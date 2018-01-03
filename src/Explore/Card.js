@@ -23,11 +23,11 @@ const Card = styled.div`
     padding: 1.4rem;
   `;
 
-export default ({ title, image }) => {
+export default ({ props }) => {
   return (
     <Card>
-      <CardImage src={require(`./${image}`)} />
-      <CardTitle>{title}</CardTitle>
+      <CardImage src={require(`./${props.image}`)} />
+      <CardTitle>{props.title}</CardTitle>
     </Card>
   );
 };

@@ -1,14 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 
 import Card from "./Card";
-import { Title } from "./../styled";
-
-const Wrapper = styled.div`
-  max-width: 966px;
-  margin: 0 auto;
-  clear: both;
-`;
+import { Title, Wrapper, TitleWrap } from "./../styled";
 
 const title = "Explore Airbnb",
   items = [
@@ -20,8 +13,10 @@ const title = "Explore Airbnb",
 export default () => {
   return (
     <Wrapper>
-      <Title>{title}</Title>
-      {items.map(item => <Card title={item.title} image={item.image} />)}
+      <TitleWrap>
+        <Title>{title}</Title>
+      </TitleWrap>
+      {items.map(item => <Card props={item} />)}
     </Wrapper>
   );
 };
