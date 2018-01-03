@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Content from "./Content";
-// import styled from "styled-components";
+import Explore from "./Explore";
 import "./App.css";
 
 class App extends Component {
@@ -9,7 +8,7 @@ class App extends Component {
     return (
       <div className="Wrap">
         <Header />
-        <Content />
+        <Explore />
       </div>
     );
   }
