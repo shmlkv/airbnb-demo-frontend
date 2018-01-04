@@ -8,7 +8,7 @@ const Search = styled.div`
   `,
   SearchIcon = styled.image`
     position: absolute;
-    left: 4.2rem;
+    left: 1rem;
     top: 1.9rem;
     width: 1.3rem;
     height: 1.3rem;
@@ -17,7 +17,7 @@ const Search = styled.div`
   `,
   SearchField = styled.input`
     background: none;
-    margin: 1rem 3.2rem;
+    margin: 1rem 0;
     padding-left: 3.3rem;
     border-radius: 4px;
     width: 392px;
