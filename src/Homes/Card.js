@@ -11,7 +11,7 @@ const Card = styled.a`
     color: #383838;
   `,
   Image = styled.img`
-    max-width: 19rem;
+    max-width: 100%;
   `,
   Cost = styled.div`
     font-weight: 600;
@@ -47,28 +47,31 @@ const Card = styled.a`
   Rating = styled.div`
     float: left;
     margin-right: 0.4rem;
-  `;
+  `,
+  Container = styled.div``;
 
 export default ({ props }) => {
   return (
-    <Card href="">
-      <Image src={require(`./${props.image}`)} />
-      <Title>
-        <Cost>${props.cost}</Cost>
-        {props.title}
-      </Title>
-      <Description>
-        {props.type} · {props.beds}
-      </Description>
-      <Rating>
-        <Star src={star} alt="" />
-        <Star src={star} alt="" />
-        <Star src={star} alt="" />
-        <Star src={star} alt="" />
-        <Star src={star} alt="" />
-        <Reviews>{props.reviews} reviews</Reviews>
-        <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
-      </Rating>
-    </Card>
+    <Container className="col-lg-4 col-sm-5 col-xs-7">
+      <Card href="">
+        <Image src={require(`./${props.image}`)} />
+        <Title>
+          <Cost>${props.cost}</Cost>
+          {props.title}
+        </Title>
+        <Description>
+          {props.type} · {props.beds}
+        </Description>
+        <Rating>
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Reviews>{props.reviews} reviews</Reviews>
+          <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
+        </Rating>
+      </Card>
+    </Container>
   );
 };
