@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ContainerFlex } from "./../styled";
+import { Container, ContainerFlex } from "./../styled";
+import Bottom from "./Bottom";
 
-const Footer = styled.header`
+const Footer = styled.footer`
     border-top: 1px solid rgba(72, 72, 72, 0.3);
     margin-top: 6rem;
     padding-top: 3rem;
@@ -26,10 +27,6 @@ const Footer = styled.header`
     text-decoration: none;
     color: #636363;
   `;
-
-const props = {
-  lang: "English"
-};
 
 export default () => {
   return (
@@ -66,6 +63,9 @@ export default () => {
           <Link href="">Community Center</Link>
         </div>
       </ContainerFlex>
+      <Container>
+        <Bottom />
+      </Container>
     </Footer>
   );
 };
