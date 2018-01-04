@@ -7,38 +7,38 @@ import downArrow from "./downArrow.svg";
 import Bottom from "./Bottom";
 
 const Footer = styled.footer`
-    border-top: 1px solid rgba(72, 72, 72, 0.3);
-    margin-top: 6rem;
-    padding-top: 3rem;
-  `,
-  Language = styled.div`
-    padding: 0.75rem;
-    border: 1px solid rgba(72, 72, 72, 0.2);
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    position: relative;
-    &:after {
-      content: "";
-      background: url(${downArrow});
-      position: absolute;
-      width: 1rem;
-      height: 0.5rem;
-      right: 0.5rem;
-      top: 1.1rem;
-    }
-  `,
-  Title = styled.div`
-    padding-bottom: 1.12rem;
-    font-weight: bold;
-    display: block;
-    color: #383838;
-  `,
-  Link = styled.a`
-    display: block;
-    padding-bottom: 0.7rem;
-    text-decoration: none;
-    color: #636363;
-  `;
+  border-top: 1px solid rgba(72, 72, 72, 0.3);
+  margin-top: 6rem;
+  padding-top: 3rem;
+`;
+const Language = styled.div`
+  padding: 0.75rem;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  position: relative;
+  &:after {
+    content: "";
+    background: url(${downArrow});
+    position: absolute;
+    width: 1rem;
+    height: 0.5rem;
+    right: 0.5rem;
+    top: 1.1rem;
+  }
+`;
+const Title = styled.div`
+  padding-bottom: 1.12rem;
+  font-weight: bold;
+  display: block;
+  color: #383838;
+`;
+const Link = styled.a`
+  display: block;
+  padding-bottom: 0.7rem;
+  text-decoration: none;
+  color: #636363;
+`;
 
 export default () => {
   return (

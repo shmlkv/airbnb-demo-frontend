@@ -1,14 +1,7 @@
 import React from "react";
 
 import Card from "./Card";
-import {
-  Title,
-  Container,
-  More,
-  ScrollWrap,
-  Header,
-  CardContainer
-} from "./../styled";
+import { Title, Container, More, ScrollWrap, Header } from "./../styled";
 
 const title = "Homes",
   items = [

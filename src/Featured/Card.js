@@ -1,24 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-import star from "./../star.svg";
-
 const Card = styled.a`
-    float: left;
-    max-width: 19rem;
-    margin-right: 1rem;
-    text-decotarion: none;
-    color: #383838;
-  `,
-  Image = styled.img`
-    max-width: 100%;
-  `,
-  Title = styled.div`
-    font-size: 15px;
-    font-weight: 600;
-    float: left;
-  `,
-  Container = styled.div``;
+  float: left;
+  max-width: 19rem;
+  margin-right: 1rem;
+  text-decotarion: none;
+  color: #383838;
+`;
+const Image = styled.img`
+  max-width: 100%;
+`;
+const Title = styled.div`
+  font-size: 15px;
+  font-weight: 600;
+  float: left;
+`;
+const Container = styled.div``;
 
 export default ({ props }) => {
   return (

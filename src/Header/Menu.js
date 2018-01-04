@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const Menu = styled.ul`
-    padding-left: 0;
+  padding-left: 0;
 
-    @media (max-width: 968px) {
-      display: none;
-    }
-  `,
-  Item = styled.li`
-    display: inline-block;
-    margin: 1rem 0 1rem 0.5rem;
-  `,
-  Link = styled.a`
-    padding: 0.5rem;
-    color: #383838;
-    font-size: 14px;
-    text-decoration: none;
-  `,
-  links = ["Become a host", "Help", "Sign up", "Log in"];
+  @media (max-width: 968px) {
+    display: none;
+  }
+`;
+const Item = styled.li`
+  display: inline-block;
+  margin: 1rem 0 1rem 0.5rem;
+`;
+const Link = styled.a`
+  padding: 0.5rem;
+  color: #383838;
+  font-size: 14px;
+  text-decoration: none;
+`;
+const links = ["Become a host", "Help", "Sign up", "Log in"];
 
 export default () => {
   return (
