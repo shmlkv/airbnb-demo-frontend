@@ -21,7 +21,7 @@ export default () => {
         <div className="col-lg-5 col-sm-7 col-xs-10">
           <Search />
         </div>
-        <div className="col-lg-4 col-sm-offset-2 col-lg-offset-2 hidden-sm hidden-xs">
+        <div className="col-lg-4 col-lg-offset-2 hidden-sm hidden-xs">
           <Menu />
         </div>
       </ContainerFlex>

@@ -5,13 +5,13 @@ import star from "./../star.svg";
 
 const Card = styled.a`
     float: left;
-    max-width: 19rem;
+    max-width: 100%;
     margin-right: 1rem;
     text-decotarion: none;
     color: #383838;
   `,
   Image = styled.img`
-    max-width: 100%;
+    width: 100%;
   `,
   Cost = styled.div`
     font-weight: 600;
