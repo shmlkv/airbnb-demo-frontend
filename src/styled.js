@@ -13,7 +13,7 @@ export const Title = styled.h1`
     right: 1rem;
     &: after;
   `,
-  Wrapper = styled.div`
+  Container = styled.div`
     max-width: 966px;
     margin: 0 auto;
     clear: both;
@@ -21,4 +21,11 @@ export const Title = styled.h1`
   TitleWrap = styled.div`
     display: block;
     position: relative;
+  `,
+  ScrollWrap = styled.div`
+    display: block;
+    overflow-y: auto;
+  `,
+  CardContainer = styled.div`
+    float: left;
   `;

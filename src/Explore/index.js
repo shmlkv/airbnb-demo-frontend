@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Wrapper, TitleWrap } from "./../styled";
+import { Title, Container, TitleWrap, ScrollWrap } from "./../styled";
 
 const title = "Explore Airbnb",
   items = [
@@ -12,11 +12,13 @@ const title = "Explore Airbnb",
 
 export default () => {
   return (
-    <Wrapper>
+    <Container>
       <TitleWrap>
         <Title>{title}</Title>
       </TitleWrap>
-      {items.map(item => <Card props={item} />)}
-    </Wrapper>
+      <ScrollWrap>
+        <scroll>{items.map(item => <Card props={item} />)}</scroll>
+      </ScrollWrap>
+    </Container>
   );
 };

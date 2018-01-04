@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Wrapper, SeeAll, TitleWrap } from "./../styled";
+import { Title, Container, SeeAll, TitleWrap } from "./../styled";
 
 const title = "Experiences",
   items = [
@@ -15,6 +15,7 @@ const title = "Experiences",
     {
       title: "Whale watching",
       image: "Rectangle@2x-2.png",
+
       cost: 69,
       reviews: 46,
       stars: 5
@@ -37,12 +38,12 @@ const title = "Experiences",
 
 export default () => {
   return (
-    <Wrapper>
+    <Container>
       <TitleWrap>
         <Title>{title}</Title>
         <SeeAll>See all</SeeAll>
       </TitleWrap>
       {items.map(item => <Card props={item} />)}
-    </Wrapper>
+    </Container>
   );
 };
