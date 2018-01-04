@@ -1,17 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = styled.a`
-    width: 19rem;
+const Card = styled.div`
+    width: 100%;
     height: 4.5rem;
     display: inline-block;
     box-sizing: border-box;
-    margin-right: 1.1rem;
     border: 1px solid rgba(72, 72, 72, 0.2);
     box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
     border-radius: 4px;
     color: #383838;
     text-decoration: none;
+    @media (max-width: 480px) {
+      height: auto;
+    }
   `,
   CardImage = styled.img`
     width: 6rem;
@@ -20,18 +22,35 @@ const Card = styled.a`
     margin-right: 1.4rem;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+    object-fit: cover;
+    @media (max-width: 480px) {
+      height: 5rem;
+      width: 100% !important;
+      padding-bottom: 0.75rem;
+    }
   `,
   CardTitle = styled.div`
     font-size: 17px;
     font-weight: 600;
     padding: 1.4rem;
+    @media (max-width: 480px) {
+      padding: 0.75rem;
+    }
+  `,
+  Link = styled.a`
+    padding: 0 1rem 0 0 !important;
+    &: last-child {
+      padding: 0 !important;
+    }
   `;
 
 export default ({ props }) => {
   return (
-    <Card href="">
-      <CardImage src={require(`./${props.image}`)} />
-      <CardTitle>{props.title}</CardTitle>
-    </Card>
+    <Link className="col-lg-4 col-sm-5 col-xs-6" href="">
+      <Card>
+        <CardImage src={require(`./${props.image}`)} />
+        <CardTitle>{props.title}</CardTitle>
+      </Card>
+    </Link>
   );
 };

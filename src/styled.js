@@ -29,15 +29,26 @@ export const Title = styled.h1`
     max-width: 966px;
     margin: 0 auto;
     clear: both;
+    padding: 0.5em;
+  `,
+  ContainerFlex = styled.div`
+    max-width: 966px;
+    margin: 0 auto;
+    clear: both;
+    display: flex;
   `,
   Header = styled.div`
     display: block;
     position: relative;
   `,
   ScrollWrap = styled.div`
-    display: block;
-    overflow-y: auto;
-  `,
-  CardContainer = styled.div`
-    float: left;
+    display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
   `;

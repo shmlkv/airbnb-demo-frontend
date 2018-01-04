@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "flexboxgrid2";
 import "./App.css";
 
 import Header from "./Header";
@@ -9,7 +10,7 @@ import Homes from "./Homes";
 class App extends Component {
   render() {
     return (
-      <div className="Wrap">
+      <div>
         <Header />
         <Explore />
         <Experiences />

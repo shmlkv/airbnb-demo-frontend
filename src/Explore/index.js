@@ -16,9 +16,7 @@ export default () => {
       <Header>
         <Title>{title}</Title>
       </Header>
-      <ScrollWrap>
-        <scroll>{items.map(item => <Card props={item} />)}</scroll>
-      </ScrollWrap>
+      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
     </Container>
   );
 };

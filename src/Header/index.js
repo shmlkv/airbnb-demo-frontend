@@ -5,8 +5,7 @@ import Logo from "./Logo/";
 import Search from "./Search/";
 import Menu from "./Menu";
 
-import { Grid, Row, Col } from "react-flexbox-grid";
-import { Container } from "./../styled";
+import { ContainerFlex } from "./../styled";
 
 const Header = styled.header`
   border-bottom: 1px solid rgba(72, 72, 72, 0.3);
@@ -15,21 +14,17 @@ const Header = styled.header`
 export default () => {
   return (
     <Header className="App-header">
-      <Container>
-        <Grid fluid>
-          <Row>
-            <Col md={1} sm={1} xs={2}>
-              <Logo />
-            </Col>
-            <Col md={5} sm={7} xs={10}>
-              <Search />
-            </Col>
-            <Col md={4} mdOffset={2}>
-              <Menu />
-            </Col>
-          </Row>
-        </Grid>
-      </Container>
+      <ContainerFlex>
+        <div className="col-lg-1 col-sm-1 col-xs-2">
+          <Logo />
+        </div>
+        <div className="col-lg-5 col-sm-7 col-xs-10">
+          <Search />
+        </div>
+        <div className="col-lg-4 col-sm-offset-2 col-lg-offset-2 hidden-sm hidden-xs">
+          <Menu />
+        </div>
+      </ContainerFlex>
     </Header>
   );
 };
