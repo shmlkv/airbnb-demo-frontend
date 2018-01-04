@@ -3,10 +3,12 @@ import styled from "styled-components";
 
 import star from "./../star.svg";
 
-const Card = styled.div`
+const Card = styled.a`
     float: left;
     max-width: 19rem;
     margin-right: 1rem;
+    text-decotarion: none;
+    color: #383838;
   `,
   Image = styled.img`
     max-width: 19rem;
@@ -18,6 +20,7 @@ const Card = styled.div`
   `,
   Title = styled.div`
     font-size: 15px;
+    font-weight: 600;
     float: left;
   `,
   Reviews = styled.div`
@@ -37,6 +40,10 @@ const Card = styled.div`
     float: left;
     margin-top: 0.25rem;
   `,
+  Description = styled.div`
+    float: left;
+    width: 100%;
+  `,
   Rating = styled.div`
     float: left;
     margin-right: 0.4rem;
@@ -44,13 +51,15 @@ const Card = styled.div`
 
 export default ({ props }) => {
   return (
-    <Card>
+    <Card href="">
       <Image src={require(`./${props.image}`)} />
       <Title>
         <Cost>${props.cost}</Cost>
         {props.title}
       </Title>
-      {/* <Stars>⭐️</Stars> */}
+      <Description>
+        {props.type} · {props.beds}
+      </Description>
       <Rating>
         <Star src={star} alt="" />
         <Star src={star} alt="" />

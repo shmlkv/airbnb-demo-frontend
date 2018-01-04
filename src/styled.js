@@ -6,19 +6,18 @@ export const Title = styled.h1`
     font-weight: 600;
     display: inline-block;
   `,
-  SeeAll = styled.div`
+  More = styled.div`
     float: right;
     position: absolute;
     top: 4.5rem;
     right: 1rem;
-    &: after;
   `,
   Container = styled.div`
     max-width: 966px;
     margin: 0 auto;
     clear: both;
   `,
-  TitleWrap = styled.div`
+  Header = styled.div`
     display: block;
     position: relative;
   `,
