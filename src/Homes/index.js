@@ -39,7 +39,7 @@ export default () => {
     <Container>
       <Header>
         <Title>{title}</Title>
-        <More>See all</More>
+        <More href="">See all</More>
       </Header>
       <CardContainer>{items.map(item => <Card props={item} />)}</CardContainer>
     </Container>
