@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 const Menu = styled.ul`
     padding-left: 0;
+
+    @media (max-width: 968px) {
+      display: none;
+    }
   `,
   Item = styled.li`
     display: inline-block;

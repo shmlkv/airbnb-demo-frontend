@@ -5,7 +5,7 @@ import Logo from "./Logo/";
 import Search from "./Search/";
 import Menu from "./Menu";
 
-import { Row, Col } from "react-flexbox-grid";
+import { Grid, Row, Col } from "react-flexbox-grid";
 import { Container } from "./../styled";
 
 const Header = styled.header`
@@ -16,17 +16,19 @@ export default () => {
   return (
     <Header className="App-header">
       <Container>
-        <Row>
-          <Col md={1}>
-            <Logo />
-          </Col>
-          <Col md={5}>
-            <Search />
-          </Col>
-          <Col mdOffset={2} md={4}>
-            <Menu />
-          </Col>
-        </Row>
+        <Grid fluid>
+          <Row>
+            <Col md={1} sm={1} xs={2}>
+              <Logo />
+            </Col>
+            <Col md={5} sm={7} xs={10}>
+              <Search />
+            </Col>
+            <Col md={4} mdOffset={2}>
+              <Menu />
+            </Col>
+          </Row>
+        </Grid>
       </Container>
     </Header>
   );

@@ -5,6 +5,7 @@ import searchIcon from "./search.svg";
 const Search = styled.div`
     display: inline-block;
     position: relative;
+    width: 100%;
   `,
   SearchIcon = styled.image`
     position: absolute;
@@ -20,7 +21,7 @@ const Search = styled.div`
     margin: 1rem 0;
     padding-left: 3.3rem;
     border-radius: 4px;
-    width: 392px;
+    width: 100%;
     height: 48px;
     font-size: 16px;
     border: 1px solid rgba(72, 72, 72, 0.2);
