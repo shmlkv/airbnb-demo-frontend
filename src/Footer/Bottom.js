@@ -27,6 +27,7 @@ const Copyright = styled.span`
 const Links = styled.div`
   float: left;
   margin-right: 1.75rem;
+
   &:last-child {
     margin-right: 0;
   }
@@ -37,10 +38,9 @@ const Link = styled.a`
   margin-right: 1.75rem;
   color: #636363;
   text-decoration: none;
+
   &:last-child {
     margin-right: 0;
-  }
-  @media (max-width: 480px) {
   }
 `;
 
@@ -51,6 +51,7 @@ const SocialIcon = styled.img`
 
 const Side = styled.div`
   float: right;
+
   @media (max-width: 480px) {
     float: left;
     margin-top: 1rem;

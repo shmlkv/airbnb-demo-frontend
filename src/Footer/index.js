@@ -18,6 +18,7 @@ const Language = styled.div`
   border-radius: 4px;
   margin-bottom: 1rem;
   position: relative;
+
   &:after {
     content: "";
     background: url(${downArrow});
@@ -26,6 +27,11 @@ const Language = styled.div`
     height: 0.5rem;
     right: 0.5rem;
     top: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    float: left;
+    width: 50%;
   }
 `;
 
