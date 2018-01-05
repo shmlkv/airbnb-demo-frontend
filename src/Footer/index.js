@@ -29,9 +29,10 @@ const Language = styled.div`
     top: 1.1rem;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 36em) {
     float: left;
     width: 50%;
+    ${"" /* flex-basis: 50%; */} margin: 10px;
   }
 `;
 
@@ -49,15 +50,34 @@ const Link = styled.a`
   color: #636363;
 `;
 
+const Select = styled.select`
+  border: none;
+  background: none;
+  font-size: 15px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+`;
 export default () => {
   return (
     <Footer>
       <ContainerFlex>
         <div className="col-lg-3 col-sm-3 col-xs-12">
-          <Language>English</Language>
-          <Language>United States dollar</Language>
+          {/* <ContainerFlex> */}
+          <Language>
+            <Select>
+              <option>English</option>
+            </Select>
+          </Language>
+          <Language>
+            <Select>
+              <option>United States dollar</option>
+            </Select>
+          </Language>
+          {/* </ContainerFlex> */}
         </div>
-        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 hidden-sm hidden-xs">
+        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
           <Title>Airbnb</Title>
           <Link href="">About us</Link>
           <Link href="">Careers</Link>
@@ -66,7 +86,7 @@ export default () => {
           <Link href="">Help</Link>
           <Link href="">Diversity & Belongi</Link>
         </div>
-        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 hidden-sm hidden-xs">
+        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
           <Title>Discover</Title>
           <Link href="">Trust & Safety</Link>
           <Link href="">Travel Credit</Link>
@@ -76,7 +96,7 @@ export default () => {
           <Link href="">Guidebooks</Link>
           <Link href="">Airbnbmag</Link>
         </div>
-        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 hidden-sm hidden-xs">
+        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
           <Title>Hosting</Title>
           <Link href="">Why Host</Link>
           <Link href="">Hospitality</Link>

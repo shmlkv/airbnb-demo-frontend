@@ -21,12 +21,15 @@ const DropDown = styled.div`
   background: url(${menudropdown});
   right: -1rem;
   top: 1.75rem;
+  @media (min-width: 968px) {
+    display: none;
+  }
 `;
 
 export default () => {
   return (
     <Link href="#">
-      <Logo src={logo} className="App-logo" alt="logo" />
+      <Logo src={logo} alt="logo" />
       <DropDown className="hidden-lg" />
     </Link>
   );
