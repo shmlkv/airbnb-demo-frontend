@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import star from "./../star.svg";
+import star from "./star.svg";
 
 const Card = styled.a`
   float: left;

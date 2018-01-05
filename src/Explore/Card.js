@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Link = styled.a`
   padding: 0 1rem 0 0 !important;
 
-  &: last-child {
+  &:last-child {
     padding: 0 !important;
   }
 `;
@@ -25,7 +25,7 @@ const Card = styled.div`
   }
 `;
 
-const CardImage = styled.img`
+const Image = styled.img`
   width: 6rem;
   height: 100%;
   float: left;
@@ -41,7 +41,7 @@ const CardImage = styled.img`
   }
 `;
 
-const CardTitle = styled.div`
+const Title = styled.div`
   font-size: 17px;
   font-weight: 600;
   padding: 1.4rem;
@@ -55,8 +55,8 @@ export default ({ props }) => {
   return (
     <Link className="col-lg-4 col-sm-5 col-xs-6" href="">
       <Card>
-        <CardImage src={require(`./${props.image}`)} />
-        <CardTitle>{props.title}</CardTitle>
+        <Image src={require(`./${props.image}`)} />
+        <Title>{props.title}</Title>
       </Card>
     </Link>
   );

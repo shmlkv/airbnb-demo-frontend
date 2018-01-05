@@ -55,8 +55,6 @@ const Select = styled.select`
   background: none;
   font-size: 15px;
   width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 `;
 export default () => {

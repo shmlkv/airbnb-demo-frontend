@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import star from "./../star.svg";
+import star from "./star.svg";
 
 const Card = styled.div`
   float: left;
@@ -14,13 +14,13 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const Cost = styled.div`
+const Cost = styled.span`
   font-weight: 600;
   float: left;
   margin-right: 0.4rem;
 `;
 
-const Title = styled.div`
+const Title = styled.span`
   font-size: 15px;
 `;
 
