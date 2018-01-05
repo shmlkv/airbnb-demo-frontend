@@ -57,7 +57,9 @@ const Rating = styled.div`
   margin-right: 0.4rem;
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 0;
+`;
 
 export default ({ props }) => {
   return (

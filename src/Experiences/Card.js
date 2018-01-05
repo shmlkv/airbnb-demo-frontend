@@ -41,7 +41,9 @@ const Reviews = styled.div`
   font-size: 12px;
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 0;
+`;
 
 export default ({ props }) => {
   return (

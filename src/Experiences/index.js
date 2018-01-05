@@ -1,7 +1,14 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, ScrollWrap, More, Header } from "./../UI";
+import {
+  Title,
+  Container,
+  ScrollWrap,
+  ScrollButton,
+  More,
+  Header
+} from "./../UI";
 
 const items = [
   {
@@ -42,7 +49,10 @@ export default ({ title = "Experiences" }) => {
         <Title>{title}</Title>
         <More href="">See all</More>
       </Header>
-      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
+      <ScrollWrap>
+        {items.map(item => <Card props={item} />)}
+        <ScrollButton />
+      </ScrollWrap>
     </Container>
   );
 };
