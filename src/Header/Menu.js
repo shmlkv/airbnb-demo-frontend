@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const Menu = styled.ul`
-  padding-left: 0;
+const Menu = styled.nav`
+  margin-top: 1rem;
 
   @media (max-width: 968px) {
     display: none;
   }
 `;
 
-const Item = styled.li`
+const MenuItem = styled.div`
   display: inline-block;
   margin: 1rem 0 1rem 0.5rem;
 `;
@@ -27,9 +27,9 @@ export default () => {
   return (
     <Menu>
       {links.map(link => (
-        <Item>
+        <MenuItem>
           <Link href="">{link}</Link>
-        </Item>
+        </MenuItem>
       ))}
     </Menu>
   );

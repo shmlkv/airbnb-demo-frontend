@@ -10,7 +10,7 @@ import {
   Header
 } from "./../UI";
 
-const items = [
+const populars = [
   {
     title: "Chumley’s",
     image: "Chumleys.png",
@@ -44,7 +44,9 @@ export default () => {
         <Title>Popular reservations around the world</Title>
         <More href="">See all</More>
       </Header>
-      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
+      <ScrollWrap>
+        {populars.map(popular => <Card props={popular} />)}
+      </ScrollWrap>
       <ScrollButton />
     </Container>
   );

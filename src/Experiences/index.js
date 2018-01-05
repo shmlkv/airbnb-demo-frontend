@@ -10,7 +10,7 @@ import {
   Header
 } from "./../UI";
 
-const items = [
+const experiences = [
   {
     title: "Forest therapy",
     image: "Forest therapy.png",
@@ -49,7 +49,9 @@ export default ({ title = "Experiences" }) => {
         <Title>{title}</Title>
         <More href="">See all</More>
       </Header>
-      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
+      <ScrollWrap>
+        {experiences.map(experience => <Card props={experience} />)}
+      </ScrollWrap>
       <ScrollButton />
     </Container>
   );
