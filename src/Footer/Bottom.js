@@ -35,7 +35,7 @@ const Links = styled.div`
 
 const Link = styled.a`
   display: inline-block;
-  margin-right: 1.75rem;
+  margin-right: 1.25rem;
   color: #636363;
   text-decoration: none;
 

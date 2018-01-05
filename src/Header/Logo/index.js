@@ -20,7 +20,7 @@ const DropDown = styled.div`
   position: absolute;
   background: url(${menudropdown});
   right: -1rem;
-  top: 1.75rem;
+  top: 0.75rem;
   @media (min-width: 968px) {
     display: none;
   }
