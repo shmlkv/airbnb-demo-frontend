@@ -52,7 +52,7 @@ const SocialIcon = styled.img`
 const Side = styled.div`
   float: right;
 
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     float: left;
     margin-top: 1rem;
   }

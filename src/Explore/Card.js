@@ -20,7 +20,7 @@ const Card = styled.div`
   color: #383838;
   text-decoration: none;
 
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     height: auto;
   }
 `;
@@ -34,7 +34,7 @@ const CardImage = styled.img`
   border-bottom-left-radius: 3px;
   object-fit: cover;
 
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     height: 5rem;
     width: 100% !important;
     padding-bottom: 0.75rem;
@@ -46,7 +46,7 @@ const CardTitle = styled.div`
   font-weight: 600;
   padding: 1.4rem;
 
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     padding: 0.75rem;
   }
 `;
