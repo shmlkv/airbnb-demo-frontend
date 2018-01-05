@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+const Link = styled.a`
+  padding: 0 1rem 0 0 !important;
+
+  &: last-child {
+    padding: 0 !important;
+  }
+`;
+
 const Card = styled.div`
   width: 100%;
   height: 4.5rem;
@@ -11,10 +19,12 @@ const Card = styled.div`
   border-radius: 4px;
   color: #383838;
   text-decoration: none;
+
   @media (max-width: 480px) {
     height: auto;
   }
 `;
+
 const CardImage = styled.img`
   width: 6rem;
   height: 100%;
@@ -23,24 +33,21 @@ const CardImage = styled.img`
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   object-fit: cover;
+
   @media (max-width: 480px) {
     height: 5rem;
     width: 100% !important;
     padding-bottom: 0.75rem;
   }
 `;
+
 const CardTitle = styled.div`
   font-size: 17px;
   font-weight: 600;
   padding: 1.4rem;
+
   @media (max-width: 480px) {
     padding: 0.75rem;
-  }
-`;
-const Link = styled.a`
-  padding: 0 1rem 0 0 !important;
-  &: last-child {
-    padding: 0 !important;
   }
 `;
 

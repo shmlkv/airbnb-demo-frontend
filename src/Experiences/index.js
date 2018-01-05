@@ -1,19 +1,19 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, ScrollWrap, More, Header } from "./../styled";
+import { Title, Container, ScrollWrap, More, Header } from "./../UI";
 
 const items = [
   {
     title: "Forest therapy",
-    image: "Rectangle@2x-3.png",
+    image: "Forest therapy.png",
     cost: 29,
     reviews: 44,
     stars: 5
   },
   {
     title: "Whale watching",
-    image: "Rectangle@2x-2.png",
+    image: "Whale watching.png",
 
     cost: 69,
     reviews: 46,
@@ -21,14 +21,14 @@ const items = [
   },
   {
     title: "Table Mountain Summi",
-    image: "Rectangle@2x-1.png",
+    image: "Table Mountain Summi.png",
     cost: 69,
     reviews: 44,
     stars: 5
   },
   {
     title: "Salsa Night",
-    image: "Rectangle@2x.png",
+    image: "Salsa Night.png",
     cost: 50,
     reviews: 44,
     stars: 5

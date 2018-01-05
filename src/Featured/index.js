@@ -1,43 +1,26 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, ScrollWrap, Header } from "./../styled";
+import { Title, Container, ScrollWrap, Header } from "./../UI";
 
-const title = "Featured destination",
-  items = [
-    {
-      title: "Paris",
-      image: "Rectangle 6@2x-12.png"
-    },
-    {
-      title: "Miami",
-      image: "Rectangle 6@2x-11.png"
-    },
-    {
-      title: "Tokyo",
-      image: "Rectangle 6@2x-10.png"
-    },
-    {
-      title: "Cape town",
-      image: "Rectangle 6@2x-9.png"
-    },
-    {
-      title: "Seuol",
-      image: "Rectangle 6@2x-8.png"
-    },
-    {
-      title: "Los Angeles",
-      image: "Rectangle 6@2x-7.png"
-    }
-  ];
+const destinations = [
+  { title: "Paris", image: "Paris.png" },
+  { title: "Miami", image: "Miami.png" },
+  { title: "Tokyo", image: "Tokyo.png" },
+  { title: "Cape town", image: "Cape town.png" },
+  { title: "Seuol", image: "Seuol.png" },
+  { title: "Los Angeles", image: "Los Angeles.png" }
+];
 
 export default () => {
   return (
     <Container>
       <Header>
-        <Title>{title}</Title>
+        <Title>Featured destination</Title>
       </Header>
-      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
+      <ScrollWrap>
+        {destinations.map(destination => <Card props={destination} />)}
+      </ScrollWrap>
     </Container>
   );
 };

@@ -1,13 +1,13 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, Header, ScrollWrap } from "./../styled";
+import { Title, Container, Header, ScrollWrap } from "./../UI";
 
 const title = "Explore Airbnb",
   items = [
-    { title: "Homes", image: "Rectangle 2@2x-2.png" },
-    { title: "Experiences", image: "Rectangle 2@2x-1.png" },
-    { title: "Restaurants", image: "Rectangle 2.png" }
+    { title: "Homes", image: "Homes.png" },
+    { title: "Experiences", image: "Experiences.png" },
+    { title: "Restaurants", image: "Restaurants.png" }
   ];
 
 export default () => {

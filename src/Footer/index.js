@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container, ContainerFlex } from "./../styled";
+import { Container, ContainerFlex } from "./../UI";
 import downArrow from "./downArrow.svg";
 
 import Bottom from "./Bottom";
@@ -11,6 +11,7 @@ const Footer = styled.footer`
   margin-top: 6rem;
   padding-top: 3rem;
 `;
+
 const Language = styled.div`
   padding: 0.75rem;
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -27,12 +28,14 @@ const Language = styled.div`
     top: 1.1rem;
   }
 `;
+
 const Title = styled.div`
   padding-bottom: 1.12rem;
   font-weight: bold;
   display: block;
   color: #383838;
 `;
+
 const Link = styled.a`
   display: block;
   padding-bottom: 0.7rem;

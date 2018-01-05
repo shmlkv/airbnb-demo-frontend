@@ -13,14 +13,17 @@ const Bottom = styled.div`
   padding: 2rem 0;
   margin-top: 1.5rem;
 `;
+
 const Logo = styled.img`
   vertical-align: middle;
 `;
+
 const Copyright = styled.span`
   color: #636363;
   vertical-align: middle;
   margin-left: 0.75rem;
 `;
+
 const Links = styled.div`
   float: left;
   margin-right: 1.75rem;
@@ -28,6 +31,7 @@ const Links = styled.div`
     margin-right: 0;
   }
 `;
+
 const Link = styled.a`
   display: inline-block;
   margin-right: 1.75rem;
@@ -39,10 +43,12 @@ const Link = styled.a`
   @media (max-width: 480px) {
   }
 `;
+
 const SocialIcon = styled.img`
   height: 1.5rem;
   width: 1.5rem;
 `;
+
 const Side = styled.div`
   float: right;
   @media (max-width: 480px) {

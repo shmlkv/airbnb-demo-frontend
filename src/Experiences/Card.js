@@ -9,31 +9,38 @@ const Card = styled.div`
   color: #383838;
   text-decoration: none;
 `;
+
 const Image = styled.img`
   width: 100%;
 `;
+
 const Cost = styled.div`
   font-weight: 600;
   float: left;
   margin-right: 0.4rem;
 `;
+
 const Title = styled.div`
   font-size: 15px;
 `;
+
 const Star = styled.img`
   margin-right: 0.25rem;
   float: left;
   margin-top: 0.25rem;
 `;
+
 const Rating = styled.div`
   float: left;
   margin-right: 0.4rem;
 `;
+
 const Reviews = styled.div`
   float: left;
   margin-top: 0.25rem;
   font-size: 12px;
 `;
+
 const Container = styled.div``;
 
 export default ({ props }) => {

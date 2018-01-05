@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container = styled.div``;
+
 const Card = styled.a`
   float: left;
   max-width: 19rem;
@@ -8,15 +10,16 @@ const Card = styled.a`
   text-decotarion: none;
   color: #383838;
 `;
+
 const Image = styled.img`
   max-width: 100%;
 `;
+
 const Title = styled.div`
   font-size: 15px;
   font-weight: 600;
   float: left;
 `;
-const Container = styled.div``;
 
 export default ({ props }) => {
   return (

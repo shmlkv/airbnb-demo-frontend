@@ -7,6 +7,7 @@ const Search = styled.div`
   position: relative;
   width: 100%;
 `;
+
 const SearchIcon = styled.image`
   position: absolute;
   left: 1rem;
@@ -16,6 +17,7 @@ const SearchIcon = styled.image`
   background: url(${searchIcon});
   z-index: -1;
 `;
+
 const SearchField = styled.input`
   background: none;
   margin: 1rem 0;
@@ -28,6 +30,7 @@ const SearchField = styled.input`
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
 `;
+
 const placeholder = `Try "Miami"`;
 
 export default () => {

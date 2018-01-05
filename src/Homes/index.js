@@ -1,13 +1,13 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, More, ScrollWrap, Header } from "./../styled";
+import { Title, Container, More, ScrollWrap, Header } from "./../UI";
 
 const title = "Homes",
   items = [
     {
       title: "La Salentina, see, nature & relax",
-      image: "Rectangle 6-2.png",
+      image: "La Salentina.png",
       cost: 82,
       type: "Entrie house",
       beds: "9 beds",
@@ -16,7 +16,7 @@ const title = "Homes",
     },
     {
       title: "Your private 3 bedr. riad and exclusi…",
-      image: "Rectangle 6-1.png",
+      image: "Your private 3 bedr.png",
       cost: 82,
       type: "Entrie house",
       beds: "5 beds",
@@ -25,7 +25,7 @@ const title = "Homes",
     },
     {
       title: "Dreamy Tropical Tree House",
-      image: "Rectangle 6-3.png",
+      image: "Dreamy Tropical.png",
       cost: 200,
       type: "Entrie treehouse",
       beds: "1 bed",

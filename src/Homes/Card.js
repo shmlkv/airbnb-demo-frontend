@@ -10,44 +10,53 @@ const Card = styled.a`
   text-decotarion: none;
   color: #383838;
 `;
+
 const Image = styled.img`
   width: 100%;
 `;
+
 const Cost = styled.div`
   font-weight: 600;
   float: left;
   margin-right: 0.4rem;
 `;
+
 const Title = styled.div`
   font-size: 15px;
   font-weight: 600;
   float: left;
 `;
+
 const Reviews = styled.div`
   float: left;
   margin-left: 0.4rem;
   font-size: 12px;
   margin-top: 0.25rem;
 `;
+
 const OwnerCharacteristic = styled.div`
   float: left;
   margin-left: 0.4rem;
   font-size: 12px;
   margin-top: 0.25rem;
 `;
+
 const Star = styled.img`
   margin-right: 0.25rem;
   float: left;
   margin-top: 0.25rem;
 `;
+
 const Description = styled.div`
   float: left;
   width: 100%;
 `;
+
 const Rating = styled.div`
   float: left;
   margin-right: 0.4rem;
 `;
+
 const Container = styled.div``;
 
 export default ({ props }) => {

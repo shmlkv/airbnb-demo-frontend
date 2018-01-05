@@ -5,7 +5,7 @@ import Logo from "./Logo/";
 import Search from "./Search/";
 import Menu from "./Menu";
 
-import { ContainerFlex } from "./../styled";
+import { ContainerFlex } from "./../UI";
 
 const Header = styled.header`
   border-bottom: 1px solid rgba(72, 72, 72, 0.3);
