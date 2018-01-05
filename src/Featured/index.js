@@ -20,8 +20,8 @@ export default () => {
       </Header>
       <ScrollWrap>
         {destinations.map(destination => <Card props={destination} />)}
-        <ScrollButton />
       </ScrollWrap>
+      <ScrollButton />
     </Container>
   );
 };

@@ -49,10 +49,8 @@ export default ({ title = "Experiences" }) => {
         <Title>{title}</Title>
         <More href="">See all</More>
       </Header>
-      <ScrollWrap>
-        {items.map(item => <Card props={item} />)}
-        <ScrollButton />
-      </ScrollWrap>
+      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
+      <ScrollButton />
     </Container>
   );
 };

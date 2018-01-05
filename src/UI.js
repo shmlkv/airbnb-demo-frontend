@@ -34,6 +34,7 @@ export const Container = styled.div`
   margin: 0 auto;
   clear: both;
   padding: 0.5em;
+  position: relative;
 `;
 
 export const ContainerFlex = styled.div`
@@ -86,5 +87,9 @@ export const ScrollButton = styled.div`
     display: block;
     margin: 0.8rem 1rem;
     float: right;
+  }
+
+  @media (max-width: 990px) {
+    display: none;
   }
 `;

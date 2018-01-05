@@ -44,10 +44,8 @@ export default () => {
         <Title>Popular reservations around the world</Title>
         <More href="">See all</More>
       </Header>
-      <ScrollWrap>
-        {items.map(item => <Card props={item} />)}
-        <ScrollButton />
-      </ScrollWrap>
+      <ScrollWrap>{items.map(item => <Card props={item} />)}</ScrollWrap>
+      <ScrollButton />
     </Container>
   );
 };
