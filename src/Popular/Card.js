@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { CardContainer, Card, CardImage } from "../UI";
+import { CardContainer, Card, CardImage } from "../Card";
 
 const Type = styled.div`
   font-size: 10px;
