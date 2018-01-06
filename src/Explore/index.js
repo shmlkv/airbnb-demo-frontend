@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, TitleWrap, ScrollWrap } from "./../UI";
+import { Title, Container, TitleWrap, ScrollWrap } from "../UI";
 
 const explores = [
   { title: "Homes", image: "Homes.png" },

@@ -4,7 +4,7 @@ import Logo from "./Logo/";
 import Search from "./Search/";
 import Menu from "./Menu";
 
-import { Header, ContainerFlex } from "./../UI";
+import { Header, ContainerFlex } from "../UI";
 
 export default () => {
   return (

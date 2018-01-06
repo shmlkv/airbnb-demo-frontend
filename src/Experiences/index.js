@@ -9,7 +9,7 @@ import {
   ScrollButton,
   More,
   TitleWrap
-} from "./../UI";
+} from "../UI";
 
 const experiences = [
   {

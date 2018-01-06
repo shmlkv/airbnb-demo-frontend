@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CardContainer, Card, CardImage, CardTitle } from "./../UI";
+import { CardContainer, Card, CardImage, CardTitle } from "../UI";
 
 export default ({ destination }) => {
   return (

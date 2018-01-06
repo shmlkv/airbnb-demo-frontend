@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container, ContainerFlex } from "./../UI";
+import { Container, ContainerFlex } from "../UI";
 import downArrow from "./arrow.svg";
 
 import Bottom from "./Bottom";

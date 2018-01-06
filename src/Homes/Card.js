@@ -10,7 +10,7 @@ import {
   CardInlinePrice,
   CardRating,
   CardReviews
-} from "./../UI";
+} from "../UI";
 
 import star from "./star.svg";
 
