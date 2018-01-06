@@ -23,14 +23,14 @@ const Price = styled.div`
   font-size: 18px;
 `;
 
-export default ({ props }) => {
+export default ({ popular }) => {
   return (
     <CardContainer className="col-lg-3 col-md-4 col-sm-4 col-xs-6">
       <Card href="">
-        <CardImage src={require(`./${props.image}`)} />
-        <Type>{props.type}</Type>
-        <CardTitle>{props.title}</CardTitle>
-        <Price>About ${props.price} per persone</Price>
+        <CardImage src={require(`./${popular.image}`)} />
+        <Type>{popular.type}</Type>
+        <CardTitle>{popular.title}</CardTitle>
+        <Price>About ${popular.price} per persone</Price>
       </Card>
     </CardContainer>
   );

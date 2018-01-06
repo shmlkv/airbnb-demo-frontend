@@ -24,17 +24,17 @@ const Description = styled.span`
   width: 100%;
 `;
 
-export default ({ props }) => {
+export default ({ home }) => {
   return (
     <CardContainer className="col-lg-4 col-sm-5 col-xs-7">
       <Card href="">
-        <CardImage src={require(`./${props.image}`)} />
+        <CardImage src={require(`./${home.image}`)} />
         <CardTitle>
-          <CardInlinePrice>${props.cost}</CardInlinePrice>
-          {props.title}
+          <CardInlinePrice>${home.cost}</CardInlinePrice>
+          {home.title}
         </CardTitle>
         <Description>
-          {props.type} · {props.beds}
+          {home.type} · {home.beds}
         </Description>
         <CardRating>
           <CardStar src={star} alt="" />
@@ -42,7 +42,7 @@ export default ({ props }) => {
           <CardStar src={star} alt="" />
           <CardStar src={star} alt="" />
           <CardStar src={star} alt="" />
-          <CardReviews>{props.reviews} reviews</CardReviews>
+          <CardReviews>{home.reviews} reviews</CardReviews>
           <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
         </CardRating>
       </Card>

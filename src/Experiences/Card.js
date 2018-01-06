@@ -17,14 +17,14 @@ const Rating = styled.div`
   margin-right: 0.4rem;
 `;
 
-export default ({ props }) => {
+export default ({ experience }) => {
   return (
     <CardContainer className="col-lg-3 col-sm-4 col-xs-6">
       <Card href="">
-        <CardImage src={require(`./${props.image}`)} />
+        <CardImage src={require(`./${experience.image}`)} />
         <CardTitle>
-          <CardInlinePrice>${props.cost}</CardInlinePrice>
-          {props.title}
+          <CardInlinePrice>${experience.cost}</CardInlinePrice>
+          {experience.title}
         </CardTitle>
         <Rating>
           <CardStar src={star} alt="" />
@@ -32,7 +32,7 @@ export default ({ props }) => {
           <CardStar src={star} alt="" />
           <CardStar src={star} alt="" />
           <CardStar src={star} alt="" />
-          <CardReviews>{props.reviews} reviews</CardReviews>
+          <CardReviews>{experience.reviews} reviews</CardReviews>
         </Rating>
       </Card>
     </CardContainer>

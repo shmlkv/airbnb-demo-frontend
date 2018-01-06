@@ -47,12 +47,12 @@ const Title = styled.h4`
   }
 `;
 
-export default ({ props }) => {
+export default ({ explore }) => {
   return (
     <Link className="col-lg-4 col-sm-5 col-xs-6" href="">
       <Card>
-        <Image src={require(`./${props.image}`)} />
-        <Title>{props.title}</Title>
+        <Image src={require(`./${explore.image}`)} />
+        <Title>{explore.title}</Title>
       </Card>
     </Link>
   );
