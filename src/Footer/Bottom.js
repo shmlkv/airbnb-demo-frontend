@@ -9,24 +9,37 @@ import instagram from "./social/instagram-2.svg";
 
 const Bottom = styled.div`
   border-top: 1px solid rgba(72, 72, 72, 0.2);
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 2rem 0;
   margin-top: 1.5rem;
+  @media (max-width: 580px) {
+    display: block;
+  }
 `;
 
 const Logo = styled.img`
-  vertical-align: middle;
+  margin-right: 0.5rem;
 `;
 
 const Copyright = styled.span`
   color: #636363;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
   margin-left: 0.75rem;
 `;
 
+const Side = styled.div`
+  display: flex;
+
+  @media (max-width: 580px) {
+    margin: 1rem 0.75rem;
+  }
+`;
+
 const Links = styled.div`
-  float: left;
   margin-right: 1.75rem;
+  display: flex;
 
   &:last-child {
     margin-right: 0;
@@ -34,7 +47,6 @@ const Links = styled.div`
 `;
 
 const Link = styled.a`
-  display: inline-block;
   margin-right: 1.25rem;
   color: #636363;
   text-decoration: none;
@@ -49,20 +61,13 @@ const SocialIcon = styled.img`
   width: 1.5rem;
 `;
 
-const Side = styled.div`
-  float: right;
-
-  @media (max-width: 580px) {
-    float: left;
-    margin-top: 1rem;
-  }
-`;
-
 export default () => {
   return (
     <Bottom>
-      <Logo src={logo} />
-      <Copyright>© Airbnb Inc.</Copyright>
+      <Copyright>
+        <Logo src={logo} />
+        © Airbnb Inc.
+      </Copyright>
       <Side>
         <Links>
           <Link href="#">Terms</Link>

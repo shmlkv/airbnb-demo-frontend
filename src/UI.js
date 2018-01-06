@@ -8,12 +8,14 @@ export const Title = styled.h1`
   font-weight: 600;
   margin: 0;
 `;
+
 export const TitleWrap = styled.div`
   display: flex;
   margin: 4rem 0 1.5rem 0;
   align-items: center;
   justify-content: space-between;
 `;
+
 export const More = styled.a`
   text-decoration: none;
   color: #383838;
@@ -88,9 +90,11 @@ export const ScrollButton = styled.div`
     display: none;
   }
 `;
+
 export const CardContainer = styled.div`
   padding: 0;
 `;
+
 export const Card = styled.a`
   margin-right: 1rem;
   text-decoration: none;
@@ -98,6 +102,7 @@ export const Card = styled.a`
   display: flex;
   flex-direction: column;
 `;
+
 export const CardImage = styled.img`
   max-width: 100%;
 `;
@@ -110,19 +115,23 @@ export const CardTitle = styled.h4`
   overflow: hidden;
   font-weight: bold;
 `;
+
 export const CardRating = styled.div`
   margin-right: 0.4rem;
   display: flex;
 `;
+
 export const CardStar = styled.img`
   margin-right: 0.25rem;
   float: left;
   margin-top: 0.25rem;
 `;
+
 export const CardInlinePrice = styled.span`
   font-weight: 600;
   margin-right: 0.4rem;
 `;
+
 export const CardReviews = styled.div`
   margin-left: 0.4rem;
   font-size: 12px;

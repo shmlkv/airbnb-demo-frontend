@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Container, ContainerFlex } from "./../UI";
-import downArrow from "./downArrow.svg";
+import downArrow from "./arrow.svg";
 
 import Bottom from "./Bottom";
 
@@ -11,7 +11,11 @@ const Footer = styled.footer`
   margin-top: 6rem;
   padding-top: 3rem;
 `;
-
+const ContainerLanguage = styled.div`
+  @media (max-width: 576px) {
+    display: flex;
+  }
+`;
 const Language = styled.div`
   padding: 0.75rem;
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -29,17 +33,16 @@ const Language = styled.div`
     top: 1.1rem;
   }
 
-  @media (max-width: 36em) {
+  @media (max-width: 576px) {
     float: left;
     width: 50%;
-    ${"" /* flex-basis: 50%; */} margin: 10px;
+    margin: 10px;
   }
 `;
 
 const Title = styled.div`
   padding-bottom: 1.12rem;
   font-weight: bold;
-  display: block;
   color: #383838;
 `;
 
@@ -57,12 +60,12 @@ const Select = styled.select`
   width: 100%;
   appearance: none;
 `;
+
 export default () => {
   return (
     <Footer>
       <ContainerFlex>
-        <div className="col-lg-3 col-sm-3 col-xs-12">
-          {/* <ContainerFlex> */}
+        <ContainerLanguage className="col-lg-3 col-sm-3 col-xs-12">
           <Language>
             <Select>
               <option>English</option>
@@ -73,8 +76,7 @@ export default () => {
               <option>United States dollar</option>
             </Select>
           </Language>
-          {/* </ContainerFlex> */}
-        </div>
+        </ContainerLanguage>
         <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
           <Title>Airbnb</Title>
           <Link href="">About us</Link>
