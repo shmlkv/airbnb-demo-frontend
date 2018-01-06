@@ -9,7 +9,7 @@ const Menu = styled.nav`
   }
 `;
 
-const MenuItem = styled.div`
+const LinkWrap = styled.div`
   display: inline-block;
   margin: 1rem 0 1rem 0.5rem;
 `;
@@ -27,9 +27,9 @@ export default () => {
   return (
     <Menu>
       {links.map(link => (
-        <MenuItem>
+        <LinkWrap>
           <Link href="">{link}</Link>
-        </MenuItem>
+        </LinkWrap>
       ))}
     </Menu>
   );
