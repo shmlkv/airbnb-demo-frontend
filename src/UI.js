@@ -65,7 +65,7 @@ export const ScrollWrap = styled.div`
   }
 `;
 
-export const ScrollButton = styled.div`
+export const ScrollButton = styled.button`
   top: calc(50% - 20px);
   right: 0;
   height: 40px;
@@ -85,9 +85,8 @@ export const ScrollButton = styled.div`
     content: "";
     width: 6px;
     height: 10px;
+    margin: 8px;
     display: block;
-    margin: 0.8rem 1rem;
-    float: right;
   }
 
   @media (max-width: 990px) {
