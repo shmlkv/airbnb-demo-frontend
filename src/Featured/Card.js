@@ -1,13 +1,13 @@
 import React from "react";
 
-import { CardContainer, Card, CardImage, CardTitle } from "../Card";
+import { CardContainer, Card, Image, Title } from "../Card";
 
 export default ({ destination }) => {
   return (
     <CardContainer className="col-lg-2 col-sm-3 col-xs-4">
       <Card href="">
-        <CardImage src={require(`./${destination.image}`)} />
-        <CardTitle>{destination.title}</CardTitle>
+        <Image src={require(`./${destination.image}`)} />
+        <Title>{destination.title}</Title>
       </Card>
     </CardContainer>
   );

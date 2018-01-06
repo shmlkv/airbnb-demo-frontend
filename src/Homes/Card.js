@@ -4,12 +4,12 @@ import styled from "styled-components";
 import {
   CardContainer,
   Card,
-  CardTitle,
-  CardImage,
-  CardStar,
-  CardInlinePrice,
-  CardRating,
-  CardReviews
+  Title,
+  Image,
+  Star,
+  InlinePrice,
+  Rating,
+  Reviews
 } from "../Card";
 
 import star from "./star.svg";
@@ -28,23 +28,23 @@ export default ({ home }) => {
   return (
     <CardContainer className="col-lg-4 col-sm-5 col-xs-7">
       <Card href="">
-        <CardImage src={require(`./${home.image}`)} />
-        <CardTitle>
-          <CardInlinePrice>${home.cost}</CardInlinePrice>
+        <Image src={require(`./${home.image}`)} />
+        <Title>
+          <InlinePrice>${home.cost}</InlinePrice>
           {home.title}
-        </CardTitle>
+        </Title>
         <Description>
           {home.type} · {home.beds}
         </Description>
-        <CardRating>
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardReviews>{home.reviews} reviews</CardReviews>
+        <Rating>
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Reviews>{home.reviews} reviews</Reviews>
           <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
-        </CardRating>
+        </Rating>
       </Card>
     </CardContainer>
   );

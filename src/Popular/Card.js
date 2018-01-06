@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { CardContainer, Card, CardImage } from "../Card";
+import { CardContainer, Card, Image } from "../Card";
 
 const Type = styled.div`
   font-size: 10px;
@@ -9,7 +9,7 @@ const Type = styled.div`
   margin-top: 0.5rem;
   text-transform: uppercase;
 `;
-const CardTitle = styled.p`
+const Title = styled.p`
   font-size: 18px;
   margin: 2px 0 0;
   text-overflow: ellipsis;
@@ -27,9 +27,9 @@ export default ({ popular }) => {
   return (
     <CardContainer className="col-lg-3 col-md-4 col-sm-4 col-xs-6">
       <Card href="">
-        <CardImage src={require(`./${popular.image}`)} />
+        <Image src={require(`./${popular.image}`)} />
         <Type>{popular.type}</Type>
-        <CardTitle>{popular.title}</CardTitle>
+        <Title>{popular.title}</Title>
         <Price>About ${popular.price} per persone</Price>
       </Card>
     </CardContainer>

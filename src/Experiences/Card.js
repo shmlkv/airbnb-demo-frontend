@@ -4,11 +4,11 @@ import styled from "styled-components";
 import {
   CardContainer,
   Card,
-  CardImage,
-  CardTitle,
-  CardStar,
-  CardInlinePrice,
-  CardReviews
+  Image,
+  Title,
+  Star,
+  InlinePrice,
+  Reviews
 } from "../Card";
 
 import star from "./star.svg";
@@ -21,18 +21,18 @@ export default ({ experience }) => {
   return (
     <CardContainer className="col-lg-3 col-sm-4 col-xs-6">
       <Card href="">
-        <CardImage src={require(`./${experience.image}`)} />
-        <CardTitle>
-          <CardInlinePrice>${experience.cost}</CardInlinePrice>
+        <Image src={require(`./${experience.image}`)} />
+        <Title>
+          <InlinePrice>${experience.cost}</InlinePrice>
           {experience.title}
-        </CardTitle>
+        </Title>
         <Rating>
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardStar src={star} alt="" />
-          <CardReviews>{experience.reviews} reviews</CardReviews>
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Star src={star} alt="" />
+          <Reviews>{experience.reviews} reviews</Reviews>
         </Rating>
       </Card>
     </CardContainer>
