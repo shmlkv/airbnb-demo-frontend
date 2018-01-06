@@ -42,7 +42,7 @@ const homes = [
 
 export default () => {
   return (
-    <Container className="col-xs">
+    <Container>
       <TitleWrap>
         <Title>Homes</Title>
         <More href="">See all</More>

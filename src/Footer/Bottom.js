@@ -13,7 +13,8 @@ const Bottom = styled.div`
   justify-content: space-between;
   padding: 2rem 0;
   margin-top: 1.5rem;
-  @media (max-width: 580px) {
+
+  @media (min-width: 580px) {
     display: block;
   }
 `;

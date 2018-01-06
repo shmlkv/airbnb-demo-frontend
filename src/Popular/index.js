@@ -39,7 +39,7 @@ const populars = [
 
 export default () => {
   return (
-    <Container className="col-xs">
+    <Container>
       <TitleWrap>
         <Title>Popular reservations around the world</Title>
         <More href="">See all</More>

@@ -13,7 +13,7 @@ export default () => {
   return (
     <Container>
       <TitleWrap>
-        <Title className="col-xs">Explore Airbnb</Title>
+        <Title>Explore Airbnb</Title>
       </TitleWrap>
       <ScrollWrap>
         {explores.map(explore => <Card explore={explore} />)}

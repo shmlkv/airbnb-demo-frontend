@@ -12,16 +12,20 @@ const Footer = styled.footer`
   padding-top: 3rem;
 `;
 const ContainerLanguage = styled.div`
-  @media (max-width: 576px) {
-    display: flex;
+  display: flex;
+  @media (min-width: 576px) {
+    display: block;
   }
 `;
 const Language = styled.div`
   padding: 0.75rem;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
-  margin-bottom: 1rem;
   position: relative;
+
+  float: left;
+  width: 50%;
+  margin: 10px;
 
   &:after {
     content: "";
@@ -33,10 +37,10 @@ const Language = styled.div`
     top: 1.1rem;
   }
 
-  @media (max-width: 576px) {
-    float: left;
-    width: 50%;
-    margin: 10px;
+  @media (min-width: 576px) {
+    margin-bottom: 1rem;
+    float: none;
+    width: inherit;
   }
 `;
 

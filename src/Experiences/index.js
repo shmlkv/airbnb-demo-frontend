@@ -45,7 +45,7 @@ const experiences = [
 
 export default ({ title = "Experiences" }) => {
   return (
-    <Container className="col-xs">
+    <Container>
       <TitleWrap>
         <Title>{title}</Title>
         <More href="">See all</More>

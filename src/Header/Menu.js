@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 const Menu = styled.nav`
   margin-top: 1rem;
+  display: none;
 
-  @media (max-width: 968px) {
-    display: none;
+  @media (min-width: 968px) {
+    display: block;
   }
 `;
 

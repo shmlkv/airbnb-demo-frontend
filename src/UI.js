@@ -39,6 +39,7 @@ export const More = styled.a`
 export const Container = styled.div`
   max-width: 966px;
   margin: 0 auto;
+  padding: 0 8px;
   clear: both;
   position: relative;
 `;
@@ -89,7 +90,7 @@ export const ScrollButton = styled.button`
     display: block;
   }
 
-  @media (max-width: 990px) {
+  @media (min-width: 990px) {
     display: none;
   }
 `;
