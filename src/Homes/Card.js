@@ -21,7 +21,7 @@ const OwnerCharacteristic = styled.div`
 `;
 
 const Description = styled.span`
-  width: 100%;
+  margin-top: 0.25rem;
 `;
 
 export default ({ home }) => {

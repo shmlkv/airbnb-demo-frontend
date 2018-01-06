@@ -66,7 +66,7 @@ export const ScrollWrap = styled.div`
 `;
 
 export const ScrollButton = styled.div`
-  top: 50%;
+  top: calc(50% - 20px);
   right: 0;
   height: 40px;
   width: 40px;
