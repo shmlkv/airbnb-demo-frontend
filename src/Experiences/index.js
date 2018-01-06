@@ -50,7 +50,7 @@ export default ({ title = "Experiences" }) => {
         <More href="">See all</More>
       </TitleWrap>
       <ScrollWrap>
-        {experiences.map(experience => <Card props={experience} />)}
+        {experiences.map(experience => <Card experience={experience} />)}
       </ScrollWrap>
       <ScrollButton />
     </Container>

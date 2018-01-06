@@ -47,7 +47,7 @@ export default () => {
         <Title>Homes</Title>
         <More href="">See all</More>
       </TitleWrap>
-      <ScrollWrap>{homes.map(home => <Card props={home} />)}</ScrollWrap>
+      <ScrollWrap>{homes.map(home => <Card home={home} />)}</ScrollWrap>
       <ScrollButton />
     </Container>
   );

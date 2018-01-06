@@ -45,7 +45,7 @@ export default () => {
         <More href="">See all</More>
       </TitleWrap>
       <ScrollWrap>
-        {populars.map(popular => <Card props={popular} />)}
+        {populars.map(popular => <Card popular={popular} />)}
       </ScrollWrap>
       <ScrollButton />
     </Container>

@@ -16,7 +16,7 @@ export default () => {
         <Title className="col-xs">Explore Airbnb</Title>
       </TitleWrap>
       <ScrollWrap>
-        {explores.map(explore => <Card props={explore} />)}
+        {explores.map(explore => <Card explore={explore} />)}
       </ScrollWrap>
     </Container>
   );

@@ -19,7 +19,7 @@ export default () => {
         <Title>Featured destination</Title>
       </TitleWrap>
       <ScrollWrap>
-        {destinations.map(destination => <Card props={destination} />)}
+        {destinations.map(destination => <Card destination={destination} />)}
       </ScrollWrap>
       <ScrollButton />
     </Container>
