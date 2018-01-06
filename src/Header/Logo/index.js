@@ -2,35 +2,33 @@ import React from "react";
 import styled from "styled-components";
 import logo from "./logo.svg";
 
-import menudropdown from "./menu-dropdown.svg";
+import arrow from "./arrow.svg";
+
 const Link = styled.a`
-  position: relative;
-`;
+  display: flex;
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
 
-const Logo = styled.img`
-  margin: 1.5rem 0;
-  float: left;
-`;
+  &:after {
+    content: "";
+    width: 1rem;
+    height: 0.5rem;
+    background: url(${arrow});
+    background-size: cover;
 
-const DropDown = styled.div`
-  width: 1rem;
-  height: 0.5rem;
-  float: left;
-  margin: 1.5rem 0;
-  position: absolute;
-  background: url(${menudropdown});
-  right: -1rem;
-  top: 0.75rem;
-  @media (min-width: 968px) {
-    display: none;
+    @media (min-width: 968px) {
+      display: none;
+    }
   }
 `;
+
+const Logo = styled.img``;
 
 export default () => {
   return (
     <Link href="#">
       <Logo src={logo} alt="logo" />
-      <DropDown className="hidden-lg" />
     </Link>
   );
 };

@@ -7,7 +7,7 @@ import {
   More,
   ScrollWrap,
   ScrollButton,
-  Header
+  TitleWrap
 } from "./../UI";
 
 const homes = [
@@ -42,11 +42,11 @@ const homes = [
 
 export default () => {
   return (
-    <Container>
-      <Header>
+    <Container className="col-xs">
+      <TitleWrap>
         <Title>Homes</Title>
-        <More href="">See all</More>
-      </Header>
+        <More href="">See all</More>
+      </TitleWrap>
       <ScrollWrap>{homes.map(home => <Card props={home} />)}</ScrollWrap>
       <ScrollButton />
     </Container>

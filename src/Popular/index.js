@@ -7,43 +7,43 @@ import {
   More,
   ScrollWrap,
   ScrollButton,
-  Header
+  TitleWrap
 } from "./../UI";
 
 const populars = [
   {
     title: "Chumley’s",
     image: "Chumleys.png",
-    cost: 60,
+    price: 60,
     type: "Speakeasy"
   },
   {
     title: "Hanjan",
     image: "Hanjan.png",
-    cost: 50,
+    price: 50,
     type: "Korean gastropub"
   },
   {
     title: "Prime Meats",
     image: "Prime Meats.png",
-    cost: 50,
+    price: 50,
     type: "Speakeasy"
   },
   {
     title: "Seaprice",
     image: "Seaprice.png",
-    cost: 70,
+    price: 70,
     type: "Fine seafood"
   }
 ];
 
 export default () => {
   return (
-    <Container>
-      <Header>
+    <Container className="col-xs">
+      <TitleWrap>
         <Title>Popular reservations around the world</Title>
-        <More href="">See all</More>
-      </Header>
+        <More href="">See all</More>
+      </TitleWrap>
       <ScrollWrap>
         {populars.map(popular => <Card props={popular} />)}
       </ScrollWrap>

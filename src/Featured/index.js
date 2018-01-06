@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, ScrollWrap, ScrollButton, Header } from "./../UI";
+import { Title, Container, ScrollWrap, ScrollButton, TitleWrap } from "./../UI";
 
 const destinations = [
   { title: "Paris", image: "Paris.png" },
@@ -14,10 +14,10 @@ const destinations = [
 
 export default () => {
   return (
-    <Container>
-      <Header>
+    <Container className="col-xs">
+      <TitleWrap>
         <Title>Featured destination</Title>
-      </Header>
+      </TitleWrap>
       <ScrollWrap>
         {destinations.map(destination => <Card props={destination} />)}
       </ScrollWrap>

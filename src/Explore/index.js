@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, Header, ScrollWrap } from "./../UI";
+import { Title, Container, TitleWrap, ScrollWrap } from "./../UI";
 
 const explores = [
   { title: "Homes", image: "Homes.png" },
@@ -12,9 +12,9 @@ const explores = [
 export default () => {
   return (
     <Container>
-      <Header>
-        <Title>Explore Airbnb</Title>
-      </Header>
+      <TitleWrap>
+        <Title className="col-xs">Explore Airbnb</Title>
+      </TitleWrap>
       <ScrollWrap>
         {explores.map(explore => <Card props={explore} />)}
       </ScrollWrap>
