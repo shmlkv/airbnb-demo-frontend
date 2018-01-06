@@ -90,7 +90,7 @@ export const ScrollButton = styled.button`
     display: block;
   }
 
-  @media (min-width: 990px) {
+  @media (max-width: 990px) {
     display: none;
   }
 `;
