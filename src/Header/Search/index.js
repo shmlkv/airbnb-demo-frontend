@@ -3,17 +3,15 @@ import styled from "styled-components";
 import searchIcon from "./search.svg";
 
 const Search = styled.div`
-  display: inline-block;
   position: relative;
-  width: 100%;
 `;
 
 const SearchIcon = styled.image`
+  width: 1.3rem;
+  height: 1.3rem;
   position: absolute;
   left: 1rem;
   top: 1.9rem;
-  width: 1.3rem;
-  height: 1.3rem;
   background: url(${searchIcon});
   z-index: -1;
 `;

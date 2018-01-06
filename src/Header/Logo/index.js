@@ -6,7 +6,6 @@ import arrow from "./arrow.svg";
 
 const Link = styled.a`
   display: flex;
-  display: flex;
   align-items: center;
   margin-top: 1.5rem;
 

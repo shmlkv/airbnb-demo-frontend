@@ -3,6 +3,10 @@ import styled from "styled-components";
 import arrowmore from "./arrow-more.svg";
 import arrowslider from "./arrow-slider.svg";
 
+export const Header = styled.header`
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+`;
+
 export const Title = styled.h1`
   font-size: 32px;
   font-weight: 600;

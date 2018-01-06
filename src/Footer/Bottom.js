@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 import logo from "./logo.svg";
 
-import facebook from "./social/facebook-2.svg";
-import twitter from "./social/twitter-2.svg";
-import instagram from "./social/instagram-2.svg";
+import facebook from "./social/facebook.svg";
+import twitter from "./social/twitter.svg";
+import instagram from "./social/instagram.svg";
 
 const Bottom = styled.div`
   border-top: 1px solid rgba(72, 72, 72, 0.2);
