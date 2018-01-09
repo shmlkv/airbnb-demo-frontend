@@ -1,7 +1,13 @@
 import React from "react";
 
 import Card from "./Card";
-import { Title, Container, ScrollWrap, ScrollButton, TitleWrap } from "../UI";
+import {
+  Title,
+  Container,
+  ScrollWrap,
+  ScrollButton,
+  TitleWrap
+} from "../../UI";
 
 const destinations = [
   { title: "Paris", image: "Paris.png" },

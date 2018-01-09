@@ -8,7 +8,7 @@ import {
   ScrollWrap,
   ScrollButton,
   TitleWrap
-} from "../UI";
+} from "../../UI";
 
 const populars = [
   {
