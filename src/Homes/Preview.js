@@ -1,14 +1,7 @@
 import React from "react";
 
-import Card from "../../Homes/Card";
-import {
-  Title,
-  Container,
-  More,
-  ScrollWrap,
-  ScrollButton,
-  TitleWrap
-} from "../../UI";
+import Card from "./Card";
+import { ContainerFlex } from "../UI";
 
 const homes = [
   {
@@ -39,16 +32,19 @@ const homes = [
     stars: 5
   }
 ];
-
 export default () => {
   return (
-    <Container>
-      <TitleWrap>
-        <Title>Homes</Title>
-        <More href="">See all</More>
-      </TitleWrap>
-      <ScrollWrap>{homes.map(home => <Card home={home} />)}</ScrollWrap>
-      <ScrollButton />
-    </Container>
+    <ContainerFlex>
+      <div className="col-xs-12 col-lg-8">
+        <div>
+          {homes.map(home => (
+            <div className="col-xs-12 col-sm-6">
+              <Card home={home} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="col-lg-4">f</div>
+    </ContainerFlex>
   );
 };

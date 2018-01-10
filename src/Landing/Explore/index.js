@@ -4,7 +4,7 @@ import Card from "./Card";
 import { Title, Container, TitleWrap, ScrollWrap } from "../../UI";
 
 const explores = [
-  { title: "Homes", image: "Homes.png" },
+  { title: "Homes", image: "Homes.png", link: "/homes" },
   { title: "Experiences", image: "Experiences.png" },
   { title: "Restaurants", image: "Restaurants.png" }
 ];

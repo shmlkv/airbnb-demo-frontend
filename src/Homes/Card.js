@@ -10,7 +10,7 @@ import {
   InlinePrice,
   Rating,
   Reviews
-} from "../../UI/Card";
+} from "../UI/Card";
 
 import star from "./star.svg";
 
@@ -26,7 +26,7 @@ const Description = styled.span`
 
 export default ({ home }) => {
   return (
-    <CardContainer className="col-lg-4 col-sm-5 col-xs-7">
+    <CardContainer>
       <Card href="">
         <Image src={require(`./${home.image}`)} />
         <Title>

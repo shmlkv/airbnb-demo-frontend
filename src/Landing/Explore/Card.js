@@ -49,7 +49,7 @@ const Title = styled.h4`
 
 export default ({ explore }) => {
   return (
-    <Link className="col-lg-4 col-sm-5 col-xs-6" href="">
+    <Link className="col-lg-4 col-sm-5 col-xs-6" href={explore.link}>
       <Card>
         <Image src={require(`./${explore.image}`)} />
         <Title>{explore.title}</Title>
