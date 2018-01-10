@@ -10,7 +10,7 @@ export default () => {
   return (
     <Header>
       <ContainerFlex>
-        <div className="col-lg-1 col-sm-1 col-xs-2">
+        <div className="col-lg-1 col-md-1 col-sm-2 col-xs-2">
           <Logo />
         </div>
         <div className="col-lg-5 col-sm-7 col-xs-10">
