@@ -23,6 +23,18 @@ const Container = styled.div`
   margin: 0 auto;
   clear: both;
   display: flex;
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+`;
+
+export const Filter = styled.button`
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  color: #383838;
+  margin: 0.75rem 0.75rem 0.75rem 0;
+  border-radius: 4px;
+  font-size: 14px;
+  -fx-faint-focus-color: transparent;
 `;
 
 export default () => {
@@ -31,9 +43,9 @@ export default () => {
       <Container>
         <Dates />
         <Guests />
-        <Type />
-        <Price />
-        <Instant />
+        <Type className="hidden-xs hidden-md hidden-sm" />
+        <Price className="hidden-xs hidden-md hidden-sm" />
+        <Instant className="hidden-xs hidden-md hidden-sm" />
         <MoreFilters />
       </Container>
     </Box>

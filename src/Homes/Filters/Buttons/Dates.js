@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Filter } from "../Filter";
+import { Filter } from "../index";
 
-export default () => {
-  return <Filter>Dates</Filter>;
+export default ({ className, ...props }) => {
+  return <Filter className={className}>Dates</Filter>;
 };

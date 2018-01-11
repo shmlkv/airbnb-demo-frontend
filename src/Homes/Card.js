@@ -13,7 +13,7 @@ import {
 
 import star from "./star.svg";
 const HomeCard = styled(Card)`
-  padding: 0 1rem 1rem 0;
+  padding: 0 0.5rem 2.5rem 0.5rem;
   margin: 0;
 `;
 const OwnerCharacteristic = styled.div`

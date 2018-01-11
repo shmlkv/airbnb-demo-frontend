@@ -5,9 +5,9 @@ import GoogleMap from "google-map-react";
 const GoogleMapContainer = styled.div`
   background: lightgrey;
   position: fixed;
+  width: calc( (100vw - 966px)/2 + (330px - 16px));
   right: 0;
   bottom: 0;
-  left: calc(100% / 12 * 8);
   top: 140px;
 `;
 
