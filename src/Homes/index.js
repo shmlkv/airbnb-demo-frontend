@@ -4,12 +4,12 @@ import Header from "../Header";
 import Filters from "./Filters";
 import Preview from "./Preview";
 import GoogleMap from "./GoogleMap";
-import { ContainerFlex } from "../UI";
+import { ContainerFlex, HomeContainer } from "../UI";
 
 export default () => {
   return (
-    <div>
-      <Header />
+    <HomeContainer>
+      <Header searchPlaceHolder="Anywhere · Homes" />
       <Filters />
       <ContainerFlex>
         <div className="col-xs-12 col-lg-8">
@@ -19,6 +19,6 @@ export default () => {
           <GoogleMap />
         </div>
       </ContainerFlex>
-    </div>
+    </HomeContainer>
   );
 };

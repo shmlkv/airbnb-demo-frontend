@@ -10,6 +10,12 @@ import MoreFilters from "./Buttons/MoreFilters";
 
 const Box = styled.div`
   border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  position: fixed;
+  top: 81px;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 1;
 `;
 
 const Container = styled.div`

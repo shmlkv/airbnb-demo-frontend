@@ -1,5 +1,6 @@
 import React from "react";
 
+import { MainContainer } from "../UI";
 import Header from "../Header";
 import Explore from "./Explore";
 import Experiences from "./Experiences";
@@ -10,14 +11,14 @@ import Footer from "./Footer";
 
 export default () => {
   return (
-    <div>
-      <Header />
+    <MainContainer>
+      <Header searchPlaceHolder="Try “Miami”" />
       <Explore />
       <Experiences />
       <Homes />
       <Popular />
       <Featured />
       <Footer />
-    </div>
+    </MainContainer>
   );
 };

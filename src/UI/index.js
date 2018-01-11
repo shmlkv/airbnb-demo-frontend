@@ -3,8 +3,22 @@ import styled from "styled-components";
 import arrowmore from "./arrow-more.svg";
 import arrowslider from "./arrow-slider.svg";
 
+export const MainContainer = styled.div`
+  margin-top: 6.5rem;
+`;
+
+export const HomeContainer = styled.div`
+  margin-top: 9.5rem;
+`;
+
 export const Header = styled.header`
   border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 1;
 `;
 
 export const Title = styled.h1`
@@ -15,7 +29,7 @@ export const Title = styled.h1`
 
 export const TitleWrap = styled.div`
   display: flex;
-  margin: 4rem 0 1.5rem 0;
+  margin: 3rem 0 1.5rem 0;
   align-items: center;
   justify-content: space-between;
 `;

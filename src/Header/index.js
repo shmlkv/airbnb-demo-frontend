@@ -6,7 +6,7 @@ import Menu from "./Menu";
 
 import { Header, ContainerFlex } from "../UI";
 
-export default () => {
+export default ({ searchPlaceHolder, ...props }) => {
   return (
     <Header>
       <ContainerFlex>
@@ -14,7 +14,7 @@ export default () => {
           <Logo />
         </div>
         <div className="col-lg-5 col-sm-7 col-xs-10">
-          <Search />
+          <Search searchPlaceHolder={searchPlaceHolder} />
         </div>
         <div className="col-lg-4 col-lg-offset-2 hidden-sm hidden-xs">
           <Menu />
