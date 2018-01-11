@@ -108,3 +108,7 @@ export const ScrollButton = styled.button`
     display: none;
   }
 `;
+
+export const Flex = styled.div`
+  display: flex;
+`;

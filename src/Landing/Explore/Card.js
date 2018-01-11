@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 
 const InternalLink = styled(Link)`
   text-decoration: none;
+
+  &:first-child {
+    padding-left: 0;
+  }
 `;
 const Card = styled.div`
   display: flex;

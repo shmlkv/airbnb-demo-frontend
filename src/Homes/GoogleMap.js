@@ -16,7 +16,7 @@ export default () => (
     <GoogleMap
       apiKey={process.env.REACT_APP_GOOGLE_MAPS_KEY}
       defaultZoom={8}
-      center={{ lat: -34.397, lng: 150.644 }}
+      center={{ lat: 32.091958, lng: 34.788203 }}
     />
   </GoogleMapContainer>
 );

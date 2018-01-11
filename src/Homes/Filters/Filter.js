@@ -7,4 +7,5 @@ export const Filter = styled.button`
   margin: 0.75rem 0.75rem 0.75rem 0;
   border-radius: 4px;
   font-size: 14px;
+  -fx-faint-focus-color: transparent;
 `;
