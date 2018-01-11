@@ -20,6 +20,7 @@ const Link = styled.a`
   color: #383838;
   font-size: 14px;
   text-decoration: none;
+  font-family: "CircularAir-Normal";
 `;
 
 const links = ["Become a host", "Help", "Sign up", "Log in"];

@@ -66,12 +66,12 @@ const homes = [
 export default () => {
   return (
     <HomeContainer>
-      <Header searchPlaceHolder="Anywhere · Homes" />
+      <Header placeHolder="Anywhere · Homes" />
       <Filters />
       <ContainerFlex>
         <HomeBox className="col-xs-12 col-lg-8">
           {homes.map(home => (
-            <Card className="col-lg-6 col-xs-12 col-sm-6" home={home} />
+            <Card className="col-xs-12 col-sm-6 col-lg-6 " home={home} />
           ))}
           <Pager />
         </HomeBox>

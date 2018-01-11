@@ -45,7 +45,7 @@ export const More = styled.a`
     width: 6px;
     height: 10px;
     display: block;
-    margin: 0.4rem 0.5rem;
+    margin: 0.3rem 0.5rem;
     float: right;
   }
 `;

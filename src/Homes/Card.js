@@ -12,6 +12,7 @@ import {
 } from "../UI/Card";
 
 import star from "./star.svg";
+
 const HomeCard = styled(Card)`
   padding: 0 0.5rem 2.5rem 0.5rem;
   margin: 0;
@@ -26,7 +27,7 @@ const Description = styled.span`
   margin-top: 0.25rem;
 `;
 
-export default ({ home, className, ...props }) => {
+export default ({ home, className }) => {
   return (
     <HomeCard className={className} href="">
       <Image src={require(`./${home.image}`)} />

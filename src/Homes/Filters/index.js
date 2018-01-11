@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import Dates from "./Buttons/Dates";
-import Guests from "./Buttons/Guests";
-import Type from "./Buttons/Type";
-import Price from "./Buttons/Price";
-import Instant from "./Buttons/Instant";
-import MoreFilters from "./Buttons/MoreFilters";
+import Dates from "./Dates";
+import Guests from "./Guests";
+import Type from "./Type";
+import Price from "./Price";
+import Instant from "./Instant";
+import MoreFilters from "./MoreFilters";
 
 const Box = styled.div`
   border-bottom: 1px solid rgba(72, 72, 72, 0.3);
@@ -34,7 +34,8 @@ export const Filter = styled.button`
   margin: 0.75rem 0.75rem 0.75rem 0;
   border-radius: 4px;
   font-size: 14px;
-  -fx-faint-focus-color: transparent;
+  cursor: pointer;
+  font-family: "CircularAir-Normal";
 `;
 
 export default () => {

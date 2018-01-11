@@ -5,9 +5,9 @@ input {
   font-family: CircularAir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 @font-face {
-  font-family: "CircularAir";
+  font-family: "CircularAir-Normal";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   src: url("fonts/Circular_Air-Book.woff") format("woff"),
     url("fonts/Circular_Air-Book.ttf") format("truetype");
 }

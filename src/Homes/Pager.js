@@ -23,11 +23,7 @@ const Page = styled.button`
   align-items: center;
   justify-content: center;
   color: #0f7276;
-  -fx-faint-focus-color: transparent;
-
-  &:focus {
-    outline: none;
-  }
+  cursor: pointer;
 `;
 
 const Current = styled(Page)`
@@ -46,12 +42,14 @@ const Description = styled.span`
   font-size: 16px;
   margin-top: 1rem;
   text-align: center;
+  font-family: "CircularAir-Normal";
 `;
 
 const Warning = styled.span`
   font-size: 16px;
   margin-top: 2.5rem;
   text-align: center;
+  color: #636363;
 `;
 export default () => (
   <Box>

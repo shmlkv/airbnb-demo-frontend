@@ -12,7 +12,7 @@ import Footer from "./Footer";
 export default () => {
   return (
     <MainContainer>
-      <Header searchPlaceHolder="Try “Miami”" />
+      <Header placeHolder="Try “Miami”" />
       <Explore />
       <Experiences />
       <Homes />
