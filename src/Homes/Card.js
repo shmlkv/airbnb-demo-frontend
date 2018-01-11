@@ -12,7 +12,10 @@ import {
 } from "../UI/Card";
 
 import star from "./star.svg";
-
+const HomeCard = styled(Card)`
+  padding: 0 1rem 1rem 0;
+  margin: 0;
+`;
 const OwnerCharacteristic = styled.div`
   margin-left: 0.4rem;
   font-size: 12px;
@@ -25,7 +28,7 @@ const Description = styled.span`
 
 export default ({ home, className, ...props }) => {
   return (
-    <Card className={className} href="">
+    <HomeCard className={className} href="">
       <Image src={require(`./${home.image}`)} />
       <Title>
         <InlinePrice>${home.cost}</InlinePrice>
@@ -43,6 +46,6 @@ export default ({ home, className, ...props }) => {
         <Reviews>{home.reviews} reviews</Reviews>
         <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
       </Rating>
-    </Card>
+    </HomeCard>
   );
 };

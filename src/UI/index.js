@@ -109,6 +109,8 @@ export const ScrollButton = styled.button`
   }
 `;
 
-export const Flex = styled.div`
+export const HomeBox = styled.div`
   display: flex;
+  flex-flow: wrap;
+  padding: 0;
 `;

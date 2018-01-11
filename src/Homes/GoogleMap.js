@@ -7,7 +7,7 @@ const GoogleMapContainer = styled.div`
   position: fixed;
   right: 0;
   bottom: 0;
-  left: 60%;
+  left: calc(100% / 12 * 8);
   top: 140px;
 `;
 
