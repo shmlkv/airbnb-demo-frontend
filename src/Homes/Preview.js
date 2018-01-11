@@ -34,17 +34,8 @@ const homes = [
 ];
 export default () => {
   return (
-    <ContainerFlex>
-      <div className="col-xs-12 col-lg-8">
-        <div>
-          {homes.map(home => (
-            <div className="col-xs-12 col-sm-6">
-              <Card home={home} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="col-lg-4">f</div>
-    </ContainerFlex>
+    <div>
+      {homes.map(home => <Card className="col-xs-12 col-sm-6" home={home} />)}
+    </div>
   );
 };

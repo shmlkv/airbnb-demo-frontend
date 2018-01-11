@@ -24,28 +24,26 @@ const Description = styled.span`
   margin-top: 0.25rem;
 `;
 
-export default ({ home }) => {
+export default ({ home, className, ...props }) => {
   return (
-    <CardContainer>
-      <Card href="">
-        <Image src={require(`./${home.image}`)} />
-        <Title>
-          <InlinePrice>${home.cost}</InlinePrice>
-          {home.title}
-        </Title>
-        <Description>
-          {home.type} · {home.beds}
-        </Description>
-        <Rating>
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Reviews>{home.reviews} reviews</Reviews>
-          <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
-        </Rating>
-      </Card>
-    </CardContainer>
+    <Card className={className} href="">
+      <Image src={require(`./${home.image}`)} />
+      <Title>
+        <InlinePrice>${home.cost}</InlinePrice>
+        {home.title}
+      </Title>
+      <Description>
+        {home.type} · {home.beds}
+      </Description>
+      <Rating>
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Reviews>{home.reviews} reviews</Reviews>
+        <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
+      </Rating>
+    </Card>
   );
 };
