@@ -22,3 +22,6 @@
 .DayPicker__horizontal {
   box-shadow: none;
 }
+.DayPicker__withBorder {
+  box-shadow: none !important;
+}
