@@ -13,15 +13,23 @@ const GoogleMapContainer = styled.div`
 
 const Place = styled.div`
   position: absolute;
-  border: 10px solid #fabf3f;
+  width: 1.5rem;
+  background: #fabf3f;
+  box-shadow: 0px 7px 13px 0px rgba(50, 50, 50, 0.75);
   border-radius: 50%;
-  backgroundcolor: white;
-  textalign: center;
+  text-align: center;
+  height: 1.5rem;
+
+  &:after {
+    content: "★";
+    color: #ed549c;
+    font-size: 1.2rem;
+  }
 `;
 export default () => (
   <GoogleMapContainer>
     <GoogleMap
-      apiKey="AIzaSyDEEl36KlPhaJM-TRbX8io-xdjAZm4twtg"
+      apiKey={process.env.REACT_APP_GOOGLE_MAPS_KEY}
       defaultZoom={8}
       center={{ lat: 32.091958, lng: 34.788203 }}
     >
