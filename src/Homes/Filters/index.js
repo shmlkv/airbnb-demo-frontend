@@ -9,7 +9,7 @@ import Instant from "./Instant";
 import MoreFilters from "./MoreFilters";
 
 const Box = styled.div`
-  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
   position: fixed;
   top: 81px;
   right: 0;
@@ -27,28 +27,39 @@ const Container = styled.div`
   padding-left: 0.5rem;
 `;
 
-export const Filter = styled.button`
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  color: #383838;
-  margin: 0.75rem 0.75rem 0.75rem 0;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  font-family: "CircularAir-Normal";
-`;
+class Filters extends React.Component {
+  state = {
+    dropdown: null
+  };
+  setDropdown = (dropdown, callback) => {
+    this.setState(
+      { dropdown: this.state.dropdown === dropdown ? null : dropdown },
+      callback
+    );
+  };
 
-export default () => {
-  return (
-    <Box>
-      <Container>
-        <Dates />
-        <Guests />
-        <Type className="hidden-xs hidden-md hidden-sm" />
-        <Price className="hidden-xs hidden-md hidden-sm" />
-        <Instant className="hidden-xs hidden-md hidden-sm" />
-        <MoreFilters />
-      </Container>
-    </Box>
-  );
-};
+  render() {
+    return (
+      <Box>
+        <Container>
+          <Dates
+            closeDropdown={() => this.setDropdown(null)}
+            onApply={(startDate, endDate) =>
+              this.setState({ startDate, endDate })
+            }
+          />
+          <Guests text="Guest" />
+          <Type text="Room type" className="hidden-xs hidden-md hidden-sm" />
+          <Price text="Price" className="hidden-xs hidden-md hidden-sm" />
+          <Instant
+            text="Instant book"
+            className="hidden-xs hidden-md hidden-sm"
+          />
+          <MoreFilters text="More filters" />
+        </Container>
+      </Box>
+    );
+  }
+}
+
+export default Filters;

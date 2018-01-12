@@ -1,0 +1,24 @@
+.CalendarDay_container {
+  border: 1px solid #d5d5d5;
+  color: #383838;
+}
+.CalendarDay__blocked_calendar {
+  background: #fff !important;
+  border: 1px solid #d5d5d5;
+  color: #cbcbcb;
+}
+.DayPickerNavigation_svg__horizontal {
+  fill: #767676;
+}
+.DayPickerNavigation_button__default {
+  border: 1px solid rgba(118, 118, 118, 0.3);
+}
+.CalendarMonth_table {
+  margin-top: 4px;
+}
+.DayPicker_weekHeader {
+  color: #636363;
+}
+.DayPicker__horizontal {
+  box-shadow: none;
+}

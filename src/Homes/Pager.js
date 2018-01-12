@@ -24,6 +24,7 @@ const Page = styled.button`
   justify-content: center;
   color: #0f7276;
   cursor: pointer;
+  background: white;
 `;
 
 const Current = styled(Page)`

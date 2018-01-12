@@ -71,7 +71,7 @@ export default () => {
       <ContainerFlex>
         <HomeBox className="col-xs-12 col-lg-8">
           {homes.map(home => (
-            <Card className="col-xs-12 col-sm-6 col-lg-6 " home={home} />
+            <Card className="col-xs-12 col-sm-6 col-lg-6" home={home} />
           ))}
           <Pager />
         </HomeBox>

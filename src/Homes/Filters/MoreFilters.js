@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Filter } from "/";
+import { FilterButton } from "../../UI";
 
-export default ({ className }) => {
-  return <Filter className={className}>More filters</Filter>;
+export default ({ className, text }) => {
+  return <FilterButton className={className}>{text}</FilterButton>;
 };
