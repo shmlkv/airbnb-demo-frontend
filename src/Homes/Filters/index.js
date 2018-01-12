@@ -11,7 +11,7 @@ import MoreFilters from "./MoreFilters";
 const Box = styled.div`
   border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
   position: fixed;
-  top: 81px;
+  top: 80.5px;
   right: 0;
   left: 0;
   background: white;
@@ -49,11 +49,11 @@ class Filters extends React.Component {
             }
           />
           <Guests text="Guest" />
-          <Type text="Room type" className="hidden-xs hidden-md hidden-sm" />
-          <Price text="Price" className="hidden-xs hidden-md hidden-sm" />
+          <Type text="Room type" className="hidden-xs hidden-sm hidden-md" />
+          <Price text="Price" className="hidden-xs hidden-sm hidden-md" />
           <Instant
             text="Instant book"
-            className="hidden-xs hidden-md hidden-sm"
+            className="hidden-xs hidden-sm hidden-md"
           />
           <MoreFilters text="More filters" />
         </Container>
