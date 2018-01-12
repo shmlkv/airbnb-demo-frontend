@@ -42,9 +42,7 @@ const Apply = styled.button`
 
 export default class extends React.Component {
   state = {
-    selected: false,
-    selectedStartDate: null,
-    selectedEndDate: null
+    selected: false
   };
 
   onClick = () => {
@@ -87,21 +85,23 @@ export default class extends React.Component {
           onClick={this.onClick}
           selected={this.state.selected}
         >
-          {this.state.selected ? "Check in — Check out" : "Dates"}
+          {this.state.selected ? `Check in — Check out` : "Dates"}
         </FilterButton>
         <DropdownHolder>
           {this.state.selected && (
-            <DropdownWindow
-              eventTypes="click"
-              handleClickOutside={this.onClickOutside}
-            >
-              {this.props.children}
-              <Actions>
-                <Cancel onClick={this.onCancel}>Cancel</Cancel>
-                <Apply onClick={this.onApply}>Apply</Apply>
-              </Actions>
+            <div>
+              <DropdownWindow
+                eventTypes="click"
+                handleClickOutside={this.onClickOutside}
+              >
+                {this.props.children}
+                <Actions>
+                  <Cancel onClick={this.onCancel}>Cancel</Cancel>
+                  <Apply onClick={this.onApply}>Apply</Apply>
+                </Actions>
+              </DropdownWindow>
               <Fade />
-            </DropdownWindow>
+            </div>
           )}
         </DropdownHolder>
       </div>
