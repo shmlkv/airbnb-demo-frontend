@@ -25,3 +25,17 @@
 .DayPicker__withBorder {
   box-shadow: none !important;
 }
+@media (max-width: 968px) {
+  .DayPicker__horizontal,
+  .DayPicker_transitionContainer {
+    width: 315px !important;
+    overflow: hidden;
+  }
+}
+@media (max-width: 320px) {
+  .DayPicker__horizontal,
+  .DayPicker_transitionContainer {
+    width: 315px !important;
+    overflow: hidden;
+  }
+}

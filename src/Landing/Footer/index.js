@@ -69,7 +69,7 @@ export default () => {
   return (
     <Footer>
       <ContainerFlex>
-        <ContainerLanguage className="col-lg-3 col-sm-3 col-xs-12">
+        <ContainerLanguage className="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
           <Language>
             <Select>
               <option>English</option>
@@ -81,7 +81,7 @@ export default () => {
             </Select>
           </Language>
         </ContainerLanguage>
-        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
+        <div className="hidden-xs col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 ">
           <Title>Airbnb</Title>
           <Link href="">About us</Link>
           <Link href="">Careers</Link>
@@ -90,7 +90,7 @@ export default () => {
           <Link href="">Help</Link>
           <Link href="">Diversity & Belongi</Link>
         </div>
-        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
+        <div className="hidden-xs col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 ">
           <Title>Discover</Title>
           <Link href="">Trust & Safety</Link>
           <Link href="">Travel Credit</Link>
@@ -100,7 +100,7 @@ export default () => {
           <Link href="">Guidebooks</Link>
           <Link href="">Airbnbmag</Link>
         </div>
-        <div className="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 hidden-xs ">
+        <div className="hidden-xs col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 ">
           <Title>Hosting</Title>
           <Link href="">Why Host</Link>
           <Link href="">Hospitality</Link>
