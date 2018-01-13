@@ -43,6 +43,10 @@ export default class extends React.Component {
     this.setState({ selected });
   };
 
+  matchMobile = () => {
+    if (window.matchMedia("(max-width: 450px)").matches) return true;
+  };
+
   render() {
     return (
       <DatePicker
@@ -53,7 +57,7 @@ export default class extends React.Component {
         selectedEndDate={this.state.selectedEndDate}
       >
         <DayPickerRangeController
-          orientation={"horizontal"}
+          orientation={this.matchMobile() ? "vertical" : "horizontal"}
           isDayBlocked={day => day.isBefore(moment(), "day")}
           numberOfMonths={2}
           hideKeyboardShortcutsPanel

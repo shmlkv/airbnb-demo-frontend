@@ -32,10 +32,16 @@
     overflow: hidden;
   }
 }
-@media (max-width: 320px) {
-  .DayPicker__horizontal,
+@media (max-width: 450px) {
+  .DayPicker {
+    position: fixed !important;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
   .DayPicker_transitionContainer {
-    width: 315px !important;
-    overflow: hidden;
+    margin: 0 auto;
+    height: 100vh !important;
   }
 }

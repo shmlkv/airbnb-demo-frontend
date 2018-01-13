@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
 import { FilterButton, Fade } from "../../UI";
+import CloseButton from "./Close.png";
 
 const DropdownHolder = styled.div`
   position: relative;
@@ -38,6 +39,27 @@ const Apply = styled.button`
   background: #fff;
   cursor: pointer;
   border: none;
+`;
+
+const DateHeader = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100px;
+  background: #fff;
+  text-align: center;
+  padding: 1rem 0.5rem;
+`;
+
+const Close = styled.div`
+  position: absolute;
+  background: url(${CloseButton});
+  left: 0.5rem;
+  top: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background-size: cover;
 `;
 
 export default class extends React.Component {
@@ -77,6 +99,10 @@ export default class extends React.Component {
     } else return "Dates";
   };
 
+  matchMobile = () => {
+    if (window.matchMedia("(max-width: 450px)").matches) return true;
+  };
+
   render() {
     return (
       <div className={this.props.className}>
@@ -99,11 +125,19 @@ export default class extends React.Component {
                 eventTypes="click"
                 handleClickOutside={this.onClickOutside}
               >
+                {this.matchMobile && (
+                  <DateHeader>
+                    <Close onClick={this.onClickOutside} />
+                    Dates
+                  </DateHeader>
+                )}
                 {this.props.children}
-                <Actions>
-                  <Cancel onClick={this.onCancel}>Cancel</Cancel>
-                  <Apply onClick={this.onApply}>Apply</Apply>
-                </Actions>
+                {!this.matchMobile && (
+                  <Actions>
+                    <Cancel onClick={this.onCancel}>Cancel</Cancel>
+                    <Apply onClick={this.onApply}>Apply</Apply>
+                  </Actions>
+                )}
               </DropdownWindow>
               <Fade />
             </div>

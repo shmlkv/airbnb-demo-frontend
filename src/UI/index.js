@@ -120,6 +120,7 @@ export const FilterButton = styled.button`
   padding: 0.5rem 1rem;
   color: #383838;
   margin: 0.75rem 0.75rem 0.75rem 0;
+  transition: background-color 0.2s ease-out;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
