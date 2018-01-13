@@ -77,7 +77,7 @@ const Dates = styled.p`
 `;
 const Save = styled.button`
   position: fixed;
-  bottom: 0.5rem;
+  bottom: 3.5rem;
   left: 0.5rem;
   right: 0.5rem;
   width: calc(100% - 1rem);
