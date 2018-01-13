@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 
 import { MainContainer } from "../UI";
 import Header from "../Header";
@@ -12,6 +13,7 @@ import Footer from "./Footer";
 export default () => {
   return (
     <MainContainer>
+      <Helmet title="AirBnb" />
       <Header placeHolder="Try “Miami”" />
       <Explore />
       <Experiences />

@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 
 import Header from "../Header";
 import Filters from "./Filters";
@@ -66,6 +67,7 @@ const homes = [
 export default () => {
   return (
     <HomeContainer>
+      <Helmet title="AirBnb – Homes" />
       <Header placeHolder="Anywhere · Homes" />
       <Filters />
       <ContainerFlex>
