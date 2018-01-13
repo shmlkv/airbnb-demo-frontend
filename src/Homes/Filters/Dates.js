@@ -20,11 +20,11 @@ export default class extends React.Component {
 
   onApply = () => {
     this.props.closeDropdown();
-    this.setState({
+    this.setState(prevState => ({
       selected: false,
       startDate: this.state.selectedStartDate,
       endDate: this.state.selectedEndDate
-    });
+    }));
     this.props.onApply(
       this.state.selectedStartDate,
       this.state.selectedEndDate

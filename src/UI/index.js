@@ -146,8 +146,8 @@ export const MapButton = styled.button`
   position: fixed;
   bottom: 1.5rem;
   right: 0.5rem;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background: #fff;
   border-radius: 50%;
 
@@ -158,5 +158,6 @@ export const MapButton = styled.button`
     height: 1.3rem;
     background-size: cover;
     display: block;
+    margin: 0 auto;
   }
 `;
