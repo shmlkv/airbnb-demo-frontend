@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import arrowmore from "./arrow-more.svg";
 import arrowslider from "./arrow-slider.svg";
+import location from "./location.svg";
 
 export const MainContainer = styled.div`
   margin-top: 6.5rem;
@@ -139,4 +140,23 @@ export const Fade = styled.div`
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const MapButton = styled.button`
+  position: fixed;
+  bottom: 1.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    background: url(${location});
+    width: 1rem;
+    height: 1.3rem;
+    background-size: cover;
+    display: block;
+  }
 `;

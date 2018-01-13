@@ -5,7 +5,7 @@ import Filters from "./Filters";
 import GoogleMap from "./GoogleMap";
 import Card from "./Card";
 import Pager from "./Pager";
-import { ContainerFlex, HomeContainer, HomeBox } from "../UI";
+import { ContainerFlex, HomeContainer, HomeBox, MapButton } from "../UI";
 
 const homes = [
   {
@@ -78,6 +78,7 @@ export default () => {
         <div className="hidden-xs hidden-sm hidden-md col-lg-4">
           <GoogleMap />
         </div>
+        <MapButton className="hidden-lg" />
       </ContainerFlex>
     </HomeContainer>
   );
