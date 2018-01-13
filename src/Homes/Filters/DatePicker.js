@@ -183,18 +183,12 @@ export default class extends React.Component {
                     Dates
                     <Reset onClick={this.onCancel}>Reset</Reset>
                     <Dates>
-                      {/* {dateFormat(
-                        this.props.selectedStartDate,
-                        this.props.selectedEndDate,
-                        this.state.selected,
-                        ""
-                      )} */}
                       {formatDate(
                         this.props.selectedStartDate,
                         this.state.selected,
                         "Check in"
                       )}
-                      →
+                      {" → "}
                       {formatDate(
                         this.props.selectedEndDate,
                         this.state.selected,
@@ -210,7 +204,7 @@ export default class extends React.Component {
                     <Apply onClick={this.onApply}>Apply</Apply>
                   </Actions>
                 )}
-                {matchXs && <Save>Save</Save>}
+                {matchXs && <Save onClick={this.onApply}>Save</Save>}
               </DropdownWindow>
               <Fade />
             </div>

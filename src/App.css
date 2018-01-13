@@ -7,7 +7,6 @@ input {
 @font-face {
   font-family: "CircularAir Normal";
   font-style: normal;
-  font-weight: 400;
   src: url("fonts/Circular_Air-Book.woff") format("woff"),
     url("fonts/Circular_Air-Book.ttf") format("truetype");
 }

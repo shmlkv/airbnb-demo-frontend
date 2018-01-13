@@ -40,9 +40,10 @@ const Next = styled(Page)`
 `;
 
 const Description = styled.span`
-  font-size: 16px;
   margin-top: 1rem;
   text-align: center;
+  color: #383838;
+  font-size: 16px;
   font-family: "CircularAir Normal";
 `;
 
