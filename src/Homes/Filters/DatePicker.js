@@ -50,6 +50,10 @@ const DateHeader = styled.div`
   background: #fff;
   text-align: center;
   padding: 1rem 0.5rem;
+
+  @media (min-width: 450px) {
+    display: none;
+  }
 `;
 
 const Close = styled.button`
@@ -61,6 +65,10 @@ const Close = styled.button`
   height: 1rem;
   background-size: cover;
   border: none;
+
+  @media (min-width: 450px) {
+    display: none;
+  }
 `;
 
 const Reset = styled.button`
@@ -69,11 +77,19 @@ const Reset = styled.button`
   top: 1rem;
   color: #0f7276;
   border: none;
+
+  @media (min-width: 450px) {
+    display: none;
+  }
 `;
 
 const Dates = styled.p`
   text-align: left;
   margin-top: 2rem;
+
+  @media (min-width: 450px) {
+    display: none;
+  }
 `;
 const Save = styled.button`
   position: fixed;
@@ -85,6 +101,10 @@ const Save = styled.button`
   background: #ff5a5f;
   border-radius: 4px;
   height: 3rem;
+
+  @media (min-width: 450px) {
+    display: none;
+  }
 `;
 export default class extends React.Component {
   state = {
