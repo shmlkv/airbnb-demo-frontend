@@ -29,11 +29,11 @@ const Container = styled.div`
 
 class Filters extends React.Component {
   state = {
-    dropdown: null
+    opened: null
   };
-  setDropdown = (dropdown, callback) => {
+  setOpened = (opened, callback) => {
     this.setState(
-      { dropdown: this.state.dropdown === dropdown ? null : dropdown },
+      { opened: this.state.opened === opened ? null : opened },
       callback
     );
   };
@@ -43,7 +43,7 @@ class Filters extends React.Component {
       <Box>
         <Container>
           <Dates
-            closeDropdown={() => this.setDropdown(null)}
+            closeDropdown={() => this.setOpened(null)}
             onApply={(startDate, endDate) =>
               this.setState({ startDate, endDate })
             }

@@ -9,6 +9,14 @@ const matchXs = () => {
   return window.matchMedia("(max-width: 450px)").matches;
 };
 
+const dateFormat = (startDate, endDate, selected, separator) => {
+  if (selected)
+    return `${
+      !!startDate ? startDate.format("MMM Do") : "Check in "
+    } ${separator} ${!!endDate ? endDate.format("MMM Do") : "Check out"}`;
+  else return "Dates";
+};
+
 const DropdownHolder = styled.div`
   position: relative;
 `;
@@ -144,15 +152,6 @@ export default class extends React.Component {
     this.setState({ selected: false });
   };
 
-  dateFormat = (startDate, endDate, selected, separator) => {
-    if (selected) {
-      let start = startDate ? startDate.format("MMM Do") : "Check in ";
-      let end = endDate ? endDate.format("MMM Do") : "Check out";
-
-      return `${start} ${separator} ${end}`;
-    } else return "Dates";
-  };
-
   render() {
     return (
       <div className={this.props.className}>
@@ -161,7 +160,7 @@ export default class extends React.Component {
           onClick={this.onClick}
           selected={this.state.selected}
         >
-          {this.dateFormat(
+          {dateFormat(
             this.props.selectedStartDate,
             this.props.selectedEndDate,
             this.state.selected,
@@ -181,7 +180,7 @@ export default class extends React.Component {
                     Dates
                     <Reset onClick={this.onCancel}>Reset</Reset>
                     <Dates>
-                      {this.dateFormat(
+                      {dateFormat(
                         this.props.selectedStartDate,
                         this.props.selectedEndDate,
                         this.state.selected,
