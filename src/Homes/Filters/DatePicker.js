@@ -52,7 +52,7 @@ const DateHeader = styled.div`
   padding: 1rem 0.5rem;
 `;
 
-const Close = styled.div`
+const Close = styled.button`
   position: absolute;
   background: url(${CloseButton});
   left: 0.5rem;
@@ -60,8 +60,32 @@ const Close = styled.div`
   width: 1rem;
   height: 1rem;
   background-size: cover;
+  border: none;
 `;
 
+const Reset = styled.button`
+  position: absolute;
+  right: 0.5rem;
+  top: 1rem;
+  color: #0f7276;
+  border: none;
+`;
+
+const Dates = styled.p`
+  text-align: left;
+  margin-top: 2rem;
+`;
+const Save = styled.button`
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  width: calc(100% - 1rem);
+  color: #fff;
+  background: #ff5a5f;
+  border-radius: 4px;
+  height: 3rem;
+`;
 export default class extends React.Component {
   state = {
     selected: false
@@ -91,11 +115,12 @@ export default class extends React.Component {
     this.setState({ selected: false });
   };
 
-  buttonText = (startDate, endDate, selected) => {
+  dateFormat = (startDate, endDate, selected, separator) => {
     if (selected) {
       let start = startDate ? startDate.format("MMM Do") : "Check in ";
       let end = endDate ? endDate.format("MMM Do") : "Check out";
-      return start + " — " + end;
+
+      return `${start} ${separator} ${end}`;
     } else return "Dates";
   };
 
@@ -111,11 +136,11 @@ export default class extends React.Component {
           onClick={this.onClick}
           selected={this.state.selected}
         >
-          {}
-          {this.buttonText(
+          {this.dateFormat(
             this.props.selectedStartDate,
             this.props.selectedEndDate,
-            this.state.selected
+            this.state.selected,
+            "—"
           )}
         </FilterButton>
         <DropdownHolder>
@@ -129,6 +154,15 @@ export default class extends React.Component {
                   <DateHeader>
                     <Close onClick={this.onClickOutside} />
                     Dates
+                    <Reset onClick={this.onCancel}>Reset</Reset>
+                    <Dates>
+                      {this.dateFormat(
+                        this.props.selectedStartDate,
+                        this.props.selectedEndDate,
+                        this.state.selected,
+                        "→"
+                      )}
+                    </Dates>
                   </DateHeader>
                 )}
                 {this.props.children}
@@ -138,6 +172,7 @@ export default class extends React.Component {
                     <Apply onClick={this.onApply}>Apply</Apply>
                   </Actions>
                 )}
+                {this.matchMobile && <Save>Save</Save>}
               </DropdownWindow>
               <Fade />
             </div>
