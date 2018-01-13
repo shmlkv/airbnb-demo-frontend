@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
+
 import { FilterButton, Fade } from "../../UI";
 import closeButton from "./close.svg";
+
+const matchXs = () => {
+  return window.matchMedia("(max-width: 450px)").matches;
+};
 
 const DropdownHolder = styled.div`
   position: relative;
@@ -148,10 +153,6 @@ export default class extends React.Component {
     } else return "Dates";
   };
 
-  matchMobile = () => {
-    return window.matchMedia("(max-width: 450px)").matches;
-  };
-
   render() {
     return (
       <div className={this.props.className}>
@@ -174,7 +175,7 @@ export default class extends React.Component {
                 eventTypes="click"
                 handleClickOutside={this.onClickOutside}
               >
-                {this.matchMobile && (
+                {matchXs() && (
                   <DateHeader>
                     <Close onClick={this.onClickOutside} />
                     Dates
@@ -190,13 +191,13 @@ export default class extends React.Component {
                   </DateHeader>
                 )}
                 {this.props.children}
-                {!this.matchMobile && (
+                {!matchXs() && (
                   <Actions>
                     <Cancel onClick={this.onCancel}>Cancel</Cancel>
                     <Apply onClick={this.onApply}>Apply</Apply>
                   </Actions>
                 )}
-                {this.matchMobile && <Save>Save</Save>}
+                {matchXs() && <Save>Save</Save>}
               </DropdownWindow>
               <Fade />
             </div>
