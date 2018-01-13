@@ -124,7 +124,7 @@ export const FilterButton = styled.button`
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
-  font-family: "CircularAir-Normal";
+  font-family: "CircularAir Normal";
   background: ${props => (props.selected ? "#008489" : "#fff")};
   border: 1px solid
     ${props => (props.selected ? "#008489" : " rgba(72, 72, 72, 0.2);")};

@@ -43,7 +43,7 @@ const Description = styled.span`
   font-size: 16px;
   margin-top: 1rem;
   text-align: center;
-  font-family: "CircularAir-Normal";
+  font-family: "CircularAir Normal";
 `;
 
 const Warning = styled.span`
