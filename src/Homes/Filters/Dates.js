@@ -1,12 +1,12 @@
 import React from "react";
-import DatePicker from "./DatePicker";
-
 import moment from "moment";
 import "react-dates/initialize";
+
+import DatePicker from "./DatePicker";
 import { DayPickerRangeController } from "react-dates";
 
-import "./_datepicker.css";
 import "react-dates/lib/css/_datepicker.css";
+import "./datepicker.css";
 
 export default class extends React.Component {
   state = {
