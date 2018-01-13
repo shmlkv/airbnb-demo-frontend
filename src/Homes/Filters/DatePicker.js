@@ -4,7 +4,7 @@ import onClickOutside from "react-onclickoutside";
 
 import { FilterButton, Fade } from "../../UI";
 import closeButton from "./close.svg";
-
+import arrowRight from "./arrowRight.svg";
 const DropdownHolder = styled.div`
   position: relative;
 `;
@@ -112,17 +112,35 @@ const Save = styled.button`
   }
 `;
 
+const SelectDate = styled.span`
+  font-size: 18px;
+  color: ${props => (props.selected ? "#0F7276" : "#000")};
+  padding-bottom: 2px;
+  border-bottom: 1px solid ${props => (props.selected ? "#0F7276" : "#fff")};
+`;
+
+const SelectArrow = styled.img`
+  height: 10px;
+  margin: 0 1rem;
+`;
+
 const buttonDate = (start, end, selected) => {
   if (selected) {
     const from = start ? start.format("MMM Do") : "Check in";
     const to = end ? end.format("MMM Do") : "Check out";
+
     return from + " — " + to;
-  } else return "Dates";
+  } else {
+    return "Dates";
+  }
 };
 
 const formatDate = (date, selected, defaultText) => {
-  if (selected) return date ? date.format("MMM Do") : defaultText;
-  else return "Dates";
+  if (selected) {
+    return date ? date.format("MMM Do") : defaultText;
+  } else {
+    return "Dates";
+  }
 };
 
 export default class extends React.Component {
@@ -183,17 +201,21 @@ export default class extends React.Component {
                     Dates
                     <Reset onClick={this.onCancel}>Reset</Reset>
                     <Dates>
-                      {formatDate(
-                        this.props.selectedStartDate,
-                        this.state.selected,
-                        "Check in"
-                      )}
-                      {" → "}
-                      {formatDate(
-                        this.props.selectedEndDate,
-                        this.state.selected,
-                        "Check out"
-                      )}
+                      <SelectDate selected={!!this.props.selectedStartDate}>
+                        {formatDate(
+                          this.props.selectedStartDate,
+                          this.state.selected,
+                          "Check in"
+                        )}
+                      </SelectDate>
+                      <SelectArrow src={arrowRight} />
+                      <SelectDate selected={this.props.selectedEndDate}>
+                        {formatDate(
+                          this.props.selectedEndDate,
+                          this.state.selected,
+                          "Check out"
+                        )}
+                      </SelectDate>
                     </Dates>
                   </DateHeader>
                 )}
