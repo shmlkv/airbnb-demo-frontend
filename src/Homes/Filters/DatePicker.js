@@ -5,10 +5,6 @@ import onClickOutside from "react-onclickoutside";
 import { FilterButton, Fade } from "../../UI";
 import closeButton from "./close.svg";
 
-const matchXs = () => {
-  return window.matchMedia("(max-width: 450px)").matches;
-};
-
 const dateFormat = (startDate, endDate, selected, separator) => {
   if (selected)
     return `${
@@ -153,6 +149,8 @@ export default class extends React.Component {
   };
 
   render() {
+    const matchXs = window.matchMedia("(max-width: 450px)").matches;
+
     return (
       <div className={this.props.className}>
         <FilterButton
@@ -174,7 +172,7 @@ export default class extends React.Component {
                 eventTypes="click"
                 handleClickOutside={this.onClickOutside}
               >
-                {matchXs() && (
+                {matchXs && (
                   <DateHeader>
                     <Close onClick={this.onClickOutside} />
                     Dates
@@ -190,13 +188,13 @@ export default class extends React.Component {
                   </DateHeader>
                 )}
                 {this.props.children}
-                {!matchXs() && (
+                {!matchXs && (
                   <Actions>
                     <Cancel onClick={this.onCancel}>Cancel</Cancel>
                     <Apply onClick={this.onApply}>Apply</Apply>
                   </Actions>
                 )}
-                {matchXs() && <Save>Save</Save>}
+                {matchXs && <Save>Save</Save>}
               </DropdownWindow>
               <Fade />
             </div>

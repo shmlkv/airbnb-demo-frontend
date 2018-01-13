@@ -8,10 +8,6 @@ import { DayPickerRangeController } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import "./datepicker.css";
 
-const matchXs = () => {
-  return window.matchMedia("(max-width: 450px)").matches;
-};
-
 export default class extends React.Component {
   state = {
     selected: false,
@@ -48,6 +44,8 @@ export default class extends React.Component {
   };
 
   render() {
+    const matchXs = window.matchMedia("(max-width: 450px)").matches;
+
     return (
       <DatePicker
         onCancel={this.onCancel}
@@ -57,7 +55,7 @@ export default class extends React.Component {
         selectedEndDate={this.state.selectedEndDate}
       >
         <DayPickerRangeController
-          orientation={matchXs() ? "vertical" : "horizontal"}
+          orientation={matchXs ? "vertical" : "horizontal"}
           isDayBlocked={day => day.isBefore(moment(), "day")}
           numberOfMonths={2}
           hideKeyboardShortcutsPanel
