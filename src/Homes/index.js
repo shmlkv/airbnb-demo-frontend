@@ -75,7 +75,7 @@ export default () => {
           ))}
           <Pager />
         </HomeBox>
-        <div className="col-lg-4 hidden-xs hidden-md hidden-sm">
+        <div className="hidden-xs hidden-sm hidden-md col-lg-4">
           <GoogleMap />
         </div>
       </ContainerFlex>

@@ -2,7 +2,6 @@ import React from "react";
 import DatePicker from "./DatePicker";
 
 import moment from "moment";
-import sizeMe from "react-sizeme";
 import "react-dates/initialize";
 import { DayPickerRangeController } from "react-dates";
 
@@ -50,8 +49,11 @@ export default class extends React.Component {
         onCancel={this.onCancel}
         onToggle={this.onToggle}
         onApply={this.onApply}
+        selectedStartDate={this.state.selectedStartDate}
+        selectedEndDate={this.state.selectedEndDate}
       >
         <DayPickerRangeController
+          orientation={"horizontal"}
           isDayBlocked={day => day.isBefore(moment(), "day")}
           numberOfMonths={2}
           hideKeyboardShortcutsPanel

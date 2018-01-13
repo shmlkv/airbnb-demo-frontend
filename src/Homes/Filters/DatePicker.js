@@ -69,14 +69,14 @@ export default class extends React.Component {
     this.setState({ selected: false });
   };
 
-  textDate = state => {
-    console.log(state);
-    console.log(state.selectedStartDate);
-    if (state.selectedStartDate) {
-      return state.selectedStartDate.format("MMM Do");
-    }
-    return "Date";
+  buttonText = (startDate, endDate, selected) => {
+    if (selected) {
+      let start = startDate ? startDate.format("MMM Do") : "Check in ";
+      let end = endDate ? endDate.format("MMM Do") : "Check out";
+      return start + " — " + end;
+    } else return "Dates";
   };
+
   render() {
     return (
       <div className={this.props.className}>
@@ -85,7 +85,12 @@ export default class extends React.Component {
           onClick={this.onClick}
           selected={this.state.selected}
         >
-          {this.state.selected ? `Check in — Check out` : "Dates"}
+          {}
+          {this.buttonText(
+            this.props.selectedStartDate,
+            this.props.selectedEndDate,
+            this.state.selected
+          )}
         </FilterButton>
         <DropdownHolder>
           {this.state.selected && (
