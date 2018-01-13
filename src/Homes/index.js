@@ -80,7 +80,7 @@ export default () => {
         <div className="hidden-xs hidden-sm hidden-md col-lg-4">
           <GoogleMap />
         </div>
-        <MapButton className="hidden-lg" />
+        <MapButton className="hidden-lg hidden-xl" />
       </ContainerFlex>
     </HomeContainer>
   );
