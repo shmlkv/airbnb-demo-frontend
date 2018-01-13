@@ -44,7 +44,7 @@ export default class extends React.Component {
   };
 
   matchMobile = () => {
-    if (window.matchMedia("(max-width: 450px)").matches) return true;
+    return window.matchMedia("(max-width: 450px)").matches;
   };
 
   render() {

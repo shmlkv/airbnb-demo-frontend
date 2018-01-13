@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
 import { FilterButton, Fade } from "../../UI";
-import CloseButton from "./Close.png";
+import closeButton from "./close.svg";
 
 const DropdownHolder = styled.div`
   position: relative;
@@ -58,13 +58,14 @@ const DateHeader = styled.div`
 
 const Close = styled.button`
   position: absolute;
-  background: url(${CloseButton});
+  background: url(${closeButton});
   left: 0.5rem;
   top: 1rem;
   width: 1rem;
   height: 1rem;
   background-size: cover;
   border: none;
+  cursor: pointer;
 
   @media (min-width: 450px) {
     display: none;
@@ -77,6 +78,7 @@ const Reset = styled.button`
   top: 1rem;
   color: #0f7276;
   border: none;
+  cursor: pointer;
 
   @media (min-width: 450px) {
     display: none;
@@ -91,6 +93,7 @@ const Dates = styled.p`
     display: none;
   }
 `;
+
 const Save = styled.button`
   position: fixed;
   bottom: 3.5rem;
@@ -101,6 +104,7 @@ const Save = styled.button`
   background: #ff5a5f;
   border-radius: 4px;
   height: 3rem;
+  cursor: pointer;
 
   @media (min-width: 450px) {
     display: none;
@@ -145,7 +149,7 @@ export default class extends React.Component {
   };
 
   matchMobile = () => {
-    if (window.matchMedia("(max-width: 450px)").matches) return true;
+    return window.matchMedia("(max-width: 450px)").matches;
   };
 
   render() {
