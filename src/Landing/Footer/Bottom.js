@@ -14,7 +14,7 @@ const Bottom = styled.div`
   padding: 2rem 0;
   margin-top: 1.5rem;
 
-  @media (min-width: 580px) {
+  @media (max-width: 580px) {
     display: block;
   }
 `;
@@ -34,7 +34,7 @@ const Side = styled.div`
   display: flex;
   align-items: center;
 
-  @media (min-width: 580px) {
+  @media (max-width: 580px) {
     margin: 1rem 0.75rem;
   }
 `;

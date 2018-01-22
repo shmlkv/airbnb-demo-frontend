@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const Link = styled.a`
+import { Link } from "react-router-dom";
+
+const InternalLink = styled(Link)`
   text-decoration: none;
-  &:last-child {
-    padding: 0 !important;
+
+  &:first-child {
+    padding-left: 0;
   }
 `;
-
 const Card = styled.div`
   display: flex;
   width: 100%;
@@ -49,11 +51,11 @@ const Title = styled.h4`
 
 export default ({ explore }) => {
   return (
-    <Link className="col-lg-4 col-sm-5 col-xs-6" href="">
+    <InternalLink className="col-lg-4 col-sm-5 col-xs-6" to={explore.title}>
       <Card>
         <Image src={require(`./${explore.image}`)} />
         <Title>{explore.title}</Title>
       </Card>
-    </Link>
+    </InternalLink>
   );
 };

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import {
-  CardContainer,
   Card,
   Title,
   Image,
@@ -10,10 +9,14 @@ import {
   InlinePrice,
   Rating,
   Reviews
-} from "../Card";
+} from "../UI/Card";
 
 import star from "./star.svg";
 
+const HomeCard = styled(Card)`
+  padding: 0 0.5rem 2.5rem 0.5rem;
+  margin: 0;
+`;
 const OwnerCharacteristic = styled.div`
   margin-left: 0.4rem;
   font-size: 12px;
@@ -24,28 +27,26 @@ const Description = styled.span`
   margin-top: 0.25rem;
 `;
 
-export default ({ home }) => {
+export default ({ home, className }) => {
   return (
-    <CardContainer className="col-lg-4 col-sm-5 col-xs-7">
-      <Card href="">
-        <Image src={require(`./${home.image}`)} />
-        <Title>
-          <InlinePrice>${home.cost}</InlinePrice>
-          {home.title}
-        </Title>
-        <Description>
-          {home.type} · {home.beds}
-        </Description>
-        <Rating>
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Star src={star} alt="" />
-          <Reviews>{home.reviews} reviews</Reviews>
-          <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
-        </Rating>
-      </Card>
-    </CardContainer>
+    <HomeCard className={className} href="">
+      <Image src={require(`./${home.image}`)} />
+      <Title>
+        <InlinePrice>${home.cost}</InlinePrice>
+        {home.title}
+      </Title>
+      <Description>
+        {home.type} · {home.beds}
+      </Description>
+      <Rating>
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Star src={star} alt="" />
+        <Reviews>{home.reviews} reviews</Reviews>
+        <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
+      </Rating>
+    </HomeCard>
   );
 };

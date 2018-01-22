@@ -2,9 +2,24 @@ import styled from "styled-components";
 
 import arrowmore from "./arrow-more.svg";
 import arrowslider from "./arrow-slider.svg";
+import location from "./location.svg";
+
+export const MainContainer = styled.div`
+  margin-top: 6.5rem;
+`;
+
+export const HomeContainer = styled.div`
+  margin-top: 9.5rem;
+`;
 
 export const Header = styled.header`
-  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  border-bottom: 0.5px solid rgba(72, 72, 72, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 1;
 `;
 
 export const Title = styled.h1`
@@ -15,7 +30,7 @@ export const Title = styled.h1`
 
 export const TitleWrap = styled.div`
   display: flex;
-  margin: 4rem 0 1.5rem 0;
+  margin: 3rem 0 1.5rem 0;
   align-items: center;
   justify-content: space-between;
 `;
@@ -31,7 +46,7 @@ export const More = styled.a`
     width: 6px;
     height: 10px;
     display: block;
-    margin: 0.4rem 0.5rem;
+    margin: 0.3rem 0.5rem;
     float: right;
   }
 `;
@@ -92,5 +107,57 @@ export const ScrollButton = styled.button`
 
   @media (max-width: 990px) {
     display: none;
+  }
+`;
+
+export const HomeBox = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  padding: 0;
+`;
+
+export const FilterButton = styled.button`
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: #383838;
+  margin: 0.75rem 0.75rem 0.75rem 0;
+  transition: background-color 0.2s ease-out;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "CircularAir Normal";
+  background: ${props => (props.isSelected ? "#008489" : "#fff")};
+  border: 1px solid
+    ${props => (props.isSelected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
+  color: ${props => (props.isSelected ? "#fff" : "#383838")};
+`;
+
+export const Fade = styled.div`
+  position: fixed;
+  z-index: -1;
+  top: 8rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const MapButton = styled.button`
+  position: fixed;
+  bottom: 1.5rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #fff;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    background: url(${location});
+    width: 1rem;
+    height: 1.3rem;
+    background-size: cover;
+    display: block;
+    margin: 0 auto;
   }
 `;

@@ -10,6 +10,7 @@ export const Card = styled.a`
   color: #383838;
   display: flex;
   flex-direction: column;
+  padding: 0;
 `;
 
 export const Image = styled.img`

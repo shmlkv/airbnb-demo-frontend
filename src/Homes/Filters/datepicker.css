@@ -1,0 +1,57 @@
+.CalendarDay_container {
+  border: 1px solid #d5d5d5;
+  color: #383838;
+}
+
+.CalendarDay__blocked_calendar {
+  background: #fff !important;
+  border: 1px solid #d5d5d5;
+  color: #cbcbcb;
+}
+
+.DayPickerNavigation_svg__horizontal {
+  fill: #767676;
+}
+
+.DayPickerNavigation_button__default {
+  border: 1px solid rgba(118, 118, 118, 0.3);
+}
+
+.CalendarMonth_table {
+  margin-top: 4px;
+}
+
+.DayPicker_weekHeader {
+  color: #636363;
+}
+
+.DayPicker__horizontal {
+  box-shadow: none;
+}
+
+.DayPicker__withBorder {
+  box-shadow: none !important;
+}
+
+.DayPicker {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.DayPicker_transitionContainer {
+  margin: 0 auto;
+  height: 100vh;
+}
+
+@media (min-width: 575px) {
+  .DayPicker {
+    position: initial;
+  }
+
+  .DayPicker_transitionContainer {
+    height: inherit;
+  }
+}

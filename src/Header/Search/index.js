@@ -29,13 +29,11 @@ const SearchField = styled.input`
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
 `;
 
-const placeholder = `Try "Miami"`;
-
-export default () => {
+export default ({ placeHolder }) => {
   return (
     <Search>
       <SearchIcon />
-      <SearchField placeholder={placeholder} />
+      <SearchField placeholder={placeHolder} />
     </Search>
   );
 };
