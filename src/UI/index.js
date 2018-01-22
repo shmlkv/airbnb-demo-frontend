@@ -126,10 +126,10 @@ export const FilterButton = styled.button`
   font-size: 14px;
   cursor: pointer;
   font-family: "CircularAir Normal";
-  background: ${props => (props.selected ? "#008489" : "#fff")};
+  background: ${props => (props.isSelected ? "#008489" : "#fff")};
   border: 1px solid
-    ${props => (props.selected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
-  color: ${props => (props.selected ? "#fff" : "#383838")};
+    ${props => (props.isSelected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
+  color: ${props => (props.isSelected ? "#fff" : "#383838")};
 `;
 
 export const Fade = styled.div`

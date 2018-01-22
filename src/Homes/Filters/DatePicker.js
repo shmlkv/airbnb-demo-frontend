@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
 
+import { matchXs } from "../../helpers.js";
+
 import { FilterButton, Fade } from "../../UI";
 import closeButton from "./close.svg";
 import arrowRight from "./arrowRight.svg";
+
 const DropdownHolder = styled.div`
   position: relative;
 `;
@@ -114,9 +117,9 @@ const Save = styled.button`
 
 const SelectDate = styled.span`
   font-size: 18px;
-  color: ${props => (props.selected ? "#0F7276" : "#000")};
+  color: ${props => (props.isSelected ? "#0F7276" : "#000")};
   padding-bottom: 2px;
-  border-bottom: 1px solid ${props => (props.selected ? "#0F7276" : "#fff")};
+  border-bottom: 1px solid ${props => (props.isSelected ? "#0F7276" : "#fff")};
 `;
 
 const SelectArrow = styled.img`
@@ -124,109 +127,90 @@ const SelectArrow = styled.img`
   margin: 0 1rem;
 `;
 
-const buttonDate = (start, end, selected) => {
-  if (selected) {
-    const from = start ? start.format("MMM Do") : "Check in";
-    const to = end ? end.format("MMM Do") : "Check out";
-
-    return from + " — " + to;
-  } else {
-    return "Dates";
-  }
+const buttonText = (start, end, isSelected) => {
+  if (isSelected)
+    return `${formatDate(start, "Check in")} — ${formatDate(end, "Check out")}`;
+  else return "Dates";
 };
 
-const formatDate = (date, selected, defaultText) => {
-  if (selected) {
-    return date ? date.format("MMM Do") : defaultText;
-  } else {
-    return "Dates";
-  }
+const formatDate = (date, defaultText) => {
+  return date ? date.format("MMM Do") : defaultText;
 };
 
 export default class extends React.Component {
   state = {
-    selected: false
+    isSelected: false
   };
 
   onClick = () => {
-    if (!this.state.selected) {
+    if (!this.state.isSelected) {
       this.props.onToggle(true);
     } else {
       this.onApply();
     }
-    this.setState({ selected: !this.state.selected });
+    this.setState({ isSelected: !this.state.isSelected });
   };
 
   onCancel = () => {
     this.props.onCancel();
-    this.setState({ selected: false });
+    this.setState({ isSelected: false });
   };
 
   onApply = () => {
     this.props.onApply();
-    this.setState({ selected: false });
+    this.setState({ isSelected: false });
   };
 
   onClickOutside = () => {
     this.props.onCancel();
-    this.setState({ selected: false });
+    this.setState({ isSelected: false });
   };
 
   render() {
-    const matchXs = window.matchMedia("(max-width: 450px)").matches;
-
     return (
       <div className={this.props.className}>
         <FilterButton
           className={this.props.className}
           onClick={this.onClick}
-          selected={this.state.selected}
+          isSelected={this.state.isSelected}
         >
-          {buttonDate(
+          {buttonText(
             this.props.selectedStartDate,
             this.props.selectedEndDate,
-            this.state.selected
+            this.state.isSelected
           )}
         </FilterButton>
         <DropdownHolder>
-          {this.state.selected && (
+          {this.state.isSelected && (
             <div>
               <DropdownWindow
                 eventTypes="click"
                 handleClickOutside={this.onClickOutside}
               >
-                {matchXs && (
+                {matchXs() && (
                   <DateHeader>
                     <Close onClick={this.onClickOutside} />
                     Dates
                     <Reset onClick={this.onCancel}>Reset</Reset>
                     <Dates>
-                      <SelectDate selected={!!this.props.selectedStartDate}>
-                        {formatDate(
-                          this.props.selectedStartDate,
-                          this.state.selected,
-                          "Check in"
-                        )}
+                      <SelectDate isSelected={this.props.selectedStartDate}>
+                        {formatDate(this.props.selectedStartDate, "Check in")}
                       </SelectDate>
                       <SelectArrow src={arrowRight} />
-                      <SelectDate selected={this.props.selectedEndDate}>
-                        {formatDate(
-                          this.props.selectedEndDate,
-                          this.state.selected,
-                          "Check out"
-                        )}
+                      <SelectDate isSelected={this.props.selectedEndDate}>
+                        {formatDate(this.props.selectedEndDate, "Check out")}
                       </SelectDate>
                     </Dates>
                   </DateHeader>
                 )}
                 {this.props.children}
-                {!matchXs && (
+                {!matchXs() && (
                   <Actions>
                     <Cancel onClick={this.onCancel}>Cancel</Cancel>
                     <Apply onClick={this.onApply}>Apply</Apply>
                   </Actions>
                 )}
-                {matchXs && <Save onClick={this.onApply}>Save</Save>}
+                {matchXs() && <Save onClick={this.onApply}>Save</Save>}
               </DropdownWindow>
               <Fade />
             </div>

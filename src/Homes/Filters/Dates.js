@@ -2,6 +2,8 @@ import React from "react";
 import moment from "moment";
 import "react-dates/initialize";
 
+import { matchXs } from "../../helpers.js";
+
 import DatePicker from "./DatePicker";
 import { DayPickerRangeController } from "react-dates";
 
@@ -10,7 +12,7 @@ import "./datepicker.css";
 
 export default class extends React.Component {
   state = {
-    selected: false,
+    isSelected: false,
     startDate: null,
     endDate: null,
     selectedStartDate: null,
@@ -20,11 +22,16 @@ export default class extends React.Component {
 
   onApply = () => {
     this.props.closeDropdown();
-    this.setState(prevState => ({
-      selected: false,
-      startDate: this.state.selectedStartDate,
-      endDate: this.state.selectedEndDate
-    }));
+    this.setState(
+      {
+        isSelected: false,
+        startDate: this.state.selectedStartDate,
+        endDate: this.state.selectedEndDate
+      },
+      () => {
+        // console.log("applyed, so..?");
+      }
+    );
     this.props.onApply(
       this.state.selectedStartDate,
       this.state.selectedEndDate
@@ -34,18 +41,17 @@ export default class extends React.Component {
   onCancel = () => {
     this.props.closeDropdown();
     this.setState({
-      selected: false,
+      isSelected: false,
       selectedStartDate: this.state.startDate,
       selectedEndDate: this.state.endDate
     });
   };
-  onToggle = selected => {
-    this.setState({ selected });
+
+  onToggle = isSelected => {
+    this.setState({ isSelected });
   };
 
   render() {
-    const matchXs = window.matchMedia("(max-width: 450px)").matches;
-
     return (
       <DatePicker
         onCancel={this.onCancel}
@@ -55,7 +61,7 @@ export default class extends React.Component {
         selectedEndDate={this.state.selectedEndDate}
       >
         <DayPickerRangeController
-          orientation={matchXs ? "vertical" : "horizontal"}
+          orientation={matchXs() ? "vertical" : "horizontal"}
           isDayBlocked={day => day.isBefore(moment(), "day")}
           numberOfMonths={2}
           hideKeyboardShortcutsPanel

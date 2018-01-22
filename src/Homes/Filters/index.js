@@ -31,11 +31,8 @@ class Filters extends React.Component {
   state = {
     opened: null
   };
-  setOpened = (opened, callback) => {
-    this.setState(
-      { opened: this.state.opened === opened ? null : opened },
-      callback
-    );
+  setOpened = opened => {
+    this.setState({ opened: this.state.opened === opened ? null : opened });
   };
 
   render() {
