@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import "react-dates/initialize";
 
-import { matchXs, matchMd } from "../../helpers.js";
+import { matchXs, matchMd } from "../../helpers";
 
 import DatePicker from "./DatePicker";
 import { DayPickerRangeController } from "react-dates";
@@ -24,9 +24,7 @@ export default class extends React.Component {
     this.props.closeDropdown();
     this.setState(
       {
-        isSelected: false,
-        startDate: this.state.selectedStartDate,
-        endDate: this.state.selectedEndDate
+        isSelected: false
       },
       () => {
         this.props.onApply(

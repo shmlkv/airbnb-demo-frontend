@@ -3,7 +3,7 @@ import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
 import ScrollLock from "react-scrolllock";
 
-import { matchXs } from "../../helpers.js";
+import { matchXs } from "../../helpers";
 
 import { FilterButton, Fade } from "../../UI";
 import closeButton from "./close.svg";
@@ -129,7 +129,7 @@ const SelectArrow = styled.img`
   margin: 0 1rem;
 `;
 
-const buttonText = (start, end, isSelected) => {
+const getButtonText = (start, end, isSelected) => {
   if (isSelected)
     return `${formatDate(start, "Check in")} — ${formatDate(end, "Check out")}`;
   else return "Dates";
@@ -176,7 +176,7 @@ export default class extends React.Component {
           onClick={this.onClick}
           isSelected={this.state.isSelected}
         >
-          {buttonText(
+          {getButtonText(
             this.props.selectedStartDate,
             this.props.selectedEndDate,
             this.state.isSelected
