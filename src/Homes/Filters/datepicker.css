@@ -33,25 +33,24 @@
   box-shadow: none !important;
 }
 
-@media (max-width: 968px) {
-  .DayPicker__horizontal,
-  .DayPicker_transitionContainer {
-    width: 315px !important;
-    overflow: hidden;
-  }
+.DayPicker {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-@media (max-width: 450px) {
-  .DayPicker {
-    position: fixed !important;
-    top: 90px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+.DayPicker_transitionContainer {
+  margin: 0 auto;
+  height: 100vh;
+}
 
+@media (min-width: 450px) {
+  .DayPicker {
+    position: initial;
+  }
   .DayPicker_transitionContainer {
-    margin: 0 auto;
-    height: 100vh !important;
+    height: inherit;
   }
 }
