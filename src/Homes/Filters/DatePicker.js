@@ -55,7 +55,7 @@ const DateHeader = styled.div`
   text-align: center;
   padding: 1rem 0.5rem;
 
-  @media (min-width: 450px) {
+  @media (min-width: 575px) {
     display: none;
   }
 `;
@@ -71,7 +71,7 @@ const Close = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (min-width: 450px) {
+  @media (min-width: px) {
     display: none;
   }
 `;
@@ -84,7 +84,7 @@ const Reset = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (min-width: 450px) {
+  @media (min-width: px) {
     display: none;
   }
 `;
@@ -93,7 +93,7 @@ const Dates = styled.p`
   text-align: left;
   margin-top: 2rem;
 
-  @media (min-width: 450px) {
+  @media (min-width: px) {
     display: none;
   }
 `;
@@ -110,7 +110,7 @@ const Save = styled.button`
   height: 3rem;
   cursor: pointer;
 
-  @media (min-width: 450px) {
+  @media (min-width: px) {
     display: none;
   }
 `;

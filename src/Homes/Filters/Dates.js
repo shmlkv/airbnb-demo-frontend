@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import "react-dates/initialize";
 
-import { matchXs } from "../../helpers.js";
+import { matchXs, matchMd } from "../../helpers.js";
 
 import DatePicker from "./DatePicker";
 import { DayPickerRangeController } from "react-dates";
@@ -63,7 +63,7 @@ export default class extends React.Component {
         <DayPickerRangeController
           orientation={matchXs() ? "vertical" : "horizontal"}
           isDayBlocked={day => day.isBefore(moment(), "day")}
-          numberOfMonths={2}
+          numberOfMonths={matchMd() ? 1 : 2}
           hideKeyboardShortcutsPanel
           focusedInput={this.state.focusedInput}
           onFocusChange={focusedInput =>

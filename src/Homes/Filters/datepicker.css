@@ -46,7 +46,7 @@
   height: 100vh;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 575px) {
   .DayPicker {
     position: initial;
   }
