@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import onClickOutside from "react-onclickoutside";
+import ScrollLock from "react-scrolllock";
 
 import { matchXs } from "../../helpers.js";
 
@@ -71,7 +72,7 @@ const Close = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (min-width: px) {
+  @media (min-width: 540px) {
     display: none;
   }
 `;
@@ -83,8 +84,9 @@ const Reset = styled.button`
   color: #0f7276;
   border: none;
   cursor: pointer;
+  background: none;
 
-  @media (min-width: px) {
+  @media (min-width: 540px) {
     display: none;
   }
 `;
@@ -93,7 +95,7 @@ const Dates = styled.p`
   text-align: left;
   margin-top: 2rem;
 
-  @media (min-width: px) {
+  @media (min-width: 540px) {
     display: none;
   }
 `;
@@ -110,7 +112,7 @@ const Save = styled.button`
   height: 3rem;
   cursor: pointer;
 
-  @media (min-width: px) {
+  @media (min-width: 540px) {
     display: none;
   }
 `;
@@ -204,6 +206,7 @@ export default class extends React.Component {
                   </DateHeader>
                 )}
                 {this.props.children}
+
                 {!matchXs() && (
                   <Actions>
                     <Cancel onClick={this.onCancel}>Cancel</Cancel>
@@ -213,6 +216,7 @@ export default class extends React.Component {
                 {matchXs() && <Save onClick={this.onApply}>Save</Save>}
               </DropdownWindow>
               <Fade />
+              {matchXs() && <ScrollLock />}
             </div>
           )}
         </DropdownHolder>

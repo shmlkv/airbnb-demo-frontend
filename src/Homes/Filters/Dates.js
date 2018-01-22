@@ -29,12 +29,11 @@ export default class extends React.Component {
         endDate: this.state.selectedEndDate
       },
       () => {
-        // console.log("applyed, so..?");
+        this.props.onApply(
+          this.state.selectedStartDate,
+          this.state.selectedEndDate
+        );
       }
-    );
-    this.props.onApply(
-      this.state.selectedStartDate,
-      this.state.selectedEndDate
     );
   };
 
