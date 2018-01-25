@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-import { FilterButton } from "../../UI";
+import { FilterButton } from '../../UI';
 
-export default ({ className, text }) => {
-  return <FilterButton className={className}>{text}</FilterButton>;
-};
+export default ({ className, text }) => <FilterButton className={className}>{text}</FilterButton>;

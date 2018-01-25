@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import GoogleMap from "google-map-react";
+import React from 'react';
+import styled from 'styled-components';
+import GoogleMap from 'google-map-react';
 
 const GoogleMapContainer = styled.div`
   background: lightgrey;
@@ -21,7 +21,7 @@ const Place = styled.div`
   height: 1.5rem;
 
   &:after {
-    content: "★";
+    content: '★';
     color: #ed549c;
     font-size: 1.2rem;
   }

@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import arrowmore from "./arrow-more.svg";
-import arrowslider from "./arrow-slider.svg";
-import location from "./location.svg";
+import arrowmore from './arrow-more.svg';
+import arrowslider from './arrow-slider.svg';
+import location from './location.svg';
 
 export const MainContainer = styled.div`
   margin-top: 6.5rem;
@@ -41,7 +41,7 @@ export const More = styled.a`
   display: flex;
 
   &:after {
-    content: "";
+    content: '';
     background-image: url(${arrowmore});
     width: 6px;
     height: 10px;
@@ -98,7 +98,7 @@ export const ScrollButton = styled.button`
 
   &:after {
     background-image: url(${arrowslider});
-    content: "";
+    content: '';
     width: 6px;
     height: 10px;
     margin: 8px;
@@ -125,11 +125,10 @@ export const FilterButton = styled.button`
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
-  font-family: "CircularAir Normal";
-  background: ${props => (props.isSelected ? "#008489" : "#fff")};
-  border: 1px solid
-    ${props => (props.isSelected ? "#008489" : " rgba(72, 72, 72, 0.2);")};
-  color: ${props => (props.isSelected ? "#fff" : "#383838")};
+  font-family: 'CircularAir Normal';
+  background: ${props => (props.isSelected ? '#008489' : '#fff')};
+  border: 1px solid ${props => (props.isSelected ? '#008489' : ' rgba(72, 72, 72, 0.2);')};
+  color: ${props => (props.isSelected ? '#fff' : '#383838')};
 `;
 
 export const Fade = styled.div`
@@ -152,7 +151,7 @@ export const MapButton = styled.button`
   border-radius: 50%;
 
   &:after {
-    content: "";
+    content: '';
     background: url(${location});
     width: 1rem;
     height: 1.3rem;

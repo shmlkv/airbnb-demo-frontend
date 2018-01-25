@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import onClickOutside from "react-onclickoutside";
-import ScrollLock from "react-scrolllock";
+import React from 'react';
+import styled from 'styled-components';
+import onClickOutside from 'react-onclickoutside';
+import ScrollLock from 'react-scrolllock';
 
-import { matchXs } from "../../helpers";
+import { matchXs } from '../../helpers';
 
-import { FilterButton, Fade } from "../../UI";
-import closeButton from "./close.svg";
-import arrowRight from "./arrowRight.svg";
+import { FilterButton, Fade } from '../../UI';
+import closeButton from './close.svg';
+import arrowRight from './arrowRight.svg';
 
 const DropdownHolder = styled.div`
   position: relative;
@@ -119,9 +119,9 @@ const Save = styled.button`
 
 const SelectDate = styled.span`
   font-size: 18px;
-  color: ${props => (props.isSelected ? "#0F7276" : "#000")};
+  color: ${props => (props.isSelected ? '#0F7276' : '#000')};
   padding-bottom: 2px;
-  border-bottom: 1px solid ${props => (props.isSelected ? "#0F7276" : "#fff")};
+  border-bottom: 1px solid ${props => (props.isSelected ? '#0F7276' : '#fff')};
 `;
 
 const SelectArrow = styled.img`
@@ -130,18 +130,15 @@ const SelectArrow = styled.img`
 `;
 
 const getButtonText = (start, end, isSelected) => {
-  if (isSelected)
-    return `${formatDate(start, "Check in")} — ${formatDate(end, "Check out")}`;
-  else return "Dates";
+  if (isSelected) return `${formatDate(start, 'Check in')} — ${formatDate(end, 'Check out')}`;
+  return 'Dates';
 };
 
-const formatDate = (date, defaultText) => {
-  return date ? date.format("MMM Do") : defaultText;
-};
+const formatDate = (date, defaultText) => (date ? date.format('MMM Do') : defaultText);
 
 export default class extends React.Component {
   state = {
-    isSelected: false
+    isSelected: false,
   };
 
   onClick = () => {
@@ -179,16 +176,13 @@ export default class extends React.Component {
           {getButtonText(
             this.props.selectedStartDate,
             this.props.selectedEndDate,
-            this.state.isSelected
+            this.state.isSelected,
           )}
         </FilterButton>
         <DropdownHolder>
           {this.state.isSelected && (
             <div>
-              <DropdownWindow
-                eventTypes="click"
-                handleClickOutside={this.onClickOutside}
-              >
+              <DropdownWindow eventTypes="click" handleClickOutside={this.onClickOutside}>
                 {matchXs() && (
                   <DateHeader>
                     <Close onClick={this.onClickOutside} />
@@ -196,11 +190,11 @@ export default class extends React.Component {
                     <Reset onClick={this.onCancel}>Reset</Reset>
                     <Dates>
                       <SelectDate isSelected={this.props.selectedStartDate}>
-                        {formatDate(this.props.selectedStartDate, "Check in")}
+                        {formatDate(this.props.selectedStartDate, 'Check in')}
                       </SelectDate>
                       <SelectArrow src={arrowRight} />
                       <SelectDate isSelected={this.props.selectedEndDate}>
-                        {formatDate(this.props.selectedEndDate, "Check out")}
+                        {formatDate(this.props.selectedEndDate, 'Check out')}
                       </SelectDate>
                     </Dates>
                   </DateHeader>

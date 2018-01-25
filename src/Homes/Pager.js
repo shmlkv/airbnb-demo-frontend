@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
-import arrowNext from "./arrow-right.svg";
+import styled from 'styled-components';
+import arrowNext from './arrow-right.svg';
 
 const Box = styled.div`
   margin: 3rem auto;
@@ -44,7 +44,7 @@ const Description = styled.span`
   text-align: center;
   color: #383838;
   font-size: 16px;
-  font-family: "CircularAir Normal";
+  font-family: 'CircularAir Normal';
 `;
 
 const Warning = styled.span`
@@ -66,9 +66,6 @@ export default () => (
       <Next />
     </Pager>
     <Description>1 – 18 of 300+ Rentals</Description>
-    <Warning>
-      Enter dates to see full pricing. Additional fees apply. Taxes may be
-      added.
-    </Warning>
+    <Warning>Enter dates to see full pricing. Additional fees apply. Taxes may be added.</Warning>
   </Box>
 );
