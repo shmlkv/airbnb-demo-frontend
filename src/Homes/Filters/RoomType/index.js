@@ -1,19 +1,14 @@
 import React from 'react';
 
-import { matchXs } from '../../../helpers';
-
 import { FilterButton, Fade } from '../../../UI';
-import { Actions, Cancel, Apply, Save } from '../styled';
-
-import Picker from './Picker';
-import { ContainerPick } from './styled';
+import { ContainerPick } from '../Guests/styled';
+import { Actions, Cancel, Apply } from '../styled';
 
 export default class Guests extends React.Component {
   state = {
     isSelected: false,
     guests: 0,
     isSelectedGuests: 0,
-
     adultsCount: 0,
     childrenCount: 0,
     infantsCount: 0,
@@ -48,12 +43,12 @@ export default class Guests extends React.Component {
 
   increment = (ev) => {
     console.log(ev.target.name);
-    this.setState({ [ev.target.name]: ev.target.value++ });
+    // this.setState(prevState => ({ [ev.target.name]: prevSev.target.value++ }));
   };
 
   decrement = (ev) => {
     console.log(ev.target.name);
-    this.setState({ [ev.target.name]: ev.target.value-- });
+    // this.setState({ [ev.target.name]: ev.target.value-- });
   };
 
   render(className) {
@@ -66,41 +61,15 @@ export default class Guests extends React.Component {
           className={className}
           text="text"
         >
-          Guests
+          Room type
         </FilterButton>
         {this.state.isSelected && (
           <React.Fragment>
             <ContainerPick handleClickOutside={this.onClickOutside}>
-              <Picker
-                title="Adults"
-                name="adultsCount"
-                onInc={this.increment}
-                onDec={this.decrement}
-                value={this.state.adultsCount}
-              />
-              <Picker
-                title="Children"
-                description="Ages 2 – 12"
-                name="childrenCount"
-                onInc={this.increment}
-                onDec={this.decrement}
-                value={this.state.childrenCount}
-              />
-              <Picker
-                title="Infants"
-                description="Under 2"
-                name="infantsCount"
-                onInc={this.increment}
-                onDec={this.decrement}
-                value={this.state.infantsCount}
-              />
-              {!matchXs() && (
-                <Actions>
-                  <Cancel onClick={this.onCancel}>Cancel</Cancel>
-                  <Apply onClick={this.onApply}>Apply</Apply>
-                </Actions>
-              )}
-              {matchXs() && <Save onClick={this.onApply}>Save</Save>}
+              <Actions>
+                <Cancel onClick={this.onCancel}>Cancel</Cancel>
+                <Apply onClick={this.onApply}>Apply</Apply>
+              </Actions>
             </ContainerPick>
             <Fade />
           </React.Fragment>
