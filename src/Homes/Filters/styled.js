@@ -57,3 +57,41 @@ export const Close = styled.button`
     display: none;
   }
 `;
+
+export const MobileHeader = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100px;
+  background: #fff;
+  text-align: center;
+  padding: 1rem 0.5rem;
+
+  @media (min-width: 575px) {
+    display: none;
+  }
+`;
+
+export const Reset = styled.button`
+  position: absolute;
+  right: 0.5rem;
+  top: 1rem;
+  color: #0f7276;
+  border: none;
+  cursor: pointer;
+  background: none;
+
+  @media (min-width: 575px) {
+    display: none;
+  }
+`;
+
+export const Dates = styled.p`
+  text-align: left;
+  margin-top: 2rem;
+
+  @media (min-width: 575px) {
+    display: none;
+  }
+`;

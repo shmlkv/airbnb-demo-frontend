@@ -2,12 +2,23 @@ import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 
 export const ContainerPick = onClickOutside(styled.div`
-  position: absolute;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: #fff;
   color: #383838;
   border: 1px solid #d5d5d5;
   border-radius: 3px;
-  ${''};
+
+  @media (min-width: 575px) {
+    position: absolute;
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: initial;
+  }
 `);
 
 export const DropDownWindow = styled.div`

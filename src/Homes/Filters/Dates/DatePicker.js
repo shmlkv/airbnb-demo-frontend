@@ -4,18 +4,10 @@ import ScrollLock from 'react-scrolllock';
 import { matchXs } from '../../../helpers';
 
 import { FilterButton, Fade } from '../../../UI';
-import { Save, Close, Actions, Cancel, Apply } from '../styled';
+import { Save, Close, Actions, Cancel, Apply, MobileHeader, Reset, Dates } from '../styled';
 
 import arrowRight from './arrowRight.svg';
-import {
-  DropdownHolder,
-  DropdownWindow,
-  DateHeader,
-  Reset,
-  Dates,
-  SelectDate,
-  SelectArrow,
-} from './styled';
+import { DropdownHolder, DropdownWindow, SelectDate, SelectArrow } from './styled';
 
 const formatDate = (date, defaultText) => (date ? date.format('MMM Do') : defaultText);
 
@@ -71,7 +63,7 @@ export default class extends React.Component {
             <React.Fragment>
               <DropdownWindow eventTypes="click" handleClickOutside={this.onClickOutside}>
                 {matchXs() && (
-                  <DateHeader>
+                  <MobileHeader>
                     <Close onClick={this.onClickOutside} />
                     Dates
                     <Reset onClick={this.onCancel}>Reset</Reset>
@@ -84,7 +76,7 @@ export default class extends React.Component {
                         {formatDate(this.props.endDate, 'Check out')}
                       </SelectDate>
                     </Dates>
-                  </DateHeader>
+                  </MobileHeader>
                 )}
 
                 {this.props.children}

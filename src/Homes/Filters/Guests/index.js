@@ -3,7 +3,7 @@ import React from 'react';
 import { matchXs } from '../../../helpers';
 
 import { FilterButton, Fade } from '../../../UI';
-import { Actions, Cancel, Apply, Save } from '../styled';
+import { Actions, Cancel, Apply, Save, MobileHeader, Reset, Dates, Close } from '../styled';
 
 import Picker from './Picker';
 import { ContainerPick } from './styled';
@@ -71,6 +71,14 @@ export default class Guests extends React.Component {
         {this.state.isSelected && (
           <React.Fragment>
             <ContainerPick handleClickOutside={this.onClickOutside}>
+              {matchXs() && (
+                <MobileHeader>
+                  <Close onClick={this.onClickOutside} />
+                  Guests
+                  <Reset onClick={this.onCancel}>Reset</Reset>
+                  <Dates />
+                </MobileHeader>
+              )}
               <Picker
                 title="Adults"
                 name="adultsCount"
