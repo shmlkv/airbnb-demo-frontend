@@ -45,7 +45,11 @@ class Filters extends React.Component {
             endDate={this.state.endDate}
             onApply={(startDate, endDate) => this.setState({ startDate, endDate })}
           />
-          <Guests text="Guest" />
+          <Guests
+            closeDropdown={() => this.setOpened(null)}
+            startDate={this.state.startDate}
+            text="Guest"
+          />
           <Type text="Room type" className="hidden-xs hidden-sm hidden-md" />
           <Price text="Price" className="hidden-xs hidden-sm hidden-md" />
           <Instant text="Instant book" className="hidden-xs hidden-sm hidden-md" />

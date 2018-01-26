@@ -8,10 +8,17 @@ import Card from './Card';
 import Pager from './Pager';
 import { ContainerFlex, HomeContainer, HomeBox, MapButton } from '../UI';
 
+import img1 from './La Salentina.png';
+import img2 from './Your private 3 bedr.png';
+import img3 from './Dreamy Tropical.png';
+import img4 from './Best location.png';
+import img5 from './Lussouoso.png';
+import img6 from './In the historical center of Lecce.png';
+
 const homes = [
   {
     title: 'La Salentina, see, nature & relax',
-    image: './La Salentina.png',
+    image: img1,
     cost: 82,
     type: 'Entrie house',
     beds: '9 beds',
@@ -20,7 +27,7 @@ const homes = [
   },
   {
     title: 'Your private 3 bedr. riad and exclusi…',
-    image: './Your private 3 bedr.png',
+    image: img2,
     cost: 82,
     type: 'Entrie house',
     beds: '5 beds',
@@ -29,7 +36,7 @@ const homes = [
   },
   {
     title: 'Dreamy Tropical Tree House',
-    image: './Dreamy Tropical.png',
+    image: img3,
     cost: 200,
     type: 'Entrie treehouse',
     beds: '1 bed',
@@ -38,7 +45,7 @@ const homes = [
   },
   {
     title: 'Best location old town luxury loft',
-    image: './Best location.png',
+    image: img4,
     cost: 110,
     type: 'Entrie apartment',
     beds: '1 bed',
@@ -47,7 +54,7 @@ const homes = [
   },
   {
     title: 'Lussuoso. Vista incantevole',
-    image: './Lussouoso.png',
+    image: img5,
     cost: 83,
     type: 'Entrie apartment',
     beds: '6 bed',
@@ -56,7 +63,7 @@ const homes = [
   },
   {
     title: 'In the historical center of Lecce',
-    image: './In the historical center of Lecce.png',
+    image: img6,
     cost: 72,
     type: 'Entrie house',
     beds: '3 bed',

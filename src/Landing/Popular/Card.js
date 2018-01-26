@@ -26,7 +26,7 @@ const Price = styled.div`
 export default ({ popular }) => (
   <CardContainer className="col-lg-3 col-md-4 col-sm-4 col-xs-6">
     <Card href="">
-      <Image src={require(`${popular.image}`)} />
+      <Image src={popular.image} />
       <Type>{popular.type}</Type>
       <Title>{popular.title}</Title>
       <Price>About ${popular.price} per persone</Price>

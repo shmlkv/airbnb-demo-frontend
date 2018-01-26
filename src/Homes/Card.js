@@ -21,7 +21,7 @@ const Description = styled.span`
 
 export default ({ home, className }) => (
   <HomeCard className={className} href="">
-    <Image src={require(`${home.image}`)} />
+    <Image src={home.image} />
     <Title>
       <InlinePrice>${home.cost}</InlinePrice>
       {home.title}

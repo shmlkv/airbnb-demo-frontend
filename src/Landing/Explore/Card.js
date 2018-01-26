@@ -52,7 +52,7 @@ const Title = styled.h4`
 export default ({ explore }) => (
   <InternalLink className="col-lg-4 col-sm-5 col-xs-6" to={explore.title}>
     <Card>
-      <Image src={require(`${explore.image}`)} />
+      <Image src={explore.image} />
       <Title>{explore.title}</Title>
     </Card>
   </InternalLink>
