@@ -9,9 +9,8 @@ import './datepicker.css';
 import { matchXs, matchMd } from '../../helpers';
 import DatePicker from './DatePicker';
 
-export default class extends React.Component {
+class Dates extends React.Component {
   state = {
-    isSelected: false,
     startDate: null,
     endDate: null,
     selectedStartDate: null,
@@ -21,20 +20,14 @@ export default class extends React.Component {
 
   onApply = () => {
     this.props.closeDropdown();
-    this.setState(
-      {
-        isSelected: false,
-      },
-      () => {
-        this.props.onApply(this.state.selectedStartDate, this.state.selectedEndDate);
-      },
-    );
+    this.setState({}, () => {
+      this.props.onApply(this.state.selectedStartDate, this.state.selectedEndDate);
+    });
   };
 
   onCancel = () => {
     this.props.closeDropdown();
     this.setState({
-      isSelected: false,
       selectedStartDate: this.state.startDate,
       selectedEndDate: this.state.endDate,
     });
@@ -76,3 +69,5 @@ export default class extends React.Component {
     );
   }
 }
+
+export default Dates;

@@ -181,7 +181,7 @@ export default class extends React.Component {
         </FilterButton>
         <DropdownHolder>
           {this.state.isSelected && (
-            <div>
+            <React.Fragment>
               <DropdownWindow eventTypes="click" handleClickOutside={this.onClickOutside}>
                 {matchXs() && (
                   <DateHeader>
@@ -199,6 +199,7 @@ export default class extends React.Component {
                     </Dates>
                   </DateHeader>
                 )}
+
                 {this.props.children}
 
                 {!matchXs() && (
@@ -211,7 +212,7 @@ export default class extends React.Component {
               </DropdownWindow>
               <Fade />
               {matchXs() && <ScrollLock />}
-            </div>
+            </React.Fragment>
           )}
         </DropdownHolder>
       </div>
