@@ -7,14 +7,14 @@ import { Title, Container, ScrollWrap, ScrollButton, More, TitleWrap } from '../
 const experiences = [
   {
     title: 'Forest therapy',
-    image: 'Forest therapy.png',
+    image: './Forest therapy.png',
     cost: 29,
     reviews: 44,
     stars: 5,
   },
   {
     title: 'Whale watching',
-    image: 'Whale watching.png',
+    image: './Whale watching.png',
 
     cost: 69,
     reviews: 46,
@@ -22,14 +22,14 @@ const experiences = [
   },
   {
     title: 'Table Mountain Summi',
-    image: 'Table Mountain Summi.png',
+    image: './Table Mountain Summi.png',
     cost: 69,
     reviews: 44,
     stars: 5,
   },
   {
     title: 'Salsa Night',
-    image: 'Salsa Night.png',
+    image: './Salsa Night.png',
     cost: 50,
     reviews: 44,
     stars: 5,

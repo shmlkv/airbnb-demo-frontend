@@ -2,13 +2,12 @@ import React from 'react';
 import moment from 'moment';
 import 'react-dates/initialize';
 
-import { matchXs, matchMd } from '../../helpers';
-
-import DatePicker from './DatePicker';
-import { DayPickerRangeController } from 'react-dates';
-
 import 'react-dates/lib/css/_datepicker.css';
+import { DayPickerRangeController } from 'react-dates';
 import './datepicker.css';
+
+import { matchXs, matchMd } from '../../helpers';
+import DatePicker from './DatePicker';
 
 export default class extends React.Component {
   state = {
@@ -41,7 +40,7 @@ export default class extends React.Component {
     });
   };
 
-  onToggle = (isSelected) => {
+  onToggle = () => {
     this.setState({ isSelected: true });
   };
 
@@ -57,6 +56,7 @@ export default class extends React.Component {
         <DayPickerRangeController
           orientation={matchXs() ? 'vertical' : 'horizontal'}
           isDayBlocked={day => day.isBefore(moment(), 'day')}
+          isSelected={this.state.isSelected}
           numberOfMonths={matchMd() ? 1 : 2}
           hideKeyboardShortcutsPanel
           focusedInput={this.state.focusedInput}

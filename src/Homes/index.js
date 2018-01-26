@@ -11,7 +11,7 @@ import { ContainerFlex, HomeContainer, HomeBox, MapButton } from '../UI';
 const homes = [
   {
     title: 'La Salentina, see, nature & relax',
-    image: 'La Salentina.png',
+    image: './La Salentina.png',
     cost: 82,
     type: 'Entrie house',
     beds: '9 beds',
@@ -20,7 +20,7 @@ const homes = [
   },
   {
     title: 'Your private 3 bedr. riad and exclusi…',
-    image: 'Your private 3 bedr.png',
+    image: './Your private 3 bedr.png',
     cost: 82,
     type: 'Entrie house',
     beds: '5 beds',
@@ -29,7 +29,7 @@ const homes = [
   },
   {
     title: 'Dreamy Tropical Tree House',
-    image: 'Dreamy Tropical.png',
+    image: './Dreamy Tropical.png',
     cost: 200,
     type: 'Entrie treehouse',
     beds: '1 bed',
@@ -38,7 +38,7 @@ const homes = [
   },
   {
     title: 'Best location old town luxury loft',
-    image: 'Best location.png',
+    image: './Best location.png',
     cost: 110,
     type: 'Entrie apartment',
     beds: '1 bed',
@@ -47,7 +47,7 @@ const homes = [
   },
   {
     title: 'Lussuoso. Vista incantevole',
-    image: 'Lussouoso.png',
+    image: './Lussouoso.png',
     cost: 83,
     type: 'Entrie apartment',
     beds: '6 bed',
@@ -56,7 +56,7 @@ const homes = [
   },
   {
     title: 'In the historical center of Lecce',
-    image: 'In the historical center of Lecce.png',
+    image: './In the historical center of Lecce.png',
     cost: 72,
     type: 'Entrie house',
     beds: '3 bed',

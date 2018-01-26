@@ -12,7 +12,7 @@ const Rating = styled.div`
 export default ({ experience }) => (
   <CardContainer className="col-lg-3 col-sm-4 col-xs-6">
     <Card href="">
-      <Image src={require(`./${experience.image}`)} />
+      <Image src={require(`${experience.image}`)} />
       <Title>
         <InlinePrice>${experience.cost}</InlinePrice>
         {experience.title}

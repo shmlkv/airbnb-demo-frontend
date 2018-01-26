@@ -129,12 +129,12 @@ const SelectArrow = styled.img`
   margin: 0 1rem;
 `;
 
+const formatDate = (date, defaultText) => (date ? date.format('MMM Do') : defaultText);
+
 const getButtonText = (start, end, isSelected) => {
   if (isSelected) return `${formatDate(start, 'Check in')} — ${formatDate(end, 'Check out')}`;
   return 'Dates';
 };
-
-const formatDate = (date, defaultText) => (date ? date.format('MMM Do') : defaultText);
 
 export default class extends React.Component {
   state = {

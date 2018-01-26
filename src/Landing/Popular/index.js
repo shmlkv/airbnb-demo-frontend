@@ -6,25 +6,25 @@ import { Title, Container, More, ScrollWrap, ScrollButton, TitleWrap } from '../
 const populars = [
   {
     title: 'Chumley’s',
-    image: 'Chumleys.png',
+    image: './Chumleys.png',
     price: 60,
     type: 'Speakeasy',
   },
   {
     title: 'Hanjan',
-    image: 'Hanjan.png',
+    image: './Hanjan.png',
     price: 50,
     type: 'Korean gastropub',
   },
   {
     title: 'Prime Meats',
-    image: 'Prime Meats.png',
+    image: './Prime Meats.png',
     price: 50,
     type: 'Speakeasy',
   },
   {
     title: 'Seaprice',
-    image: 'Seaprice.png',
+    image: './Seaprice.png',
     price: 70,
     type: 'Fine seafood',
   },

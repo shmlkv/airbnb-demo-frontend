@@ -41,6 +41,8 @@ class Filters extends React.Component {
         <Container>
           <Dates
             closeDropdown={() => this.setOpened(null)}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
             onApply={(startDate, endDate) => this.setState({ startDate, endDate })}
           />
           <Guests text="Guest" />
