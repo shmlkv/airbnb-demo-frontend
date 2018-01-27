@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 
-export const ContainerPick = onClickOutside(styled.div`
-  position: absolute;
+export const Wrapper = styled.div`
+  position: fixed;
+  margin: 0 auto;
+  width: 950px;
+  right: 0;
+  left: 0;
+`;
+
+export const Container = onClickOutside(styled.div`
+  display: flex;
   background: #fff;
   color: #383838;
-  border: 1px solid #d5d5d5;
-  border-radius: 3px;
-  width: 18em;
   padding: 1rem;
-`);
-
-export const Container = styled.div`
-  display: flex;
+  border-radius: 3px;
   flex-wrap: nowrap;
-`;
+  flex-direction: column;
+`);
 
 export const Title = styled.h3`
   margin: 0;
@@ -27,3 +30,6 @@ export const Description = styled.p`
   font-size: 0.95rem;
   margin-right: 1rem;
 `;
+
+export const Rooms = styled.div``;
+export const Types = styled.div``;
