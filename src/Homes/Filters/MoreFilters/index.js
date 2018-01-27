@@ -1,6 +1,7 @@
 import React from 'react';
 import Rheostat from 'rheostat';
 import '../Price/rheostat.css';
+import ScrollLock from 'react-scrolllock';
 
 import { FilterButton, Fade } from '../../../UI';
 import {
@@ -27,19 +28,20 @@ import roomIcon from '../RoomType/room.svg';
 export default class MoreFilters extends React.Component {
   state = {
     isSelected: false,
-    rooms: {
-      bedrooms: 0,
-      beds: 0,
-      bathrooms: 0,
-    },
+
     types: {
       entireHome: false,
-      privateRoom: true,
+      privateRoom: false,
       sharedRoom: false,
     },
     price: {
       selectedStartPrice: 10,
       selectedEndPrice: 1000,
+    },
+    rooms: {
+      bedrooms: 0,
+      beds: 0,
+      bathrooms: 0,
     },
   };
 
@@ -70,9 +72,25 @@ export default class MoreFilters extends React.Component {
   onSwitchToggle = () => {
     this.setState(prevState => ({ active: !prevState.active }));
   };
-  selectTypes = (ev) => {
-    this.setState({ [ev.target.name]: !this.state[ev.target.name] });
+
+  select = (ev) => {
+    this.setState({ type: { [ev.target.name]: !this.state[ev.target.value] } });
   };
+  increment = (value) => {
+    this.setState({ rooms: { [value]: this.state.rooms[value] + 1 } });
+  };
+
+  decrement = (value) => {
+    console.log(this.state.rooms[value]);
+    console.log(value);
+    this.setState(prevState => ({
+      rooms: {
+        ...prevState.rooms,
+        [value]: this.state.rooms[value] - 1,
+      },
+    }));
+  };
+
   render() {
     return (
       <div>
@@ -95,7 +113,7 @@ export default class MoreFilters extends React.Component {
                     name="entireHome"
                     checked={this.state.types.entireHome}
                     icon={homeIcon}
-                    onChange={this.selectTypes}
+                    onChange={this.select}
                   />
                   <Type
                     title="Private room"
@@ -103,7 +121,7 @@ export default class MoreFilters extends React.Component {
                     name="privateRoom"
                     checked={this.state.types.privateRoom}
                     icon={houseRoomIcon}
-                    onChange={this.props.selectTypes}
+                    onChange={this.select}
                   />
                   <Type
                     title="Shared room"
@@ -111,7 +129,7 @@ export default class MoreFilters extends React.Component {
                     name="sharedRoom"
                     checked={this.state.types.sharedRoom}
                     icon={roomIcon}
-                    onChange={this.props.selectTypes}
+                    onChange={this.select}
                   />
                 </Types>
                 <Price>
@@ -141,16 +159,14 @@ export default class MoreFilters extends React.Component {
                 <Rooms>
                   <Title>Rooms and beds</Title>
                   <Picker
-                    // title="Infants"
                     description="Bedrooms"
-                    onInc={this.increment}
+                    onInc={this.onRoomsAndBedsIncrement}
                     onDec={this.decrement}
                     value={`${this.state.rooms.bedrooms}+`}
                     min={this.state.infantsCount === 0}
                     max={this.state.infantsCount === 10}
                   />
                   <Picker
-                    // title="Infants"
                     description="Beds"
                     onInc={this.increment}
                     onDec={this.decrement}
@@ -159,7 +175,6 @@ export default class MoreFilters extends React.Component {
                     max={this.state.infantsCount === 10}
                   />
                   <Picker
-                    // title="Infants"
                     description="Bathrooms"
                     onInc={this.increment}
                     onDec={this.decrement}

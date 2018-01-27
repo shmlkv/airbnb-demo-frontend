@@ -3,10 +3,14 @@ import React from 'react';
 import Card from '../../Homes/Card';
 import { Title, Container, More, ScrollWrap, ScrollButton, TitleWrap } from '../../UI';
 
+import img1 from '../../Homes/La Salentina.png';
+import img2 from '../../Homes/Your private 3 bedr.png';
+import img3 from '../../Homes/Dreamy Tropical.png';
+
 const homes = [
   {
     title: 'La Salentina, see, nature & relax',
-    image: './La Salentina.png',
+    image: img1,
     cost: 82,
     type: 'Entrie house',
     beds: '9 beds',
@@ -15,7 +19,7 @@ const homes = [
   },
   {
     title: 'Your private 3 bedr. riad and exclusi…',
-    image: './Your private 3 bedr.png',
+    image: img2,
     cost: 82,
     type: 'Entrie house',
     beds: '5 beds',
@@ -24,7 +28,7 @@ const homes = [
   },
   {
     title: 'Dreamy Tropical Tree House',
-    image: './Dreamy Tropical.png',
+    image: img3,
     cost: 200,
     type: 'Entrie treehouse',
     beds: '1 bed',

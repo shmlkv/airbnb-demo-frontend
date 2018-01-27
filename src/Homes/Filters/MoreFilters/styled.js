@@ -4,9 +4,15 @@ import onClickOutside from 'react-onclickoutside';
 export const Wrapper = styled.div`
   position: fixed;
   margin: 0 auto;
-  width: 950px;
+  width: 100%;
+
   right: 0;
   left: 0;
+  overflow-y: scroll;
+  height: 95%;
+  @media (min-width: 768px) {
+    width: 950px;
+  }
 `;
 
 export const Container = onClickOutside(styled.div`
@@ -42,6 +48,18 @@ export const PriceMapping = styled.img`
   margin-bottom: -16px;
   margin-top: 20px;
 `;
-export const Types = styled.div``;
-export const Price = styled.div``;
-export const Rooms = styled.div``;
+export const Types = styled.div`
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  margin-bottom: 23px;
+  padding-bottom: 23px;
+`;
+export const Price = styled.div`
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  margin-bottom: 23px;
+  padding-bottom: 23px;
+`;
+export const Rooms = styled.div`
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  margin-bottom: 23px;
+  padding-bottom: 23px;
+`;
