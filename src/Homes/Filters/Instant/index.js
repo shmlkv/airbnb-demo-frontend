@@ -26,6 +26,7 @@ const Container = styled.div`
 const Title = styled.h3`
   margin: 0;
   font-weight: 400;
+  font-family: 'CircularAir Normal';
 `;
 
 const Description = styled.p`
@@ -113,7 +114,7 @@ export default class Instant extends React.Component {
           onToggle={this.onToggle}
           className={className}
         >
-          Instant book
+          Instant book {!!this.state.active && '✔︎'}
         </FilterButton>
         {this.state.isSelected && (
           <React.Fragment>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
+import Rheostat from 'rheostat';
 
 import { FilterButton, Fade } from '../../UI';
 import { Actions, Cancel, Apply } from './styled';
@@ -46,15 +47,6 @@ export default class Guests extends React.Component {
     this.setState({ isSelected: false });
   };
 
-  increment = (ev) => {
-    console.log(ev.target.name);
-  };
-
-  decrement = (ev) => {
-    console.log(ev.target.name);
-    // this.setState({ [ev.target.name]: ev.target.value-- });
-  };
-
   render(className) {
     return (
       <div>
@@ -69,6 +61,8 @@ export default class Guests extends React.Component {
         {this.state.isSelected && (
           <React.Fragment>
             <ContainerPick handleClickOutside={this.onClickOutside}>
+              <Rheostat min={10} max={1000} values={[1, 100]} />
+
               <Actions>
                 <Cancel onClick={this.onCancel}>Cancel</Cancel>
                 <Apply onClick={this.onApply}>Apply</Apply>

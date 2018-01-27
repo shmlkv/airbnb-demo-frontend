@@ -31,11 +31,14 @@ export const DropDownWindow = styled.div`
 
 export const Title = styled.p`
   margin: 0 0 0.5rem;
+  font-size: 20px;
+  font-family: 'CircularAir Normal';
 `;
 
 export const Description = styled.p`
   margin: 0;
   font-weight: 100;
+  font-size: 16px;
 `;
 
 export const Button = styled.button`

@@ -12,7 +12,7 @@ export default ({
     </div>
     <Selectors>
       <Button name={name} onClick={onDec}>
-        -
+        –
       </Button>
       <Value>{value}</Value>
       <Button name={name} onClick={onInc}>

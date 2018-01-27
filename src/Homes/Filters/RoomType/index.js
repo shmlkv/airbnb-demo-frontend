@@ -36,19 +36,11 @@ export default class Guests extends React.Component {
     isSelected: false,
   };
   onApply = () => {
-    this.setState({
-      isSelected: false,
-      ...this.state,
-    });
-    console.log(this.state);
-    // this.props.onApply(this.state.guests);
+    this.setState({ isSelected: false });
   };
 
   onCancel = () => {
-    this.props.closeDropdown();
-    this.setState({
-      isSelected: false,
-    });
+    this.setState({ isSelected: false });
   };
 
   onToggle = (isSelected) => {

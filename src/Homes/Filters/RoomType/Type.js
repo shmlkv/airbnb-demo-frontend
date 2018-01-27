@@ -38,7 +38,8 @@ const Checkbox = styled.input.attrs({
 
 const Title = styled.p`
   margin: 0 0 0.5rem;
-  font-weight: 100;
+  font-family: 'CircularAir Normal';
+
 `;
 
 const Description = styled.p`
