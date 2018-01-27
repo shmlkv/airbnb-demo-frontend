@@ -20,25 +20,34 @@ const ContainerPick = onClickOutside(styled.div`
   width: 18em;
 `);
 
+const initialState = {
+  entireHome: false,
+  privateRoom: false,
+  sharedRoom: false,
+};
+const getButtonText = (entireHome, privateRoom, sharedRoom) => {
+  const num =
+    entireHome || privateRoom || sharedRoom ? ` • ${entireHome + privateRoom + sharedRoom}` : '';
+  return `Room type${num}`;
+};
 export default class Guests extends React.Component {
   state = {
+    ...initialState,
     isSelected: false,
-    guests: 0,
   };
   onApply = () => {
-    this.props.closeDropdown();
     this.setState({
       isSelected: false,
-      guests: this.state.isSelectedGuests,
+      ...this.state,
     });
-    this.props.onApply(this.state.guests);
+    console.log(this.state);
+    // this.props.onApply(this.state.guests);
   };
 
   onCancel = () => {
     this.props.closeDropdown();
     this.setState({
       isSelected: false,
-      guests: this.state.guests,
     });
   };
 
@@ -52,17 +61,9 @@ export default class Guests extends React.Component {
     // this.props.onCancel();
     this.setState({ isSelected: false });
   };
-
-  increment = (ev) => {
-    console.log(ev.target.name);
-    // this.setState(prevState => ({ [ev.target.name]: prevSev.target.value++ }));
+  select = (ev) => {
+    this.setState({ [ev.target.name]: !this.state[ev.target.name] });
   };
-
-  decrement = (ev) => {
-    console.log(ev.target.name);
-    // this.setState({ [ev.target.name]: ev.target.value-- });
-  };
-
   render(className) {
     return (
       <div>
@@ -72,7 +73,7 @@ export default class Guests extends React.Component {
           onToggle={this.onToggle}
           className={className}
         >
-          Room type
+          {getButtonText(this.state.entireHome, this.state.privateRoom, this.state.sharedRoom)}
         </FilterButton>
         {this.state.isSelected && (
           <React.Fragment>
@@ -81,7 +82,7 @@ export default class Guests extends React.Component {
                 title="Entire home"
                 description="Have a place to yourself"
                 name="entireHome"
-                checked={this.props.entireHome}
+                checked={this.state.entireHome}
                 icon={homeIcon}
                 onChange={this.select}
               />
@@ -89,7 +90,7 @@ export default class Guests extends React.Component {
                 title="Private room"
                 description="Have your own room and share some common spaces"
                 name="privateRoom"
-                checked={this.props.privateRoom}
+                checked={this.state.privateRoom}
                 icon={houseRoomIcon}
                 onChange={this.select}
               />
@@ -97,7 +98,7 @@ export default class Guests extends React.Component {
                 title="Shared room"
                 description="Stay in a shared space, like a common room"
                 name="sharedRoom"
-                checked={this.props.sharedRoom}
+                checked={this.state.sharedRoom}
                 icon={roomIcon}
                 onChange={this.select}
               />
