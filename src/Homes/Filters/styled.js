@@ -3,7 +3,7 @@ import closeButton from './close.svg';
 
 export const Save = styled.button`
   position: fixed;
-  bottom: 3.5rem;
+  bottom: 0.5rem;
   left: 0.5rem;
   right: 0.5rem;
   width: calc(100% - 1rem);

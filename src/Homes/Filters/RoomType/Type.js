@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import check from 'check.svg';
+import check from './check.svg';
 
 const Container = styled.label`
+  background: #fff;
+  color: #383838;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 1.5rem 1rem 1rem;
   cursor: pointer;
-  color: #383838;
 `;
 
 const Content = styled.div`
@@ -19,16 +20,16 @@ const Content = styled.div`
 const Checkbox = styled.input.attrs({
   type: 'checkbox',
 })`
-  width: 1.5rem;
   flex-shrink: 0;
-  height: 1.5rem;
-  appearance: none;
   border: 1px solid rgba(72, 72, 72, 0.3);
+  width: 1.5rem;
+  border-radius: 4px;
+  height: 1.5rem;
   margin-right: 0.5rem;
   cursor: pointer;
-  background: url(${checkbox}) no-repeat center center;
+  appearance: none;
+  background: url(${check}) no-repeat center center;
   background-size: 0.875rem 0.625rem;
-  border-radius: 4px;
 
   &:checked {
     background-color: #008489;
@@ -36,14 +37,14 @@ const Checkbox = styled.input.attrs({
 `;
 
 const Title = styled.p`
-  font-weight: 100;
   margin: 0 0 0.5rem;
+  font-weight: 100;
 `;
 
 const Description = styled.p`
-  font-weight: 100;
-  font-size: 0.875rem;
   margin: 0;
+  font-size: 0.875rem;
+  font-weight: 100;
 `;
 
 const Icon = styled.img`
