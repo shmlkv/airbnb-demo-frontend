@@ -8,23 +8,25 @@ import { Actions, Cancel, Apply, Save, MobileHeader, Reset, Dates, Close } from 
 import Picker from './Picker';
 import { ContainerPick } from './styled';
 
+const getButtonText = (adultsCount, childrenCount, infantsCount) =>
+  (adultsCount || childrenCount || infantsCount
+    ? `${adultsCount + childrenCount + infantsCount} guests`
+    : 'Guests');
+
 export default class Guests extends React.Component {
   state = {
     isSelected: false,
     guests: 0,
     isSelectedGuests: 0,
 
-    adultsCount: 0,
+    adultsCount: 2,
     childrenCount: 0,
     infantsCount: 0,
   };
   onApply = () => {
-    this.props.closeDropdown();
     this.setState({
       isSelected: false,
-      guests: this.state.isSelectedGuests,
     });
-    this.props.onApply(this.state.guests);
   };
 
   onCancel = () => {
@@ -47,11 +49,11 @@ export default class Guests extends React.Component {
   };
 
   increment = (ev) => {
-    this.setState(prevState => ({ [ev.target.name]: prevState[ev.target.value] + 1 }));
+    this.setState({ [ev]: this.state[ev] + 1 });
   };
 
   decrement = (ev) => {
-    this.setState(prevState => ({ [ev.target.name]: prevState[ev.target.value] - 1 }));
+    this.setState({ [ev]: this.state[ev] - 1 });
   };
 
   render(className) {
@@ -62,9 +64,8 @@ export default class Guests extends React.Component {
           onClick={this.onClick}
           onToggle={this.onToggle}
           className={className}
-          text="text"
         >
-          Guests
+          {getButtonText(this.state.adultsCount, this.state.childrenCount, this.state.infantsCount)}
         </FilterButton>
         {this.state.isSelected && (
           <React.Fragment>
@@ -83,6 +84,8 @@ export default class Guests extends React.Component {
                 onInc={this.increment}
                 onDec={this.decrement}
                 value={this.state.adultsCount}
+                min={this.state.adultsCount === 1}
+                max={this.state.adultsCount === 10}
               />
               <Picker
                 title="Children"
@@ -91,6 +94,8 @@ export default class Guests extends React.Component {
                 onInc={this.increment}
                 onDec={this.decrement}
                 value={this.state.childrenCount}
+                min={this.state.childrenCount === 0}
+                max={this.state.childrenCount === 10}
               />
               <Picker
                 title="Infants"
@@ -99,6 +104,8 @@ export default class Guests extends React.Component {
                 onInc={this.increment}
                 onDec={this.decrement}
                 value={this.state.infantsCount}
+                min={this.state.infantsCount === 0}
+                max={this.state.infantsCount === 10}
               />
               {!matchXs() && (
                 <Actions>

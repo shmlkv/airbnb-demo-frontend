@@ -3,7 +3,7 @@ import React from 'react';
 import { DropDownWindow, Title, Description, Button, Value, Selectors } from './styled';
 
 export default ({
-  title, description, name, onInc, onDec, value,
+  title, description, name, onInc, onDec, value, min, max,
 }) => (
   <DropDownWindow>
     <div>
@@ -11,11 +11,11 @@ export default ({
       <Description>{description}</Description>
     </div>
     <Selectors>
-      <Button name={name} onClick={onDec}>
+      <Button name={name} onClick={() => onDec(name)} disabled={min}>
         –
       </Button>
       <Value>{value}</Value>
-      <Button name={name} onClick={onInc}>
+      <Button name={name} onClick={() => onInc(name)} disabled={max}>
         +
       </Button>
     </Selectors>
