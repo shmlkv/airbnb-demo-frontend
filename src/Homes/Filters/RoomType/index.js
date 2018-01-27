@@ -59,14 +59,14 @@ export default class Guests extends React.Component {
     this.setState({ [ev.target.name]: !this.state[ev.target.name] });
   };
 
-  render(className) {
+  render() {
     return (
       <div>
         <FilterButton
           isSelected={this.state.isSelected}
           onClick={this.onClick}
           onToggle={this.onToggle}
-          className={className}
+          className={this.props.className}
         >
           {getButtonText(this.state.entireHome, this.state.privateRoom, this.state.sharedRoom)}
         </FilterButton>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollLock from 'react-scrolllock';
 
 import { matchXs } from '../../../helpers';
 
@@ -50,12 +51,12 @@ export default class Guests extends React.Component {
     this.setState({ isSelected: false });
   };
 
-  increment = (ev) => {
-    this.setState({ [ev]: this.state[ev] + 1 });
+  increment = (guestName) => {
+    this.setState({ [guestName]: this.state[guestName] + 1 });
   };
 
-  decrement = (ev) => {
-    this.setState({ [ev]: this.state[ev] - 1 });
+  decrement = (guestName) => {
+    this.setState({ [guestName]: this.state[guestName] - 1 });
   };
 
   render(className) {
@@ -115,7 +116,12 @@ export default class Guests extends React.Component {
                   <Apply onClick={this.onApply}>Apply</Apply>
                 </Actions>
               )}
-              {matchXs() && <Save onClick={this.onApply}>Save</Save>}
+              {matchXs() && (
+                <div>
+                  <Save onClick={this.onApply}>Save</Save>
+                  <ScrollLock />
+                </div>
+              )}
             </ContainerPick>
             <Fade />
           </React.Fragment>

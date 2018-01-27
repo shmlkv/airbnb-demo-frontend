@@ -31,7 +31,7 @@ class Filters extends React.Component {
   state = {
     opened: null,
   };
-  
+
   setOpened = (opened) => {
     this.setState({ opened: this.state.opened === opened ? null : opened });
   };
@@ -46,11 +46,11 @@ class Filters extends React.Component {
             endDate={this.state.endDate}
             onApply={(startDate, endDate) => this.setState({ startDate, endDate })}
           />
-          <Guests closeDropdown={() => this.setOpened(null)} />
+          <Guests />
           <RoomType className="hidden-xs hidden-sm hidden-md" />
-          <Price text="Price" className="hidden-xs hidden-sm hidden-md" />
-          <Instant text="Instant book" className="hidden-xs hidden-sm hidden-md" />
-          {/* <MoreFilters text="More filters" /> */}
+          <Price className="hidden-xs hidden-sm hidden-md" />
+          <Instant className="hidden-xs hidden-sm hidden-md" />
+          <MoreFilters />
         </Container>
       </Box>
     );

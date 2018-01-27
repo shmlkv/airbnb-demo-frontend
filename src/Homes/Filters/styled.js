@@ -12,6 +12,7 @@ export const Save = styled.button`
   border-radius: 4px;
   height: 3rem;
   cursor: pointer;
+  z-index: 2;
 
   @media (min-width: 575px) {
     display: none;

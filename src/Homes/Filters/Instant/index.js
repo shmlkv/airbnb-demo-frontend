@@ -79,7 +79,7 @@ export default class Instant extends React.Component {
     isSelected: false,
     active: false,
   };
-  
+
   onApply = () => {
     this.setState({
       isSelected: false,
@@ -108,14 +108,14 @@ export default class Instant extends React.Component {
     this.setState(prevState => ({ active: !prevState.active }));
   };
 
-  render(className) {
+  render() {
     return (
       <div>
         <FilterButton
           isSelected={this.state.isSelected}
           onClick={this.onClick}
           onToggle={this.onToggle}
-          className={className}
+          className={this.props.className}
         >
           Instant book {!!this.state.active && '✔︎'}
         </FilterButton>

@@ -27,6 +27,7 @@ export const DropDownWindow = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 2rem 1rem 2rem 1.5rem;
+  z-index: 1;
 `;
 
 export const Title = styled.p`

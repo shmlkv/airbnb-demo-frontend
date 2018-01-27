@@ -80,7 +80,7 @@ export default class Price extends React.Component {
   onClick = (isSelected) => {
     this.setState({ isSelected });
   };
-  
+
   onClickOutside = () => {
     this.setState({ isSelected: false });
   };
@@ -92,7 +92,7 @@ export default class Price extends React.Component {
           isSelected={this.state.isSelected}
           onClick={this.onClick}
           onToggle={this.onToggle}
-          className={this.className}
+          className={this.props.className}
         >
           {getButtonText(
             this.state.isSelected,
