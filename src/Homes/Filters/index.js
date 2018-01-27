@@ -47,9 +47,9 @@ class Filters extends React.Component {
           />
           <Guests closeDropdown={() => this.setOpened(null)} />
           <RoomType className="hidden-xs hidden-sm hidden-md" />
-          <Price text="Price" className="hidden-xs hidden-sm hidden-md" />
+          {/* <Price text="Price" className="hidden-xs hidden-sm hidden-md" /> */}
           <Instant text="Instant book" className="hidden-xs hidden-sm hidden-md" />
-          <MoreFilters text="More filters" />
+          {/* <MoreFilters text="More filters" /> */}
         </Container>
       </Box>
     );

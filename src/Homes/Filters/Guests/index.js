@@ -47,13 +47,11 @@ export default class Guests extends React.Component {
   };
 
   increment = (ev) => {
-    console.log(ev.target.name);
-    this.setState({ [ev.target.name]: ev.target.value++ });
+    this.setState(prevState => ({ [ev.target.name]: prevState[ev.target.value] + 1 }));
   };
 
   decrement = (ev) => {
-    console.log(ev.target.name);
-    this.setState({ [ev.target.name]: ev.target.value-- });
+    this.setState(prevState => ({ [ev.target.name]: prevState[ev.target.value] - 1 }));
   };
 
   render(className) {

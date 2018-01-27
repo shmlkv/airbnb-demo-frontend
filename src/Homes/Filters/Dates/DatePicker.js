@@ -28,7 +28,7 @@ export default class extends React.Component {
     if (!this.state.isSelected) {
       this.props.onToggle(true);
     } else {
-      this.onApply();
+      // this.onApply();
     }
     this.setState({ isSelected: !this.state.isSelected });
   };
