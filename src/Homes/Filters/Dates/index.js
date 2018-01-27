@@ -13,8 +13,6 @@ export default class Dates extends React.Component {
   state = {
     startDate: null,
     endDate: null,
-    // selectedStartDate: null,
-    // selectedEndDate: null,
     focusedInput: 'startDate',
   };
 
@@ -27,10 +25,6 @@ export default class Dates extends React.Component {
 
   onCancel = () => {
     this.props.closeDropdown();
-    // this.setState({
-    //   startDate: this.state.startDate,
-    //   endDate: this.state.endDate,
-    // });
   };
 
   onToggle = () => {

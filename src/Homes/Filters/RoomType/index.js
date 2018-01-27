@@ -20,21 +20,20 @@ const ContainerPick = onClickOutside(styled.div`
   width: 18em;
 `);
 
-const initialState = {
-  entireHome: false,
-  privateRoom: false,
-  sharedRoom: false,
-};
 const getButtonText = (entireHome, privateRoom, sharedRoom) => {
   const num =
     entireHome || privateRoom || sharedRoom ? ` • ${entireHome + privateRoom + sharedRoom}` : '';
   return `Room type${num}`;
 };
+
 export default class Guests extends React.Component {
   state = {
-    ...initialState,
+    entireHome: false,
+    privateRoom: false,
+    sharedRoom: false,
     isSelected: false,
   };
+
   onApply = () => {
     this.setState({ isSelected: false });
   };
@@ -46,16 +45,20 @@ export default class Guests extends React.Component {
   onToggle = (isSelected) => {
     this.setState({ isSelected });
   };
+
   onClick = (isSelected) => {
     this.setState({ isSelected });
   };
+
   onClickOutside = () => {
     // this.props.onCancel();
     this.setState({ isSelected: false });
   };
+
   select = (ev) => {
     this.setState({ [ev.target.name]: !this.state[ev.target.name] });
   };
+
   render(className) {
     return (
       <div>

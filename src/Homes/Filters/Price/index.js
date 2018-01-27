@@ -27,20 +27,24 @@ const ContainerPick = onClickOutside(styled.div`
   width: 18em;
   padding: 1rem;
 `);
+
 const Title = styled.p`
   font-size: 16px;
   color: #383838;
   font-weight: lighter;
 `;
+
 const Average = styled.p`
   font-size: 12px;
   font-weight: lighter;
 `;
+
 const PriceMapping = styled.img`
   margin-left: 37px;
   margin-bottom: -16px;
   margin-top: 20px;
 `;
+
 export default class Price extends React.Component {
   state = {
     isSelected: false,
@@ -72,9 +76,11 @@ export default class Price extends React.Component {
   onToggle = (isSelected) => {
     this.setState({ isSelected });
   };
+
   onClick = (isSelected) => {
     this.setState({ isSelected });
   };
+  
   onClickOutside = () => {
     this.setState({ isSelected: false });
   };

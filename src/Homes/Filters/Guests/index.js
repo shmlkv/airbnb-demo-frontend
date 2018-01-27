@@ -23,6 +23,7 @@ export default class Guests extends React.Component {
     childrenCount: 0,
     infantsCount: 0,
   };
+
   onApply = () => {
     this.setState({
       isSelected: false,
@@ -40,11 +41,12 @@ export default class Guests extends React.Component {
   onToggle = (isSelected) => {
     this.setState({ isSelected });
   };
+
   onClick = (isSelected) => {
     this.setState({ isSelected });
   };
+
   onClickOutside = () => {
-    // this.props.onCancel();
     this.setState({ isSelected: false });
   };
 

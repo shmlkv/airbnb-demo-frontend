@@ -79,6 +79,7 @@ export default class Instant extends React.Component {
     isSelected: false,
     active: false,
   };
+  
   onApply = () => {
     this.setState({
       isSelected: false,
@@ -94,9 +95,11 @@ export default class Instant extends React.Component {
   onToggle = (isSelected) => {
     this.setState({ isSelected });
   };
+  
   onClick = (isSelected) => {
     this.setState({ isSelected });
   };
+
   onClickOutside = () => {
     this.setState({ isSelected: false });
   };
