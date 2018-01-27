@@ -1,11 +1,24 @@
 import React from 'react';
+import Rheostat from 'rheostat';
+import '../Price/rheostat.css';
 
 import { FilterButton, Fade } from '../../../UI';
-import { Actions, Cancel, Apply } from '../styled';
-import { Wrapper, Container, Title, Description, Rooms, Types } from './styled';
+import {
+  Wrapper,
+  Container,
+  Title,
+  Average,
+  PriceMapping,
+  Types,
+  Price,
+  Rooms,
+  Range,
+} from './styled';
 
 import Type from '../RoomType/Type';
 import Picker from '../Guests/Picker';
+
+import prices from '../Price/prices.svg';
 
 import homeIcon from '../RoomType/home.svg';
 import houseRoomIcon from '../RoomType/houseRoom.svg';
@@ -23,6 +36,10 @@ export default class MoreFilters extends React.Component {
       entireHome: false,
       privateRoom: true,
       sharedRoom: false,
+    },
+    price: {
+      selectedStartPrice: 10,
+      selectedEndPrice: 1000,
     },
   };
 
@@ -97,6 +114,30 @@ export default class MoreFilters extends React.Component {
                     onChange={this.props.selectTypes}
                   />
                 </Types>
+                <Price>
+                  <Title>Price Range</Title>
+                  <Range>
+                    ${this.state.price.selectedStartPrice} — ${this.state.price.selectedEndPrice}
+                  </Range>
+                  <Average>The average nightly price is $75.</Average>
+                  <PriceMapping src={prices} />
+                  <Rheostat
+                    onChange={(slider) => {
+                      this.setState({
+                        price: {
+                          selectedStartPrice: slider.values[0],
+                          selectedEndPrice: slider.values[1],
+                        },
+                      });
+                    }}
+                    min={10}
+                    max={1000}
+                    values={[
+                      this.state.price.selectedStartPrice,
+                      this.state.price.selectedEndPrice,
+                    ]}
+                  />
+                </Price>
                 <Rooms>
                   <Title>Rooms and beds</Title>
                   <Picker

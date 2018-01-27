@@ -30,6 +30,18 @@ export const Description = styled.p`
   font-size: 0.95rem;
   margin-right: 1rem;
 `;
+export const Average = styled.p`
+  font-size: 12px;
+`;
+export const Range = styled.p`
+  font-size: 18px;
+`;
 
-export const Rooms = styled.div``;
+export const PriceMapping = styled.img`
+  margin-left: 37px;
+  margin-bottom: -16px;
+  margin-top: 20px;
+`;
 export const Types = styled.div``;
+export const Price = styled.div``;
+export const Rooms = styled.div``;
