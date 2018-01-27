@@ -10,6 +10,14 @@ import { FilterButton, Fade } from '../../../UI';
 import prices from './prices.svg';
 import { Actions, Cancel, Apply } from '../styled';
 
+const getButtonText = (isSelected, startPrice, endPrice) => {
+  let value = 'Price';
+  if (startPrice !== 10 || endPrice !== 1000) {
+    value = `$${startPrice} — $${endPrice}`;
+  }
+  return value;
+};
+
 const ContainerPick = onClickOutside(styled.div`
   position: absolute;
   background: #fff;
@@ -80,7 +88,11 @@ export default class Price extends React.Component {
           onToggle={this.onToggle}
           className={this.className}
         >
-          Price
+          {getButtonText(
+            this.state.isSelected,
+            this.state.selectedStartPrice,
+            this.state.selectedEndPrice,
+          )}
         </FilterButton>
         {this.state.isSelected && (
           <React.Fragment>
