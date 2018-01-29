@@ -11,14 +11,11 @@ import { DropdownHolder, DropdownWindow, SelectDate, SelectArrow } from './style
 
 const formatDate = (date, defaultText) => (date ? date.format('MMM Do') : defaultText);
 
-const getButtonText = (start, end, isSelected) => {
-  let value = 'Dates';
-  if (start || end || isSelected) {
-    value = `${formatDate(start, 'Check in')} — ${formatDate(end, 'Check out')}`;
-  }
-  return value;
-};
-
+function getButtonText(start, end, isSelected) {
+  return start || end || isSelected
+    ? `${formatDate(start, 'Check in')} — ${formatDate(end, 'Check out')}`
+    : 'Dates';
+}
 export default class extends React.Component {
   state = {
     isSelected: false,
