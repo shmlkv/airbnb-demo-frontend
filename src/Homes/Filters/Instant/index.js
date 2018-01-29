@@ -39,17 +39,12 @@ const Toggle = styled.button`
   width: 4rem;
   height: 2.5rem;
   padding: 0;
-  background: rgba(72, 72, 72, 0.08);
-  border: 1px solid rgba(72, 72, 72, 0.3);
+  background: ${props => (props.active ? '#008489' : 'rgba(72, 72, 72, 0.08)')};
+  border: 1px solid ${props => (props.active ? '#008489' : ' rgba(72, 72, 72, 0.3)')};
   border-radius: 24px;
   appearance: none;
   cursor: pointer;
   flex-shrink: 0;
-
-  &.on {
-    background: #008489;
-    border-color: #008489;
-  }
 `;
 
 const Tumbler = styled.div`
@@ -57,16 +52,11 @@ const Tumbler = styled.div`
   height: 2.5rem;
   background: white;
   top: -1px;
-  left: -1px;
-  border: 1px solid rgba(72, 72, 72, 0.3);
+  left: ${props => (props.active ? '23px' : '-1px')};
+  border: 1px solid ${props => (props.active ? '#008489' : 'rgba(72, 72, 72, 0.3)')};
   border-radius: 24px;
   transition: left 0.2s ease-in-out;
   position: relative;
-
-  ${Toggle}.on & {
-    left: 23px;
-    border-color: #008489;
-  }
 `;
 
 const Icon = styled.img`
@@ -95,7 +85,7 @@ export default class Instant extends React.Component {
   onToggle = (isSelected) => {
     this.setState({ isSelected });
   };
-  
+
   onClick = (isSelected) => {
     this.setState({ isSelected });
   };
@@ -125,9 +115,9 @@ export default class Instant extends React.Component {
               <Title>Instant book</Title>
               <Container>
                 <Description>Listings you can book without waiting for host approval.</Description>
-                <Toggle onClick={this.onSwitchToggle} className={this.state.active ? 'on' : ''}>
-                  <Tumbler>
-                    {this.state.active ? <Icon src={active} /> : <Icon src={unactive} />}
+                <Toggle onClick={this.onSwitchToggle} active={this.state.active}>
+                  <Tumbler active={this.state.active}>
+                    <Icon src={this.state.active ? active : unactive} />
                   </Tumbler>
                 </Toggle>
               </Container>
