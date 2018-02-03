@@ -59,7 +59,6 @@ export default class Guests extends React.Component {
 
   select = (name) => {
     this.setState(prevState => ({
-      ...prevState,
       [name]: !prevState[name],
     }));
   };
