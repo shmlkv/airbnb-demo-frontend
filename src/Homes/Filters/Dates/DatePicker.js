@@ -4,7 +4,17 @@ import ScrollLock from 'react-scrolllock';
 import { matchXs } from '../../../helpers';
 
 import { FilterButton, Fade } from '../../../UI';
-import { Save, Close, Actions, Cancel, Apply, MobileHeader, Reset, Dates } from '../styled';
+import {
+  SaveWrapper,
+  Save,
+  Close,
+  Actions,
+  Cancel,
+  Apply,
+  MobileHeader,
+  Reset,
+  Dates,
+} from '../styled';
 
 import arrowRight from './arrowRight.svg';
 import { DropdownHolder, DropdownWindow, SelectDate, SelectArrow } from './styled';
@@ -63,7 +73,7 @@ export default class extends React.Component {
                   <MobileHeader>
                     <Close onClick={this.onClickOutside} />
                     Dates
-                    <Reset onClick={this.onCancel}>Reset</Reset>
+                    <Reset onClick={this.props.onReset}>Reset</Reset>
                     <Dates>
                       <SelectDate isSelected={this.props.startDate}>
                         {formatDate(this.props.startDate, 'Check in')}
@@ -84,7 +94,11 @@ export default class extends React.Component {
                     <Apply onClick={this.onApply}>Apply</Apply>
                   </Actions>
                 )}
-                {matchXs() && <Save onClick={this.onApply}>Save</Save>}
+                {matchXs() && (
+                  <SaveWrapper>
+                    <Save onClick={this.onApply}>Save</Save>
+                  </SaveWrapper>
+                )}
               </DropdownWindow>
               <Fade />
               {matchXs() && <ScrollLock />}

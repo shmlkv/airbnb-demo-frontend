@@ -2,21 +2,27 @@ import styled from 'styled-components';
 import closeButton from './close.svg';
 
 export const Save = styled.button`
-  position: fixed;
-  bottom: 0.5rem;
-  left: 0.5rem;
-  right: 0.5rem;
   width: calc(100% - 1rem);
   color: #fff;
   background: #ff5a5f;
   border-radius: 4px;
   height: 3rem;
   cursor: pointer;
-  z-index: 2;
 
   @media (min-width: 575px) {
     display: none;
   }
+`;
+export const SaveWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  border-top: 0.5px #d5d5d5 solid;
+  background: #fff;
+  z-index: 2;
 `;
 
 export const Actions = styled.div`
@@ -64,8 +70,8 @@ export const MobileHeader = styled.div`
   top: 0;
   right: 0;
   left: 0;
-  height: 100px;
   background: #fff;
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
   text-align: center;
   padding: 1rem 0.5rem;
 

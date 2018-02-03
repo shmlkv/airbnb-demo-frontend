@@ -5,7 +5,7 @@ import onClickOutside from 'react-onclickoutside';
 import { FilterButton, Fade } from '../../../UI';
 
 import { Actions, Cancel, Apply } from '../styled';
-import Type from './Type';
+import Checkbox from './Checkbox';
 
 import homeIcon from './home.svg';
 import houseRoomIcon from './houseRoom.svg';
@@ -20,12 +20,14 @@ const ContainerPick = onClickOutside(styled.div`
   width: 18em;
 `);
 
-const getButtonText = (entireHome, privateRoom, sharedRoom) => {
-  const num =
-    entireHome || privateRoom || sharedRoom ? ` • ${entireHome + privateRoom + sharedRoom}` : '';
-  return `Room type${num}`;
-};
+const CheckboxWrapper = styled.div`
+  margin: 0 1rem;
+`;
 
+const getButtonText = (entireHome, privateRoom, sharedRoom) =>
+  `Room type${
+    entireHome || privateRoom || sharedRoom ? ` • ${entireHome + privateRoom + sharedRoom}` : ''
+  }`;
 export default class Guests extends React.Component {
   state = {
     entireHome: false,
@@ -55,8 +57,11 @@ export default class Guests extends React.Component {
     this.setState({ isSelected: false });
   };
 
-  select = (ev) => {
-    this.setState({ [ev.target.name]: !this.state[ev.target.name] });
+  select = (name) => {
+    this.setState(prevState => ({
+      ...prevState,
+      [name]: !prevState[name],
+    }));
   };
 
   render() {
@@ -73,30 +78,33 @@ export default class Guests extends React.Component {
         {this.state.isSelected && (
           <React.Fragment>
             <ContainerPick handleClickOutside={this.onClickOutside}>
-              <Type
-                title="Entire home"
-                description="Have a place to yourself"
-                name="entireHome"
-                checked={this.state.entireHome}
-                icon={homeIcon}
-                onChange={this.select}
-              />
-              <Type
-                title="Private room"
-                description="Have your own room and share some common spaces"
-                name="privateRoom"
-                checked={this.state.privateRoom}
-                icon={houseRoomIcon}
-                onChange={this.select}
-              />
-              <Type
-                title="Shared room"
-                description="Stay in a shared space, like a common room"
-                name="sharedRoom"
-                checked={this.state.sharedRoom}
-                icon={roomIcon}
-                onChange={this.select}
-              />
+              <CheckboxWrapper>
+                <Checkbox
+                  title="Entire home"
+                  description="Have a place to yourself"
+                  name="entireHome"
+                  checked={this.state.entireHome}
+                  icon={homeIcon}
+                  onChange={this.select}
+                />
+                <Checkbox
+                  title="Private room"
+                  description="Have your own room and share some common spaces"
+                  name="privateRoom"
+                  checked={this.state.privateRoom}
+                  icon={houseRoomIcon}
+                  onChange={this.select}
+                />
+                <Checkbox
+                  title="Shared room"
+                  description="Stay in a shared space, like a common room"
+                  name="sharedRoom"
+                  checked={this.state.sharedRoom}
+                  icon={roomIcon}
+                  onChange={this.select}
+                />
+              </CheckboxWrapper>
+
               <Actions>
                 <Cancel onClick={this.onCancel}>Cancel</Cancel>
                 <Apply onClick={this.onApply}>Apply</Apply>

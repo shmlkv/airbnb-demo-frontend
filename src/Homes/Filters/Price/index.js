@@ -55,7 +55,6 @@ export default class Price extends React.Component {
   };
 
   onApply = () => {
-    this.props.closeDropdown();
     this.setState({
       isSelected: false,
       startPrice: this.state.selectedStartPrice,
@@ -65,11 +64,8 @@ export default class Price extends React.Component {
   };
 
   onCancel = () => {
-    this.props.closeDropdown();
     this.setState({
       isSelected: false,
-      selectedStartPrice: this.state.startPrice,
-      selectedEndPrice: this.state.endPrice,
     });
   };
 

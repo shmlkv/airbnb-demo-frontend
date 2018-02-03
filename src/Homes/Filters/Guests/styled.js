@@ -3,7 +3,7 @@ import onClickOutside from 'react-onclickoutside';
 
 export const ContainerPick = onClickOutside(styled.div`
   position: fixed;
-  top: 100px;
+  top: 48px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -11,6 +11,7 @@ export const ContainerPick = onClickOutside(styled.div`
   color: #383838;
   border: 1px solid #d5d5d5;
   border-radius: 3px;
+  z-index: 1;
 
   @media (min-width: 575px) {
     position: absolute;
@@ -26,7 +27,7 @@ export const DropDownWindow = styled.div`
   position: relative;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 1rem 2rem 1.5rem;
+  margin: 2rem 0 2rem;
   z-index: 1;
 `;
 
@@ -68,4 +69,8 @@ export const Selectors = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+`;
+
+export const PickerWrapper = styled.div`
+  margin-left: 1rem;
 `;

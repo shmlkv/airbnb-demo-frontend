@@ -9,12 +9,14 @@ import './datepicker.css';
 import { matchXs, matchMd } from '../../../helpers';
 import DatePicker from './DatePicker';
 
+const initialState = {
+  startDate: null,
+  endDate: null,
+  focusedInput: 'startDate',
+};
+
 export default class Dates extends React.Component {
-  state = {
-    startDate: null,
-    endDate: null,
-    focusedInput: 'startDate',
-  };
+  state = initialState;
 
   onApply = () => {
     this.props.closeDropdown();
@@ -31,12 +33,17 @@ export default class Dates extends React.Component {
     this.setState({ isSelected: true });
   };
 
+  onReset = () => {
+    this.setState(initialState);
+  };
+
   render() {
     return (
       <DatePicker
         onCancel={this.onCancel}
         onToggle={this.onToggle}
         onApply={this.onApply}
+        onReset={this.onReset}
         startDate={this.state.startDate}
         endDate={this.state.endDate}
       >

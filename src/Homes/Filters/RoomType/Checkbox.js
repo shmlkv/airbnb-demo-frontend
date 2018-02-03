@@ -9,6 +9,7 @@ const Container = styled.label`
   flex-direction: row;
   justify-content: space-between;
   margin: 1.5rem 1rem 1rem;
+  margin: 1.5rem 0rem 1rem;
   cursor: pointer;
 `;
 
@@ -39,11 +40,10 @@ const Checkbox = styled.input.attrs({
 const Title = styled.p`
   margin: 0 0 0.5rem;
   font-family: 'CircularAir Normal';
-
 `;
 
 const Description = styled.p`
-  margin: 0;
+  margin: 4px 0px;
   font-size: 0.875rem;
   font-weight: 100;
 `;
@@ -57,12 +57,12 @@ export default ({
 }) => (
   <Container>
     <Content>
-      <Checkbox checked={checked} onChange={onChange} name={name} />
+      <Checkbox checked={checked} onChange={() => onChange(name)} name={name} />
       <div>
-        <Title>{title}</Title>
+        {title && <Title>{title}</Title>}
         <Description>{description}</Description>
       </div>
     </Content>
-    <Icon src={icon} alt="Icon" />
+    {icon && <Icon src={icon} alt="Icon" />}
   </Container>
 );
