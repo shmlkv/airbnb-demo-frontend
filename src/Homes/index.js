@@ -8,6 +8,8 @@ import Card from './Card';
 import Pager from './Pager';
 import { ContainerFlex, HomeContainer, HomeBox, MapButton } from '../UI';
 
+import retrieveData from './api';
+
 import img1 from './La Salentina.png';
 import img2 from './Your private 3 bedr.png';
 import img3 from './Dreamy Tropical.png';
@@ -15,7 +17,7 @@ import img4 from './Best location.png';
 import img5 from './Lussouoso.png';
 import img6 from './In the historical center of Lecce.png';
 
-const homes = [
+const homesOld = [
   {
     title: 'La Salentina, see, nature & relax',
     image: img1,
@@ -71,20 +73,37 @@ const homes = [
     stars: 5,
   },
 ];
-export default () => (
-  <HomeContainer>
-    <Helmet title="AirBnb – Homes" />
-    <Header placeHolder="Anywhere · Homes" />
-    <Filters />
-    <ContainerFlex>
-      <HomeBox className="col-xs-12 col-lg-8">
-        {homes.map(home => <Card className="col-xs-12 col-sm-6 col-lg-6" home={home} />)}
-        <Pager />
-      </HomeBox>
-      <div className="hidden-xs hidden-sm hidden-md col-lg-4">
-        <GoogleMap />
-      </div>
-      <MapButton className="hidden-lg hidden-xl" />
-    </ContainerFlex>
-  </HomeContainer>
-);
+
+export default class Homes extends React.Component {
+  state = {
+    homes: null,
+  };
+
+  async componentWillMount() {
+    const homes = await retrieveData(0, 6);
+    this.setState({ homes });
+  }
+
+  render() {
+    return (
+      <HomeContainer>
+        <Helmet title="AirBnb – Homes" />
+        <Header placeHolder="Anywhere · Homes" />
+        <Filters />
+        <ContainerFlex>
+          <HomeBox className="col-xs-12 col-lg-8">
+            {this.state.homes &&
+              this.state.homes.map(home => (
+                <Card className="col-xs-12 col-sm-6 col-lg-6" home={home} />
+              ))}
+            <Pager />
+          </HomeBox>
+          <div className="hidden-xs hidden-sm hidden-md col-lg-4">
+            <GoogleMap />
+          </div>
+          <MapButton className="hidden-lg hidden-xl" />
+        </ContainerFlex>
+      </HomeContainer>
+    );
+  }
+}

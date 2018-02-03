@@ -10,7 +10,7 @@ const HomeCard = styled(Card)`
   margin: 0;
 `;
 
-const OwnerCharacteristic = styled.div`
+const Superhost = styled.div`
   margin-left: 0.4rem;
   font-size: 12px;
   margin-top: 0.25rem;
@@ -24,11 +24,11 @@ export default ({ home, className }) => (
   <HomeCard className={className} href="">
     <Image src={home.image} />
     <Title>
-      <InlinePrice>${home.cost}</InlinePrice>
+      <InlinePrice>${home.price}</InlinePrice>
       {home.title}
     </Title>
     <Description>
-      {home.type} · {home.beds}
+      {home.kind} · {home.beds}
     </Description>
     <Rating>
       <Star src={star} alt="" />
@@ -37,7 +37,7 @@ export default ({ home, className }) => (
       <Star src={star} alt="" />
       <Star src={star} alt="" />
       <Reviews>{home.reviews} reviews</Reviews>
-      <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
+      {home.isSuperhost && <Superhost> · Superhost</Superhost>}
     </Rating>
   </HomeCard>
 );
