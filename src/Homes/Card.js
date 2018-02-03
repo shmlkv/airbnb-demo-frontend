@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import times from 'lodash/times';
+import Pluralize from 'react-pluralize';
 
 import { Card, Title, Image, Star, InlinePrice, Rating, Reviews } from '../UI/Card';
 
@@ -28,14 +30,10 @@ export default ({ home, className }) => (
       {home.title}
     </Title>
     <Description>
-      {home.kind} · {home.beds}
+      {home.kind} · <Pluralize singular="bed" count={home.beds} />
     </Description>
     <Rating>
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
+      {times(home.rating, () => <Star src={star} alt="" />)}
       <Reviews>{home.reviews} reviews</Reviews>
       {home.isSuperhost && <Superhost> · Superhost</Superhost>}
     </Rating>
