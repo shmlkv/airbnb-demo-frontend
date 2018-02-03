@@ -12,8 +12,8 @@ const normalizeData = home => ({
   lng: home.lng,
 });
 
+
 export default function retrieveData() {
-  console.log('sa');
   return fetch('https://airbnb-demo-api.now.sh/v1/homes')
     .then(res => res.json())
     .then(res => res.items.map(normalizeData));
