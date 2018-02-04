@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import logo from "./logo.svg";
-import arrow from "./arrow.svg";
+import logo from './logo.svg';
+import arrow from './arrow.svg';
 
 const InternalLink = styled(Link)`
   display: flex;
@@ -12,7 +12,7 @@ const InternalLink = styled(Link)`
   margin-top: 1.5rem;
 
   &:after {
-    content: "";
+    content: '';
     width: 1rem;
     height: 0.5rem;
     background: url(${arrow});
@@ -26,10 +26,8 @@ const InternalLink = styled(Link)`
 
 const Logo = styled.img``;
 
-export default () => {
-  return (
-    <InternalLink to="/">
-      <Logo src={logo} alt="logo" />
-    </InternalLink>
-  );
-};
+export default () => (
+  <InternalLink to="/">
+    <Logo src={logo} alt="logo" />
+  </InternalLink>
+);

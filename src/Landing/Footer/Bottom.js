@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import logo from "./logo.svg";
+import logo from './logo.svg';
 
-import facebook from "./social/facebook.svg";
-import twitter from "./social/twitter.svg";
-import instagram from "./social/instagram.svg";
+import facebook from './social/facebook.svg';
+import twitter from './social/twitter.svg';
+import instagram from './social/instagram.svg';
 
 const Bottom = styled.div`
   border-top: 1px solid rgba(72, 72, 72, 0.2);
@@ -63,31 +63,29 @@ const SocialIcon = styled.img`
   width: 1.5rem;
 `;
 
-export default () => {
-  return (
-    <Bottom>
-      <Copyright>
-        <Logo src={logo} />
+export default () => (
+  <Bottom>
+    <Copyright>
+      <Logo src={logo} />
         © Airbnb Inc.
-      </Copyright>
-      <Side>
-        <Links>
-          <Link href="#">Terms</Link>
-          <Link href="#">Privacy</Link>
-          <Link href="#">Site map</Link>
-        </Links>
-        <Links>
-          <Link href="#">
-            <SocialIcon src={facebook} />
-          </Link>
-          <Link href="#">
-            <SocialIcon src={twitter} />
-          </Link>
-          <Link href="#">
-            <SocialIcon src={instagram} />
-          </Link>
-        </Links>
-      </Side>
-    </Bottom>
-  );
-};
+    </Copyright>
+    <Side>
+      <Links>
+        <Link href="#">Terms</Link>
+        <Link href="#">Privacy</Link>
+        <Link href="#">Site map</Link>
+      </Links>
+      <Links>
+        <Link href="#">
+          <SocialIcon src={facebook} />
+        </Link>
+        <Link href="#">
+          <SocialIcon src={twitter} />
+        </Link>
+        <Link href="#">
+          <SocialIcon src={instagram} />
+        </Link>
+      </Links>
+    </Side>
+  </Bottom>
+);

@@ -1,53 +1,47 @@
-import React from "react";
+import React from 'react';
 
-import Card from "./Card";
-import {
-  Title,
-  Container,
-  More,
-  ScrollWrap,
-  ScrollButton,
-  TitleWrap
-} from "../../UI";
+import Card from './Card';
+import { Title, Container, More, ScrollWrap, ScrollButton, TitleWrap } from '../../UI';
+
+import chumleysImage from './Chumleys.png';
+import hanjanImage from './Hanjan.png';
+import primemeatsImage from './Prime Meats.png';
+import seapriceImage from './Seaprice.png';
 
 const populars = [
   {
-    title: "Chumley’s",
-    image: "Chumleys.png",
+    title: 'Chumley’s',
+    image: chumleysImage,
     price: 60,
-    type: "Speakeasy"
+    type: 'Speakeasy',
   },
   {
-    title: "Hanjan",
-    image: "Hanjan.png",
+    title: 'Hanjan',
+    image: hanjanImage,
     price: 50,
-    type: "Korean gastropub"
+    type: 'Korean gastropub',
   },
   {
-    title: "Prime Meats",
-    image: "Prime Meats.png",
+    title: 'Prime Meats',
+    image: primemeatsImage,
     price: 50,
-    type: "Speakeasy"
+    type: 'Speakeasy',
   },
   {
-    title: "Seaprice",
-    image: "Seaprice.png",
+    title: 'Seaprice',
+    image: seapriceImage,
     price: 70,
-    type: "Fine seafood"
-  }
+    type: 'Fine seafood',
+  },
 ];
 
-export default () => {
-  return (
-    <Container>
-      <TitleWrap>
-        <Title>Popular reservations around the world</Title>
-        <More href="">See all</More>
-      </TitleWrap>
-      <ScrollWrap>
-        {populars.map(popular => <Card popular={popular} />)}
-      </ScrollWrap>
-      <ScrollButton />
-    </Container>
-  );
-};
+export default () => (
+  <Container>
+    <TitleWrap>
+      <Title>Popular reservations around the world</Title>
+      <More href="">See all</More>
+    </TitleWrap>
+    <ScrollWrap>{populars.map(popular => <Card popular={popular} />)}</ScrollWrap>
+    <ScrollButton />
+  </Container>
+);

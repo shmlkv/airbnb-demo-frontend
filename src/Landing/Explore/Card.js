@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const InternalLink = styled(Link)`
   text-decoration: none;
@@ -49,13 +49,11 @@ const Title = styled.h4`
   }
 `;
 
-export default ({ explore }) => {
-  return (
-    <InternalLink className="col-lg-4 col-sm-5 col-xs-6" to={explore.title}>
-      <Card>
-        <Image src={require(`./${explore.image}`)} />
-        <Title>{explore.title}</Title>
-      </Card>
-    </InternalLink>
-  );
-};
+export default ({ explore }) => (
+  <InternalLink className="col-lg-4 col-sm-5 col-xs-6" to={explore.title}>
+    <Card>
+      <Image src={explore.image} />
+      <Title>{explore.title}</Title>
+    </Card>
+  </InternalLink>
+);

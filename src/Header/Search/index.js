@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import searchIcon from "./search.svg";
+import React from 'react';
+import styled from 'styled-components';
+import searchIcon from './search.svg';
 
 const Search = styled.div`
   position: relative;
@@ -29,11 +29,9 @@ const SearchField = styled.input`
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
 `;
 
-export default ({ placeHolder }) => {
-  return (
-    <Search>
-      <SearchIcon />
-      <SearchField placeholder={placeHolder} />
-    </Search>
-  );
-};
+export default ({ placeHolder }) => (
+  <Search>
+    <SearchIcon />
+    <SearchField placeholder={placeHolder} />
+  </Search>
+);

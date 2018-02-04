@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { CardContainer, Card, Image } from "../../UI/Card";
+import { CardContainer, Card, Image } from '../../UI/Card';
 
 const Type = styled.div`
   font-size: 10px;
@@ -23,15 +23,13 @@ const Price = styled.div`
   font-size: 18px;
 `;
 
-export default ({ popular }) => {
-  return (
-    <CardContainer className="col-lg-3 col-md-4 col-sm-4 col-xs-6">
-      <Card href="">
-        <Image src={require(`./${popular.image}`)} />
-        <Type>{popular.type}</Type>
-        <Title>{popular.title}</Title>
-        <Price>About ${popular.price} per persone</Price>
-      </Card>
-    </CardContainer>
-  );
-};
+export default ({ popular }) => (
+  <CardContainer className="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+    <Card href="">
+      <Image src={popular.image} />
+      <Type>{popular.type}</Type>
+      <Title>{popular.title}</Title>
+      <Price>About ${popular.price} per persone</Price>
+    </Card>
+  </CardContainer>
+);
