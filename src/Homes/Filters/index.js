@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Dates from './Dates';
 import Guests from './Guests';
-import Type from './Type';
+import RoomType from './RoomType';
 import Price from './Price';
 import Instant from './Instant';
 import MoreFilters from './MoreFilters';
@@ -31,6 +31,7 @@ class Filters extends React.Component {
   state = {
     opened: null,
   };
+
   setOpened = (opened) => {
     this.setState({ opened: this.state.opened === opened ? null : opened });
   };
@@ -45,15 +46,11 @@ class Filters extends React.Component {
             endDate={this.state.endDate}
             onApply={(startDate, endDate) => this.setState({ startDate, endDate })}
           />
-          <Guests
-            closeDropdown={() => this.setOpened(null)}
-            startDate={this.state.startDate}
-            text="Guest"
-          />
-          <Type text="Room type" className="hidden-xs hidden-sm hidden-md" />
-          <Price text="Price" className="hidden-xs hidden-sm hidden-md" />
-          <Instant text="Instant book" className="hidden-xs hidden-sm hidden-md" />
-          <MoreFilters text="More filters" />
+          <Guests />
+          <RoomType className="hidden-xs hidden-sm hidden-md" />
+          <Price className="hidden-xs hidden-sm hidden-md" />
+          <Instant className="hidden-xs hidden-sm hidden-md" />
+          <MoreFilters />
         </Container>
       </Box>
     );

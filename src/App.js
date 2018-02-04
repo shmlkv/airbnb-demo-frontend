@@ -11,7 +11,8 @@ import Homes from './Homes';
 const App = () => (
   <BrowserRouter>
     <React.Fragment>
-      <Route path="/" exact component={Landing} /> <Route path="/homes" component={Homes} />{' '}
+      <Route path="/" exact component={Landing} />
+      <Route path="/homes" component={Homes} />
     </React.Fragment>
   </BrowserRouter>
 );

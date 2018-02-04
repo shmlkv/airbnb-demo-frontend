@@ -1,0 +1,37 @@
+.rheostat {
+  overflow: visible;
+  height: 32px;
+  margin-right: 32px;
+}
+
+.rheostat-background {
+  position: absolute;
+  height: 6px;
+  background: #d8d8d8;
+  border-radius: 3px;
+  top: calc(50% - 3px);
+  left: 0;
+  opacity: 0.5;
+  right: -32px;
+}
+
+.rheostat-progress {
+  position: absolute;
+  height: 6px;
+  background: #008489;
+  top: calc(50% - 3px);
+}
+
+.rheostat-handle {
+  background-color: #fff;
+  border: 1px solid #008489;
+  border-radius: 50%;
+  height: 32px;
+  outline: none;
+  z-index: 2;
+  width: 32px;
+}
+
+.rheostat-handle:before,
+.rheostat-handle:after {
+}

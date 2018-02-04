@@ -6,35 +6,35 @@ import 'react-dates/lib/css/_datepicker.css';
 import { DayPickerRangeController } from 'react-dates';
 import './datepicker.css';
 
-import { matchXs, matchMd } from '../../helpers';
+import { matchXs, matchMd } from '../../../helpers';
 import DatePicker from './DatePicker';
 
-class Dates extends React.Component {
-  state = {
-    startDate: null,
-    endDate: null,
-    selectedStartDate: null,
-    selectedEndDate: null,
-    focusedInput: 'startDate',
-  };
+const initialState = {
+  startDate: null,
+  endDate: null,
+  focusedInput: 'startDate',
+};
+
+export default class Dates extends React.Component {
+  state = initialState;
 
   onApply = () => {
     this.props.closeDropdown();
     this.setState({}, () => {
-      this.props.onApply(this.state.selectedStartDate, this.state.selectedEndDate);
+      this.props.onApply(this.state.startDate, this.state.endDate);
     });
   };
 
   onCancel = () => {
     this.props.closeDropdown();
-    this.setState({
-      selectedStartDate: this.state.startDate,
-      selectedEndDate: this.state.endDate,
-    });
   };
 
   onToggle = () => {
     this.setState({ isSelected: true });
+  };
+
+  onReset = () => {
+    this.setState(initialState);
   };
 
   render() {
@@ -43,8 +43,9 @@ class Dates extends React.Component {
         onCancel={this.onCancel}
         onToggle={this.onToggle}
         onApply={this.onApply}
-        selectedStartDate={this.state.selectedStartDate}
-        selectedEndDate={this.state.selectedEndDate}
+        onReset={this.onReset}
+        startDate={this.state.startDate}
+        endDate={this.state.endDate}
       >
         <DayPickerRangeController
           orientation={matchXs() ? 'vertical' : 'horizontal'}
@@ -56,12 +57,12 @@ class Dates extends React.Component {
           onFocusChange={focusedInput =>
             this.setState({ focusedInput: focusedInput || 'startDate' })
           }
-          startDate={this.state.selectedStartDate}
-          endDate={this.state.selectedEndDate}
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
           onDatesChange={({ startDate, endDate }) => {
             this.setState({
-              selectedStartDate: startDate,
-              selectedEndDate: endDate,
+              startDate,
+              endDate,
             });
           }}
         />
@@ -69,5 +70,3 @@ class Dates extends React.Component {
     );
   }
 }
-
-export default Dates;
