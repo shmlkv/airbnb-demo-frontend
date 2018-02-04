@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import times from 'lodash/times';
+import Pluralize from 'react-pluralize';
 
 import { Card, Title, Image, Star, InlinePrice, Rating, Reviews } from '../UI/Card';
 
@@ -10,7 +12,7 @@ const HomeCard = styled(Card)`
   margin: 0;
 `;
 
-const OwnerCharacteristic = styled.div`
+const Superhost = styled.div`
   margin-left: 0.4rem;
   font-size: 12px;
   margin-top: 0.25rem;
@@ -24,20 +26,16 @@ export default ({ home, className }) => (
   <HomeCard className={className} href="">
     <Image src={home.image} />
     <Title>
-      <InlinePrice>${home.cost}</InlinePrice>
+      <InlinePrice>${home.price}</InlinePrice>
       {home.title}
     </Title>
     <Description>
-      {home.type} · {home.beds}
+      {home.kind} · <Pluralize singular="bed" count={home.beds} />
     </Description>
     <Rating>
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
-      <Star src={star} alt="" />
+      {times(home.rating, () => <Star src={star} alt="" />)}
       <Reviews>{home.reviews} reviews</Reviews>
-      <OwnerCharacteristic> · Superhost</OwnerCharacteristic>
+      {home.isSuperhost && <Superhost> · Superhost</Superhost>}
     </Rating>
   </HomeCard>
 );
