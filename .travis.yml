@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+cache: npm
+script: npm run deploy
+after_script: npm run alias
+env:
+  global:
+    secure: cWW1x0M3rVaZNR1gK3uz5lF1a8uRRSqsNEiWyd/VLce/sXsb1G8HBxww0ZAGRllBWypN/j+c/RwtQvDDwy4PiduLyMWG9m7ZU101jwqfd9OpoUJypXl/2nN9/gM45q/sCscv7N778p3cYJNO7okn0YE1Q7YidPd0PCH+9kSAXk8KRtEZmMkArXsXTWNAjjMCC52Mg7QJZPha0ZRYvQw+JXLEglxMSJ/iFqnjk1ohcSe8/R1nQepKVQk0poVTTOBTB4/QkbOJahr4tbXySx8IH8NllrLpYw2jwi2dUfZ8ZcPKG+3JJwIPj98S0cXHpCtaS35oU1sMM7z47pLBiU+anhKeEF4NWy8VpRivHtoK3qeIVMqXpgjf8vpTMODSPmlc/ZvtHV0xzaB162tzDMxE6g4+yBbH1TkoNXEZ2SPx8z3zdiZy40DluKKKd3w05wzBHEKUQlVvx9GRyxEFx/BkSMQ0gEaMPccbfleXG6Bax2w6rf1AaP0jw56raK5BCOIFWda9QLHdWi34zlPi4bNGguZe3nu1cyq60gJrNOCmFC+nLYm6jYGLBaBZqIYTb7JycOtV7M+hfiAfTGrbdfl2iZo4zcfPuj0LZVVOGCOrQVR8807YBAB25q3X7WlHsBg9hdOvVLNc1N/P3N/I5PVLkYquGTt7KUxKatVYwUS5w2g=
+global:
+  secure: "<this is your encrypted NOW token. It was added when you ran travis encrypt>"
